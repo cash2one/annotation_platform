@@ -10,6 +10,10 @@ from user_system.utils import *
 from .models import *
 from .forms import NewTaskForm
 from task_manager.settings import tag2controller
+try:
+    import simplejson as json
+except ImportError:
+    import json
 
 
 def get_task_and_controller(task_id):

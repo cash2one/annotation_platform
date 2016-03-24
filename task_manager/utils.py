@@ -13,7 +13,6 @@ from django.core.mail import EmailMultiAlternatives
 import smtplib
 
 
-
 def _compute_weighted_kappa(l):
     """
     :param l:  an (item, annotator, label)-triplet list, labels must be ordinal
@@ -144,7 +143,7 @@ def batch_import_task_units_from_file(task, path):
 
 def import_task_and_task_units(task_name, task_description, task_tag, path,
                                annotation_per_unit=3, credit_per_annotation=1):
-    t = import_task(task_name, task_description, task_tag)
+    t = import_task(task_name, task_description, task_tag, annotation_per_unit, credit_per_annotation)
     batch_import_task_units_from_file(t, path)
 
 
