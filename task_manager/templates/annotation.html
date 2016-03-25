@@ -3,13 +3,13 @@
 {% block title %} {{ title }} {% endblock %}
 
 {% block content %}
-    <div class="row annotation-content">
-        <div class="col-xs-7">
+    <div class="row annotation-content" style="height: 480px">
+        <div class="col-xs-10">
             {% autoescape off %}
             {{ content }}
             {% endautoescape %}
         </div>
-        <div id="right-side" class="col-xs-4">
+        <div id="right-side" class="col-xs-2">
             {% autoescape off %}
             {{ description }}
             {% endautoescape %}

@@ -7,8 +7,8 @@ from annotation_task_2.controllers import SessionTaskManager
 from annotation_task_user_preference.controllers import UserPreferenceTaskManager
 
 tag2controller = {
-    'task_1': QueryDocumentTaskManager(),
-    'task_2': SessionTaskManager(),
-    'task_user_preference': UserPreferenceTaskManager,
+    # 'task_1': QueryDocumentTaskManager(),
+    # 'task_2': SessionTaskManager(),
+    'task_user_preference': UserPreferenceTaskManager(),
 }
 

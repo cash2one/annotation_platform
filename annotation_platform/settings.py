@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'task_manager',
     'annotation_task_1',
     'annotation_task_2',
+    'annotation_task_user_preference'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -29,7 +29,7 @@ class UserPreferenceTaskManager(TaskManager):
         """
 
         task_units = TaskUnit.objects(task=task)
-        task_units = sorted(task_units, key=lambda x: json.loads(x.unit_content)['url'])
+        task_units = sorted(task_units, key=lambda x: json.loads(x.unit_content)['query'])
         task_unit_tags = [t.tag for t in task_units]
 
         annotations = Annotation.objects(task=task, user=user)
@@ -54,14 +54,15 @@ class UserPreferenceTaskManager(TaskManager):
         try:
             task_unit = TaskUnit.objects.get(task=task, tag=unit_tag)
             jsonObj = json.loads(task_unit.unit_content)
-            t = loader.get_template('annotation_task_1_content.html')
+            t = loader.get_template('annotation_task_user_preference_content.html')
             c = RequestContext(
                 request,
                 {
                     'task_id': task.id,
                     'unit_tag': unit_tag,
                     'query': jsonObj['query'],
-                    'html': jsonObj['doc_snippet'],
+                    'html1': '/static/SERP_baidu/' + jsonObj['query'] + '_baidu.html',
+                    'html2': '/static/SERP_sogou/' + jsonObj['query'] + '_sogou.html',
                 })
             return t.render(c)
         except DoesNotExist:
@@ -76,7 +77,7 @@ class UserPreferenceTaskManager(TaskManager):
         user = get_user_from_request(request)
         finished_task_num = len(Annotation.objects(user=user, task=task))
         all_task_num = len(TaskUnit.objects(task=task))
-        t = loader.get_template('annotation_task_1_description.html')
+        t = loader.get_template('annotation_task_user_preference_description.html')
         c = RequestContext(
             request,
             {
@@ -94,7 +95,7 @@ class UserPreferenceTaskManager(TaskManager):
         :param unit_tag:
         :return: CSS fragment that will be inserted to the css block
         """
-        t = loader.get_template('annotation_task_1.css')
+        t = loader.get_template('annotation_task_user_preference.css')
         c = RequestContext(
             request, {}
         )
@@ -131,8 +132,8 @@ class UserPreferenceTaskManager(TaskManager):
                 {
                     'annotator': user.username,
                     'query': content['query'],
-                    'topic_num': content['topic_num'],
-                    'docno': content['docno'],
+                    'html1': 'baidu',
+                    'html2': 'sogou',
                     'score': score
                 }
             )

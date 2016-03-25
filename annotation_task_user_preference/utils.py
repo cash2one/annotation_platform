@@ -15,7 +15,7 @@ def import_task_unit(task, json_str):
     obj = json.loads(json_str)
     u = TaskUnit()
     u.task = task
-    u.tag = str(obj['docno'])
+    u.tag = unicode(obj['query'])
     u.unit_content = json_str
     u.save()
     return u
