@@ -8,6 +8,7 @@ from task_manager.models import *
 from task_manager.controllers import TaskManager
 from user_system.utils import *
 from .utils import *
+import random
 
 try:
     import simplejson as json
@@ -30,8 +31,8 @@ class UserPreferenceTaskManager(TaskManager):
 
         task_units = TaskUnit.objects(task=task)
         task_units = sorted(task_units, key=lambda x: json.loads(x.unit_content)['query'])
+        random.shuffle(task_units)
         task_unit_tags = [t.tag for t in task_units]
-
         annotations = Annotation.objects(task=task, user=user)
         annotated_tags = set([a.task_unit.tag for a in annotations])
 
@@ -54,6 +55,19 @@ class UserPreferenceTaskManager(TaskManager):
         try:
             task_unit = TaskUnit.objects.get(task=task, tag=unit_tag)
             jsonObj = json.loads(task_unit.unit_content)
+            html_baidu = '/static/SERP_baidu/' + jsonObj['query'] + '_baidu.html'
+            html_sogou = '/static/SERP_sogou/' + jsonObj['query'] + '_sogou.html'
+            htmls = [html_baidu, html_sogou]
+            if task_unit.annotations == 0:
+                html1 = htmls[0]
+                html2 = htmls[1]
+            elif task_unit.annotations == 1:
+                html1 = htmls[1]
+                html2 = htmls[0]
+            else:
+                ran = len(unit_tag)
+                html1 = htmls[ran % 2]
+                html2 = htmls[(ran + 1) % 2]
             t = loader.get_template('annotation_task_user_preference_content.html')
             c = RequestContext(
                 request,
@@ -61,8 +75,8 @@ class UserPreferenceTaskManager(TaskManager):
                     'task_id': task.id,
                     'unit_tag': unit_tag,
                     'query': jsonObj['query'],
-                    'html1': '/static/SERP_baidu/' + jsonObj['query'] + '_baidu.html',
-                    'html2': '/static/SERP_sogou/' + jsonObj['query'] + '_sogou.html',
+                    'html1': html1,
+                    'html2': html2,
                 })
             return t.render(c)
         except DoesNotExist:
@@ -121,6 +135,19 @@ class UserPreferenceTaskManager(TaskManager):
     def save_annotation(self, request, task, unit_tag):
         try:
             task_unit = TaskUnit.objects.get(task=task, tag=unit_tag)
+            htmls = ['baidu', 'sogou']
+            if task_unit.annotations == 0:
+                html1 = htmls[0]
+                html2 = htmls[1]
+            elif task_unit.annotations == 1:
+                html1 = htmls[1]
+                html2 = htmls[0]
+            else:
+                ran = len(unit_tag)
+                html1 = htmls[ran % 2]
+                html2 = htmls[(ran + 1) % 2]
+            task_unit.annotations += 1
+            task_unit.save()
             user = get_user_from_request(request)
             score = int(request.POST['score'])
             a = Annotation()
@@ -132,8 +159,8 @@ class UserPreferenceTaskManager(TaskManager):
                 {
                     'annotator': user.username,
                     'query': content['query'],
-                    'html1': 'baidu',
-                    'html2': 'sogou',
+                    'html1': html1,
+                    'html2': html2,
                     'score': score
                 }
             )

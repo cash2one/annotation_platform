@@ -17,6 +17,7 @@ def import_task_unit(task, json_str):
     u.task = task
     u.tag = unicode(obj['query'])
     u.unit_content = json_str
+    u.annotations = 0
     u.save()
     return u
 
@@ -27,22 +28,27 @@ def batch_import_task_units_from_file(task, path):
             import_task_unit(task, line)
 
 
-def get_query_doc_pair(annotation):
+def get_query(annotation):
     obj = json.loads(annotation.annotation_content)
-    return obj['query'], obj['docno']
+    return obj['query']
 
 
-def get_query_doc_score(annotation):
+def get_score(annotation):
     obj = json.loads(annotation.annotation_content)
     return obj['score']
 
 
-def get_two_level_doc_score(annotation):
+def get_two_level_score(annotation):
     obj = json.loads(annotation.annotation_content)
-    return 0 if obj['score'] <= 2 else 1
+    if obj['score'] < 0:
+        return -1
+    elif obj['score'] > 0:
+        return 1
+    else:
+        return 0
 
 
-def output_annotations(annotations, key=get_query_doc_pair, value=get_query_doc_score):
+def output_annotations(annotations, key=get_query, value=get_score):
     annotations = list(annotations)
 
     d = defaultdict(list)
@@ -51,12 +57,12 @@ def output_annotations(annotations, key=get_query_doc_pair, value=get_query_doc_
         d[k].append(value(a))
 
     for k in d:
-        query, docno = k
+        query = k
         values = sorted(d[k])
-        yield query, docno, values[len(values)/2]
+        yield query,  values[len(values)/2]
 
 
-def compute_kappa(annotations, key=get_query_doc_pair, value=get_query_doc_score):
+def compute_kappa(annotations, key=get_query, value=get_score):
     annotations = list(annotations)
 
     value_set = set()
@@ -67,19 +73,18 @@ def compute_kappa(annotations, key=get_query_doc_pair, value=get_query_doc_score
 
     d = defaultdict(list)
     for a in annotations:
-        query, docno = key(a)
-        d[(query, docno)].append(value(a))
-
+        query = key(a)
+        d[query].append(value(a))
     return _compute_kappa(d, value_map)
 
 
-def compute_weighted_kappa(annotations, key=get_query_doc_pair, value=get_query_doc_score):
+def compute_weighted_kappa(annotations, key=get_query, value=get_score):
     annotations = list(annotations)
     l = [(key(a), a.user.username, value(a)) for a in annotations]
     return _compute_weighted_kappa(l)
 
 
-def compute_alpha(annotations, key=get_query_doc_pair, value=get_query_doc_score):
+def compute_alpha(annotations, key=get_query, value=get_score):
 
     def iter_pairs(l):
         size = len(l)
@@ -97,8 +102,8 @@ def compute_alpha(annotations, key=get_query_doc_pair, value=get_query_doc_score
     d = defaultdict(list)
     all_values = []
     for a in annotations:
-        query, docno = key(a)
-        d[(query, docno)].append(value(a))
+        query = key(a)
+        d[query].append(value(a))
         all_values.append(value(a))
         n += 1
     return _compute_alpha(n, d, all_values)

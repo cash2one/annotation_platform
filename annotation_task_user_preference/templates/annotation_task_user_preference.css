@@ -1,27 +1,30 @@
 .query-div {
+    padding: 5px;
+    text-align: center;
     border-radius: 4px 4px 0 0;
     background: #edeff1;
-    border-bottom: 2px solid #2f4154;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .query {
-    background: #FFF;
     border-radius: 2px;
 }
 
 .annotation-div {
+    padding: 5px;
     border-top: 2px solid #2f4154;
     background: #edeff1;
     border-radius: 0 0 4px 4px;
 }
 
 .submit-btn {
-    margin: 10px 0 10px 0;
 }
 
 /* Belows are css for snippet */
 
 .body-wrapper {
+    padding: 5px;
     font: 13px Arial;
     color: #333;
     word-wrap: break-word;
@@ -33,10 +36,6 @@
 .body-wrapper a {
     color: #00c;
     cursor: pointer;
-}
-.results {
-    width: 1000px;
-    padding-bottom: 3px;
 }
 
 .pt a em {

@@ -17,9 +17,9 @@
     {% block css %}
     {% endblock %}
     </style>
+    <style>html { overflow-x:hidden; }</style>
 </head>
 <body>
-
     <header>
     <div class="container-fluid">
         <div class="col-xs-12">
@@ -66,7 +66,7 @@
     </header>
 
     <section>
-    <div class="container">
+    <div class="container" style="width: 100%">
             {% block content %}
                 This is content!
             {% endblock %}
@@ -74,7 +74,7 @@
     </section>
 
 
-    <footer>
+    <!--<footer>
         <div class="container">
             <div class="row">
                 <p class="text-center">
@@ -82,7 +82,7 @@
                 </p>
             </div>
         </div>
-    </footer>
+    </footer>-->
     <script src="/static/flat-ui/js/vendor/jquery.min.js"></script>
     <script src="/static/flat-ui/js/flat-ui.min.js"></script>
     {% block scripts %}

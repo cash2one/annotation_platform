@@ -10,6 +10,7 @@ from user_system.utils import *
 from .models import *
 from .forms import NewTaskForm
 from task_manager.settings import tag2controller
+from django.views.decorators.csrf import csrf_exempt
 try:
     import simplejson as json
 except ImportError:
@@ -47,6 +48,9 @@ def get_next_task_unit(user, request, task_id):
 
     task_unit = task_manager.get_next_task_unit(request, user, task)
     if task_unit is not None:
+        if task.task_name is not "example":
+            if task_unit.annotations == 3:
+                return HttpResponseRedirect('/task/home/')
         return HttpResponseRedirect('/task/anno/%s/%s/' % (task_id, task_unit.tag))
     else:
         return HttpResponseRedirect('/task/finished/%s/' % task_id)
@@ -69,6 +73,7 @@ def finished(user, request, task_id):
     )
 
 
+@csrf_exempt
 @require_login
 def annotate(user, request, task_id, unit_tag):
     ret = get_task_and_controller(task_id)
@@ -79,6 +84,7 @@ def annotate(user, request, task_id, unit_tag):
     if request.method == 'POST':
         if task_manager.validate_annotation(request, task, unit_tag):
             task_manager.save_annotation(request, task, unit_tag)
+
             if "message" in request.POST:
                 return HttpResponse(
                     json.dumps({'url': '/task/next_task/%s/' % task_id}),
@@ -89,7 +95,6 @@ def annotate(user, request, task_id, unit_tag):
     content = task_manager.get_annotation_content(request, task, unit_tag)
     description = task_manager.get_annotation_description(request, task, unit_tag)
     style = task_manager.get_style(request, task, unit_tag)
-
     return render_to_response(
         'annotation.html',
         {
@@ -97,7 +102,7 @@ def annotate(user, request, task_id, unit_tag):
             'title': title,
             'content': content,
             'description': description,
-            'style': style
+            'style': style,
         },
         RequestContext(request)
     )

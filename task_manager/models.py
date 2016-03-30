@@ -30,6 +30,7 @@ class TaskUnit(Document):
     tag = StringField(required=True)  # use tag to identify each task unit, should be unique
     unit_content = StringField()      # the content of the task unit, usually a JSON-serialized string
     task = ReferenceField(Task)       # reference to the task
+    annotations = IntField()          # how many annotations had
 
 
 class Annotation(Document):

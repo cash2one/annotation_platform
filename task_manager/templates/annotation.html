@@ -3,32 +3,31 @@
 {% block title %} {{ title }} {% endblock %}
 
 {% block content %}
-    <div class="row annotation-content" style="height: 480px">
-        <div class="col-xs-10">
-            {% autoescape off %}
-            {{ content }}
-            {% endautoescape %}
-        </div>
-        <div id="right-side" class="col-xs-2">
-            {% autoescape off %}
+    {% autoescape off %}
+        {{ content }}
+    {% endautoescape %}
+    <div class="row" id="description">
+        {% autoescape off %}
             {{ description }}
-            {% endautoescape %}
-        </div>
+        {% endautoescape %}
     </div>
 
 {% endblock %}
 
 
 {% block css %}
-    #right-side {
-        padding: 20px;
-        font-size: 0.7em;
+    #description {
+        text-align: center;
+        padding: 5px;
+        font-size: 1em;
         background: #edeff1;
         border-radius: 4px;
-        position: fixed;
-        right: 40px;
+        position: static;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
     }
     {% autoescape off %}
     {{ style }}
     {% endautoescape %}
 {% endblock %}
+
