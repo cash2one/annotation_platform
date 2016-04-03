@@ -30,7 +30,6 @@ class TaskUnit(Document):
     tag = StringField(required=True)  # use tag to identify each task unit, should be unique
     unit_content = StringField()      # the content of the task unit, usually a JSON-serialized string
     task = ReferenceField(Task)       # reference to the task
-    annotations = IntField()          # how many annotations had
 
 
 class Annotation(Document):
@@ -43,5 +42,13 @@ class Annotation(Document):
     task = ReferenceField(Task)           # reference to the task
     credit = IntField()                   # credits per annotation
 
+
+class Log(Document):
+    user = ReferenceField(User)
+    task = ReferenceField(Task)
+    action = StringField()
+    action_object = StringField()         # action on which html('html1' or 'html2')
+    task_unit = ReferenceField(TaskUnit)
+    content = StringField()               # Timestamp, Action, Info
 
 

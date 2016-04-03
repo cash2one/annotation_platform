@@ -5,12 +5,20 @@
 <div class="row body-wrapper">
     {% autoescape off %}
         <div class="col-xs-6">
-            <iframe scrolling="yes" seamless="seamless" height="700px" width="100%" src={{ html1 }}></iframe>
+            <iframe name="iframe_1" id="iframe1" scrolling="yes" seamless="seamless" height="650px" width="100%" src={{ html1 }}></iframe>
         </div>
         <div class="col-xs-6">
-            <iframe scrolling="yes" seamless="seamless" height="700px" width="100%" src={{ html2 }}></iframe>
+            <iframe name="iframe_2" id="iframe2" scrolling="yes" seamless="seamless" height="650px" width="100%" src={{ html2 }}></iframe>
         </div>
     {% endautoescape %}
+    <script src="/static/franky_log.js"></script>
+    <!--<script>
+        var iframe1 = document.getElementById("iframe1");
+        var window1 = iframe1.contentWindow;
+        $(window1).click(function(ev){
+            alert([ev.clientX, ev.clientY, window1.document.getElementsByTagName('html')[0].offsetHeight])
+        });
+    </script>-->
 </div>
 
 <div class="row annotation-div">

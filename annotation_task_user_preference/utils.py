@@ -17,7 +17,6 @@ def import_task_unit(task, json_str):
     u.task = task
     u.tag = unicode(obj['query'])
     u.unit_content = json_str
-    u.annotations = 0
     u.save()
     return u
 
@@ -38,7 +37,7 @@ def get_score(annotation):
     return obj['score']
 
 
-def get_two_level_score(annotation):
+def get_three_level_score(annotation):
     obj = json.loads(annotation.annotation_content)
     if obj['score'] < 0:
         return -1

@@ -58,10 +58,12 @@ class UserPreferenceTaskManager(TaskManager):
             html_baidu = '/static/SERP_baidu/' + jsonObj['query'] + '_baidu.html'
             html_sogou = '/static/SERP_sogou/' + jsonObj['query'] + '_sogou.html'
             htmls = [html_baidu, html_sogou]
-            if task_unit.annotations == 0:
+            annotations = Annotation.objects(task_unit=task_unit)
+            valid_annotations = len(annotations)
+            if valid_annotations == 0:
                 html1 = htmls[0]
                 html2 = htmls[1]
-            elif task_unit.annotations == 1:
+            elif valid_annotations == 1:
                 html1 = htmls[1]
                 html2 = htmls[0]
             else:
@@ -136,17 +138,18 @@ class UserPreferenceTaskManager(TaskManager):
         try:
             task_unit = TaskUnit.objects.get(task=task, tag=unit_tag)
             htmls = ['baidu', 'sogou']
-            if task_unit.annotations == 0:
+            annotations = Annotation.objects(task_unit=task_unit)
+            anno_num = len(annotations)
+            if anno_num == 0:
                 html1 = htmls[0]
                 html2 = htmls[1]
-            elif task_unit.annotations == 1:
+            elif anno_num == 1:
                 html1 = htmls[1]
                 html2 = htmls[0]
             else:
                 ran = len(unit_tag)
                 html1 = htmls[ran % 2]
                 html2 = htmls[(ran + 1) % 2]
-            task_unit.annotations += 1
             task_unit.save()
             user = get_user_from_request(request)
             score = int(request.POST['score'])
@@ -178,9 +181,33 @@ class UserPreferenceTaskManager(TaskManager):
         if len(annotations) == 0:
             return ret
 
-        ret['weighted kappa'] = compute_weighted_kappa(annotations)
+        '''ret['weighted kappa'] = compute_weighted_kappa(annotations)
         ret['4-level kappa'] = compute_kappa(annotations)
-        ret['Kripendorff\'s alpha'] = compute_alpha(annotations)
-
+        ret['Kripendorff\'s alpha'] = compute_alpha(annotations)'''
+        annotations_units = [0, 0, 0, 0]
+        task_units = TaskUnit.objects(task=task)
+        conflict2 = 0
+        conflict3 = 0
+        for task_unit in task_units:
+            unit_annotations = Annotation.objects(task_unit=task_unit)
+            if 0 <= len(unit_annotations) <= 3:
+                annotations_units[len(unit_annotations)] += 1
+            if len(unit_annotations) == 2:
+                if get_three_level_score(unit_annotations[0]) + get_three_level_score(unit_annotations[1]) != 0:
+                    conflict2 += 1
+            if len(unit_annotations) == 3:
+                score_sogous = []
+                for annotation in unit_annotations:
+                    html2 = json.loads(annotation.annotation_content)['html2']
+                    score_sogou = get_three_level_score(annotation)
+                    if html2 == 'baidu':
+                        score_sogou = 0 - score_sogou
+                    score_sogous.append(score_sogou)
+                if score_sogous[0] != score_sogous[1] and score_sogous[0] != score_sogous[2] and score_sogous[2] != score_sogous[1]:
+                    conflict3 += 1
+        for i in range(0, 4):
+            ret[str(i) + '个标注有'] = str(annotations_units[i]) + '个task_units'
+            ret['2个标注中的冲突数'] = str(conflict2)
+            ret['3个标注中的冲突数'] = str(conflict3)
         return ret
 

@@ -10,7 +10,9 @@ from user_system.utils import *
 from .models import *
 from .forms import NewTaskForm
 from task_manager.settings import tag2controller
+from . import LogParser
 from django.views.decorators.csrf import csrf_exempt
+import urllib
 try:
     import simplejson as json
 except ImportError:
@@ -48,9 +50,6 @@ def get_next_task_unit(user, request, task_id):
 
     task_unit = task_manager.get_next_task_unit(request, user, task)
     if task_unit is not None:
-        if task.task_name is not "example":
-            if task_unit.annotations == 3:
-                return HttpResponseRedirect('/task/home/')
         return HttpResponseRedirect('/task/anno/%s/%s/' % (task_id, task_unit.tag))
     else:
         return HttpResponseRedirect('/task/finished/%s/' % task_id)
@@ -183,9 +182,10 @@ def task_info(user, request, task_id):
     task, task_manager = ret
 
     quality_html = '\n'.join(
-        ['%s: %f</br>' % (k, v)
+        [
+            '%s: %s</br>' % (k, v)
             for k, v in sorted(
-            task_manager.get_annotation_quality(task).items(), key=lambda x: x[0])
+            task_manager.get_annotation_quality(task).items(), key=lambda x: x[1])
         ]
     )
 
@@ -201,3 +201,12 @@ def task_info(user, request, task_id):
         RequestContext(request),
     )
 
+
+@csrf_exempt
+@require_login
+def log(user, request, task_id, unit_tag):
+    message = urllib.unquote(request.POST[u'message']).encode('utf8')
+    # print message
+    # print type(message)
+    LogParser.insertMessageToDB(message, user, task_id, unit_tag)
+    return HttpResponse('OK')
