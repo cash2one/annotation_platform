@@ -37,8 +37,7 @@ class SessionTaskManager(TaskManager):
             self.send_task_finished_emails(request, task, user, admin_emails=['maojiaxin@gmail.com', 'songjingtao1994@sina.com'])
         return None
 
-
-    def get_annotation_content(self, request, task, unit_tag):
+    def get_annotation_content(self, request, user, task, unit_tag):
         """
         :param task: task
         :param unit_tag:

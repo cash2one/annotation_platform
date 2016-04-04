@@ -45,7 +45,7 @@ class QueryDocumentTaskManager(TaskManager):
 
         return None
 
-    def get_annotation_content(self, request, task, unit_tag):
+    def get_annotation_content(self, request, user, task, unit_tag):
         """
         :param task: task
         :param unit_tag:

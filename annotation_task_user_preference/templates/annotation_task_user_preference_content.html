@@ -5,10 +5,10 @@
 <div class="row body-wrapper">
     {% autoescape off %}
         <div class="col-xs-6">
-            <iframe name="iframe_1" id="iframe1" scrolling="yes" seamless="seamless" height="650px" width="100%" src={{ html1 }}></iframe>
+            <iframe name="iframe_1" id="iframe1" scrolling="yes" seamless="seamless" height="650px" width="100%" src={{ html_src1 }}></iframe>
         </div>
         <div class="col-xs-6">
-            <iframe name="iframe_2" id="iframe2" scrolling="yes" seamless="seamless" height="650px" width="100%" src={{ html2 }}></iframe>
+            <iframe name="iframe_2" id="iframe2" scrolling="yes" seamless="seamless" height="650px" width="100%" src={{ html_src2 }}></iframe>
         </div>
     {% endautoescape %}
     <script src="/static/franky_log.js"></script>
@@ -29,6 +29,8 @@
             {% csrf_token %}
             <input type="hidden" name="task_id" value="{{ task_id }}">
             <input type="hidden" name="unit_tag" value="{{ unit_tag }}">
+            <input type="hidden" name="html1" value="{{ html1 }}">
+            <input type="hidden" name="html2" value="{{ html2 }}">
             <label for="user preference">你的偏好：</label>
             <label class="radio-inline">
                 <input type="radio" name="score" value="-2">左边好很多

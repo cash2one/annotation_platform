@@ -46,7 +46,7 @@ class UserPreferenceTaskManager(TaskManager):
 
         return None
 
-    def get_annotation_content(self, request, task, unit_tag):
+    def get_annotation_content(self, request, user, task, unit_tag):
         """
         :param task: task
         :param unit_tag:
@@ -57,19 +57,59 @@ class UserPreferenceTaskManager(TaskManager):
             jsonObj = json.loads(task_unit.unit_content)
             html_baidu = '/static/SERP_baidu/' + jsonObj['query'] + '_baidu.html'
             html_sogou = '/static/SERP_sogou/' + jsonObj['query'] + '_sogou.html'
-            htmls = [html_baidu, html_sogou]
-            annotations = Annotation.objects(task_unit=task_unit)
-            valid_annotations = len(annotations)
-            if valid_annotations == 0:
-                html1 = htmls[0]
-                html2 = htmls[1]
-            elif valid_annotations == 1:
-                html1 = htmls[1]
-                html2 = htmls[0]
-            else:
-                ran = len(unit_tag)
-                html1 = htmls[ran % 2]
-                html2 = htmls[(ran + 1) % 2]
+            html_srcs = {'baidu': html_baidu, 'sogou': html_sogou}
+            htmls = ['baidu', 'sogou']
+            html1 = ''
+            html2 = ''
+
+            unit_annotations = Annotation.objects(task_unit=task_unit)
+            valid_unit_annotations = len(unit_annotations)
+            # 如果这个unit当前标注的人数为奇数
+            if valid_unit_annotations % 2 == 1:
+                # 统计之前的标注中baidu和sogou在左边出现的次数,选较少的放左边
+                baidu_num = 0
+                sogou_num = 0
+                for annotation in unit_annotations:
+                    annotation_content = json.loads(annotation.annotation_content)
+                    html_left = annotation_content['html1']
+                    if html_left == 'baidu':
+                        baidu_num += 1
+                    if html_left == 'sogou':
+                        sogou_num += 1
+                if baidu_num < sogou_num:
+                    html1 = 'baidu'
+                    html2 = 'sogou'
+                else:
+                    html1 = 'sogou'
+                    html2 = 'baidu'
+            # 如果这个unit当前标注的人数为偶数
+            if valid_unit_annotations % 2 == 0:
+                user_annotations = Annotation.objects(user=user)
+                # 如果这个user当前标注的数量为奇数
+                if len(user_annotations) % 2 == 1:
+                    # 统计之前的标注中baidu和sogou在左边出现的次数,选较少的放在左边
+                    baidu_num = 0
+                    sogou_num = 0
+                    for annotation in user_annotations:
+                        annotation_content = json.loads(annotation.annotation_content)
+                        html_left = annotation_content['html1']
+                        if html_left == 'baidu':
+                            baidu_num += 1
+                        if html_left == 'sogou':
+                            sogou_num += 1
+                    if baidu_num < sogou_num:
+                        html1 = 'baidu'
+                        html2 = 'sogou'
+                    else:
+                        html1 = 'sogou'
+                        html2 = 'baidu'
+                # 如果这个user当前标注的数量为偶数
+                if len(user_annotations) % 2 == 0:
+                    # 随机分配一个放在左边
+                    i = random.randint(0, 1)
+                    html1 = htmls[i]
+                    html2 = htmls[1-i]
+
             t = loader.get_template('annotation_task_user_preference_content.html')
             c = RequestContext(
                 request,
@@ -77,6 +117,8 @@ class UserPreferenceTaskManager(TaskManager):
                     'task_id': task.id,
                     'unit_tag': unit_tag,
                     'query': jsonObj['query'],
+                    'html_src1': html_srcs[html1],
+                    'html_src2': html_srcs[html2],
                     'html1': html1,
                     'html2': html2,
                 })
@@ -137,27 +179,16 @@ class UserPreferenceTaskManager(TaskManager):
     def save_annotation(self, request, task, unit_tag):
         try:
             task_unit = TaskUnit.objects.get(task=task, tag=unit_tag)
-            htmls = ['baidu', 'sogou']
-            annotations = Annotation.objects(task_unit=task_unit)
-            anno_num = len(annotations)
-            if anno_num == 0:
-                html1 = htmls[0]
-                html2 = htmls[1]
-            elif anno_num == 1:
-                html1 = htmls[1]
-                html2 = htmls[0]
-            else:
-                ran = len(unit_tag)
-                html1 = htmls[ran % 2]
-                html2 = htmls[(ran + 1) % 2]
             task_unit.save()
+
             user = get_user_from_request(request)
             score = int(request.POST['score'])
+            html1 = request.POST['html1']
+            html2 = request.POST['html2']
             a = Annotation()
             a.user = user
             a.task_unit = task_unit
             content = json.loads(task_unit.unit_content)
-
             a.annotation_content = json.dumps(
                 {
                     'annotator': user.username,

@@ -91,7 +91,7 @@ def annotate(user, request, task_id, unit_tag):
             return HttpResponseRedirect('/task/next_task/%s/' % task_id)
 
     title = u'标注任务-%s-%s' % (task.task_name, unit_tag)
-    content = task_manager.get_annotation_content(request, task, unit_tag)
+    content = task_manager.get_annotation_content(request, user, task, unit_tag)
     description = task_manager.get_annotation_description(request, task, unit_tag)
     style = task_manager.get_style(request, task, unit_tag)
     return render_to_response(
