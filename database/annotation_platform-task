@@ -1,0 +1,11 @@
+{"_id":{"$oid":"56fd29e567f2360ac78154f8"},"task_name":"example","task_description":"示例","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a2467f2360ac78154f9"},"task_name":"task1","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a2f67f2360ac78154fa"},"task_name":"task2","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a3a67f2360ac78154fb"},"task_name":"task3","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a4867f2360ac78154fc"},"task_name":"task4","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a5767f2360ac78154fd"},"task_name":"task5","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a6267f2360ac78154fe"},"task_name":"task6","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a6d67f2360ac78154ff"},"task_name":"task7","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a7967f2360ac7815500"},"task_name":"task8","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a8267f2360ac7815501"},"task_name":"task9","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
+{"_id":{"$oid":"56fd2a9067f2360ac7815502"},"task_name":"task10","task_description":"user_preference","annotation_per_unit":3,"credit_per_annotation":1,"task_tag":"task_user_preference","display":true}
