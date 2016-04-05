@@ -28,6 +28,14 @@ var mouse_tracking_least_move_interval = 20;//ms
 var mouse_hover_least_move_interval = 100;//ms
 var mouse_tracking_least_move_distance = 20;//px
 
+send_mouse_info(formInfo("html", "UNIT_START", ""));
+window.onbeforeunload = function(ev){
+    ev = ev || window.event;
+    send_mouse_info(formInfo("html", "PAGE_END", ""));
+    ev.returnValue = 'confirm?';
+    return ev.returnValue;
+};
+
 function get_set(url_str) {
     var ret = "127.0.0.1";
     var site_re = /http:\/\/([\w\.]+):8000\//;
@@ -171,6 +179,21 @@ $(window2).blur(function () {
         isTargetWindow2 = false;
     }
 });
+
+/*var isTargetWindow = true;
+$(window).focus(function () {
+    isTargetWindow = true;
+    send_mouse_info(formInfo("html", "JUMP_IN", ""));
+    mouse_tracking_time_stamp = (new Date()).getTime();
+});
+
+$(window).blur(function () {
+    if (isTargetWindow) {
+        send_mouse_info(formInfo("html", "JUMP_OUT", ""));
+        isTargetWindow = false;
+    }
+});*/
+
 
 $(window1).scroll(function () {
     var c_left = $(this).scrollLeft();
