@@ -64,47 +64,44 @@ class UserPreferenceTaskManager(TaskManager):
 
             unit_annotations = Annotation.objects(task_unit=task_unit)
             valid_unit_annotations = len(unit_annotations)
-            # 如果这个unit当前标注的人数为奇数
-            if valid_unit_annotations % 2 == 1:
-                # 统计之前的标注中baidu和sogou在左边出现的次数,选较少的放左边
-                baidu_num = 0
-                sogou_num = 0
-                for annotation in unit_annotations:
+
+            # 统计之前的标注中baidu和sogou在左边出现的次数,选较少的放左边
+            baidu_num = 0
+            sogou_num = 0
+            for annotation in unit_annotations:
+                annotation_content = json.loads(annotation.annotation_content)
+                html_left = annotation_content['html1']
+                if html_left == 'baidu':
+                    baidu_num += 1
+                if html_left == 'sogou':
+                    sogou_num += 1
+            if baidu_num < sogou_num:
+                html1 = 'baidu'
+                html2 = 'sogou'
+            if sogou_num < baidu_num:
+                html1 = 'sogou'
+                html2 = 'baidu'
+            if baidu_num == sogou_num:
+                # 如果之前的标注中baidu和sogou在左边出现的次数相同
+                user_annotations = Annotation.objects(user=user)
+                # 如果这个user当前标注的数量为奇数
+                # 统计这个user之前的标注中baidu和sogou在左边出现的次数,选较少的放在左边
+                user_baidu_num = 0
+                user_sogou_num = 0
+                for annotation in user_annotations:
                     annotation_content = json.loads(annotation.annotation_content)
                     html_left = annotation_content['html1']
                     if html_left == 'baidu':
-                        baidu_num += 1
+                        user_baidu_num += 1
                     if html_left == 'sogou':
-                        sogou_num += 1
-                if baidu_num < sogou_num:
+                        user_sogou_num += 1
+                if user_baidu_num < user_sogou_num:
                     html1 = 'baidu'
                     html2 = 'sogou'
-                else:
+                if user_sogou_num < user_baidu_num:
                     html1 = 'sogou'
                     html2 = 'baidu'
-            # 如果这个unit当前标注的人数为偶数
-            if valid_unit_annotations % 2 == 0:
-                user_annotations = Annotation.objects(user=user)
-                # 如果这个user当前标注的数量为奇数
-                if len(user_annotations) % 2 == 1:
-                    # 统计之前的标注中baidu和sogou在左边出现的次数,选较少的放在左边
-                    baidu_num = 0
-                    sogou_num = 0
-                    for annotation in user_annotations:
-                        annotation_content = json.loads(annotation.annotation_content)
-                        html_left = annotation_content['html1']
-                        if html_left == 'baidu':
-                            baidu_num += 1
-                        if html_left == 'sogou':
-                            sogou_num += 1
-                    if baidu_num < sogou_num:
-                        html1 = 'baidu'
-                        html2 = 'sogou'
-                    else:
-                        html1 = 'sogou'
-                        html2 = 'baidu'
-                # 如果这个user当前标注的数量为偶数
-                if len(user_annotations) % 2 == 0:
+                if user_sogou_num == user_baidu_num:
                     # 随机分配一个放在左边
                     i = random.randint(0, 1)
                     html1 = htmls[i]
@@ -215,7 +212,8 @@ class UserPreferenceTaskManager(TaskManager):
         '''ret['weighted kappa'] = compute_weighted_kappa(annotations)
         ret['4-level kappa'] = compute_kappa(annotations)
         ret['Kripendorff\'s alpha'] = compute_alpha(annotations)'''
-        annotations_units = [0, 0, 0, 0]
+
+        '''annotations_units = [0, 0, 0, 0]
         task_units = TaskUnit.objects(task=task)
         conflict2 = 0
         conflict3 = 0
@@ -238,7 +236,42 @@ class UserPreferenceTaskManager(TaskManager):
                     conflict3 += 1
         for i in range(0, 4):
             ret[str(i) + '个标注有'] = str(annotations_units[i]) + '个task_units'
-            ret['2个标注中的冲突数'] = str(conflict2)
-            ret['3个标注中的冲突数'] = str(conflict3)
-        return ret
+        ret['2个标注中的冲突数'] = str(conflict2)
+        ret['3个标注中的冲突数'] = str(conflict3)
+        return ret'''
 
+        annotated_users = set([a.user for a in annotations])
+        for user in annotated_users:
+            user_annotations = Annotation.objects(task=task, user=user)
+            conflict2 = 0
+            conflict3 = 0
+            for user_annotation in user_annotations:
+                task_unit = user_annotation.task_unit
+                unit_annotations = Annotation.objects(task_unit=task_unit)
+                if len(unit_annotations) == 2:
+                    score_sogous = []
+                    for annotation in unit_annotations:
+                        html2 = json.loads(annotation.annotation_content)['html2']
+                        score_sogou = get_three_level_score(annotation)
+                        if html2 == 'baidu':
+                            score_sogou = 0 - score_sogou
+                        score_sogous.append(score_sogou)
+                    if score_sogous[0] != score_sogous[1]:
+                        conflict2 += 1
+                if len(unit_annotations) == 3:
+                    this_user_score_sogou = -2
+                    others_score_sogous = []
+                    for annotation in unit_annotations:
+                        html2 = json.loads(annotation.annotation_content)['html2']
+                        score_sogou = get_three_level_score(annotation)
+                        if html2 == 'baidu':
+                            score_sogou = 0 - score_sogou
+                        if annotation.user.username == user.username:
+                            this_user_score_sogou = score_sogou
+                        else:
+                            others_score_sogous.append(score_sogou)
+                    if this_user_score_sogou != others_score_sogous[0] and this_user_score_sogou != others_score_sogous[1]:
+                        conflict3 += 1
+
+            ret[str(user.username)] = '冲突2--' + str(conflict2) + '\t冲突3--' + str(conflict3) + '\t总冲突--' + str(conflict2 + conflict3)
+        return ret
