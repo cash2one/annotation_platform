@@ -33,7 +33,7 @@ window.onbeforeunload = function(ev){
     ev = ev || window.event;
     send_mouse_info(formInfo("html", "PAGE_END", ""));
     ev.returnValue = '';
-    return ev.returnValue;
+    //return ev.returnValue;
 };
 
 function get_set(url_str) {
