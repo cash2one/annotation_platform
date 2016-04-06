@@ -39,8 +39,8 @@ class UserPreferenceTaskManager(TaskManager):
         annotated_tags = set([a.task_unit.tag for a in annotations])
 
         # 在6,16,26,36,46各设一个check point
-        if len(annotations) % 10 == 6:
-            i = (len(annotations) - 6) / 10
+        if len(annotations) % 10 == 5:
+            i = (len(annotations) - 5) / 10
             return TaskUnit.objects(task=task, tag=check_querys[i])[0]
         for tag in task_unit_tags:
             if tag in annotated_tags or tag in check_querys:
