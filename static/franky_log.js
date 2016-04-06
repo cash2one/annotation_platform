@@ -32,7 +32,7 @@ send_mouse_info(formInfo("html", "UNIT_START", ""));
 window.onbeforeunload = function(ev){
     ev = ev || window.event;
     send_mouse_info(formInfo("html", "PAGE_END", ""));
-    ev.returnValue = 'confirm?';
+    ev.returnValue = '';
     return ev.returnValue;
 };
 
