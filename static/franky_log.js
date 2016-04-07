@@ -14,7 +14,7 @@ var current_taskunit = get_taskunit(current_page_url);
 
 var mouse_tracking_info = "";
 var mouse_tracking_count = 0;
-var mouse_tracking_group_limit = 1;
+var mouse_tracking_group_limit = 100;
 var mouse_tracking_baseline_stamp = (new Date()).getTime();
 var mouse_tracking_time_stamp = mouse_tracking_baseline_stamp;
 
@@ -30,9 +30,10 @@ var mouse_tracking_least_move_distance = 20;//px
 
 send_mouse_info(formInfo("html", "UNIT_START", ""));
 window.onbeforeunload = function(ev){
+    mouse_tracking_group_limit = 1;
     ev = ev || window.event;
-    send_mouse_info(formInfo("html", "PAGE_END", ""));
-    ev.returnValue = '';
+    send_mouse_info(formInfo("html", "UNIT_END", ""));
+    ev.returnValue = "确认提交？";
     //return ev.returnValue;
 };
 
@@ -200,6 +201,10 @@ $(window1).scroll(function () {
     var c_top = $(this).scrollTop();
     var new_x = mouse_tracking_pos_stamp_html1.x + c_left - mouse_tracking_scroll_stamp_html1.scrollX;
     var new_y = mouse_tracking_pos_stamp_html1.y + c_top - mouse_tracking_scroll_stamp_html1.scrollY;
+    var abs_pos_distance = Math.abs(new_x - mouse_tracking_pos_stamp_html1.x) + Math.abs(new_y - mouse_tracking_pos_stamp_html1.y);
+    if (abs_pos_distance < mouse_tracking_least_move_distance) {
+        return;
+    }
     var message = "FROM\t" + "x=" + mouse_tracking_pos_stamp_html1.x + "\ty=" + mouse_tracking_pos_stamp_html1.y + "\tTO\tx=" + new_x + "\t" + "y=" + new_y;
     mouse_tracking_scroll_stamp_html1.scrollX = c_left;
     mouse_tracking_scroll_stamp_html1.scrollY = c_top;
@@ -214,6 +219,10 @@ $(window2).scroll(function () {
     var c_top = $(this).scrollTop();
     var new_x = mouse_tracking_pos_stamp_html2.x + c_left - mouse_tracking_scroll_stamp_html2.scrollX;
     var new_y = mouse_tracking_pos_stamp_html2.y + c_top - mouse_tracking_scroll_stamp_html2.scrollY;
+    var abs_pos_distance = Math.abs(new_x - mouse_tracking_pos_stamp_html2.x) + Math.abs(new_y - mouse_tracking_pos_stamp_html2.y);
+    if (abs_pos_distance < mouse_tracking_least_move_distance) {
+        return;
+    }
     var message = "FROM\t" + "x=" + mouse_tracking_pos_stamp_html2.x + "\ty=" + mouse_tracking_pos_stamp_html2.y + "\tTO\tx=" + new_x + "\t" + "y=" + new_y;
     mouse_tracking_scroll_stamp_html2.scrollX = c_left;
     mouse_tracking_scroll_stamp_html2.scrollY = c_top;

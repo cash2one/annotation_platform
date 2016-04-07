@@ -29,7 +29,7 @@ class UserPreferenceTaskManager(TaskManager):
         :return: next task unit, None if no new task needs annotation
         """
 
-        check_querys = ['窗花的剪法', '龙珠国语', '腾讯游戏大全', '怎样开红酒瓶塞', '金铃怨攻略']
+        check_querys = ('窗花的剪法', '龙珠国语', '腾讯游戏大全', '怎样开红酒瓶塞', '金铃怨攻略')
 
         task_units = TaskUnit.objects(task=task)
         task_units = sorted(task_units, key=lambda x: json.loads(x.unit_content)['query'])
@@ -43,7 +43,9 @@ class UserPreferenceTaskManager(TaskManager):
             i = (len(annotations) - 5) / 10
             return TaskUnit.objects(task=task, tag=check_querys[i])[0]
         for tag in task_unit_tags:
-            if tag in annotated_tags or tag in check_querys:
+            if tag in annotated_tags:
+                continue
+            elif tag in check_querys:
                 continue
             else:
                 return TaskUnit.objects(task=task, tag=tag)[0]

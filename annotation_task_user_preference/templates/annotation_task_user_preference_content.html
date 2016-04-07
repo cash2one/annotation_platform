@@ -74,6 +74,29 @@
         $(function() {
             $('#submit-btn').click(
                     function () {
+                        var check_querys = ['窗花的剪法', '龙珠国语', '腾讯游戏大全', '怎样开红酒瓶塞', '金铃怨攻略'];
+                        for (var i=0; i<check_querys.length; i++){
+                            if (check_querys[i] == document.getElementsByName("unit_tag")[0].value){
+                                var html1 = document.getElementsByName("html1")[0].value;
+                                var scores = document.getElementsByName("score");
+                                var score = 0;
+                                for (var j=0; j<scores.length; j++){
+                                    if (scores[j].checked) {
+                                        score = parseInt(scores[j].value);
+                                    }
+                                }
+                                if (html1 == 'baidu'){
+                                    if (score >= 0){
+                                        alert('你做的可能不太认真，后面请注意！');
+                                    }
+                                }
+                                else {
+                                    if (score <= 0){
+                                        alert('你做的可能不太认真，后面请注意！');
+                                    }
+                                }
+                            }
+                        }
                         $('#submit-form').submit();
                     }
             );
