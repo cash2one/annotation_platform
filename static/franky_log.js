@@ -9,6 +9,7 @@ var window2 = iframe2.contentWindow;
 var current_page_url = window.location.href;
 var current_site = get_set(current_page_url);
 var server_site = current_site;
+var current_port = get_port(current_page_url);
 var current_task = get_task(current_page_url);
 var current_taskunit = get_taskunit(current_page_url);
 
@@ -39,16 +40,25 @@ window.onbeforeunload = function(ev){
 
 function get_set(url_str) {
     var ret = "127.0.0.1";
-    var site_re = /http:\/\/([\w\.]+):8000\//;
+    var site_re = /http:\/\/([\w\.]+):\w+\//;
     if (site_re.test(url_str)) {
         ret = RegExp.$1;
     }
     return ret;
 }
 
+function get_port(url_str) {
+    var port = "8000";
+    var port_re = /http:\/\/[\w\.]+:(\w+)\//;
+    if (port_re.test(url_str)) {
+        port = RegExp.$1;
+    }
+    return port;
+}
+
 function get_task(url_str) {
     var task = "";
-    var task_re = /http:\/\/[\w\.]+:8000\/task\/anno\/([0-9a-z]+)\/.+\//;
+    var task_re = /http:\/\/[\w\.]+:\w+\/task\/anno\/([0-9a-z]+)\/.+\//;
     if (task_re.test(url_str)) {
         task = RegExp.$1;
     }
@@ -57,7 +67,7 @@ function get_task(url_str) {
 
 function get_taskunit(url_str) {
     var taskunit = "";
-    var taskunit_re = /http:\/\/[\w\.]+:8000\/task\/anno\/[0-9a-z]+\/(.+)\//;
+    var taskunit_re = /http:\/\/[\w\.]+:\w+\/task\/anno\/[0-9a-z]+\/(.+)\//;
     if (taskunit_re.test(url_str)) {
         taskunit = RegExp.$1;
     }
@@ -86,7 +96,7 @@ function time_info() {
 function ajax_log_message(log_str) {
     var encode_str = log_str;
     //alert(encode_str + "\n");
-    var log_url = "http://" + server_site + ":8000/task/LogService/" + current_task + '/' + current_taskunit + "/";
+    var log_url = "http://" + server_site + ":" + current_port + "/task/LogService/" + current_task + '/' + current_taskunit + "/";
     $.ajax({
         type: 'POST',
         url: log_url,
