@@ -63,7 +63,7 @@ button.c-btn-large{height:30px;_line-height:24px}.c-btn-large .c-icon{margin-top
 <script data-for="result" type="text/javascript">if(!window.A){function G(a){return document.getElementById(a)}window.bds=window.bds||{};bds.util=bds.util||{};bds.util.getWinWidth=function(){return window.document.documentElement.clientWidth};bds.util.setContainerWidth=function(){var f=G("container"),b=G("wrapper"),a=function(c,g){g.className=g.className.replace(c,"")},e=function(c,g){g.className=(g.className+" "+c).replace(/^\s+/g,"")},d=function(c,g){return c.test(g.className)};if(bds.util.getWinWidth()<1207){if(f){a(/\bcontainer_l\b/g,f);if(!d(/\bcontainer_s\b/,f)){e("container_s",f)}}if(b){a(/\bwrapper_l\b/g,b);if(!d(/\bwrapper_s\b/,b)){e("wrapper_s",b)}}bds.comm.containerSize="s"}else{if(f){a(/\bcontainer_s\b/g,f);if(!d(/\bcontainer_l\b/,f)){e("container_l",f)}}if(b){a(/\bwrapper_s\b/g,b);if(!d(/\bwrapper_l\b/,b)){e("wrapper_l",b)}}bds.comm.containerSize="l"}};(function(){var c=[],f=false;var b=function(h,g){try{h.call(g)}catch(i){}},d=function(){this.ids=[];this.has=true;this.list=[];this.logs=[];this.loadTimes=[];this.groupData=[];
 this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window.A);bds.ready=function(g){if(typeof g!="function"){return}if(f){b(g)}else{c.push(g)}};bds.doReady=function(){f=true;while(c.length){b(c.shift())}};bds.clearReady=function(){f=false;c=[]};A.__reset=d;var a=(function(){var g=document.getElementsByTagName("script");return function(){var i=g[g.length-1];if(window.currentScriptElem){i=window.currentScriptElem}var h=i;while(h){if(h.className){if(/(?:^|\s)result(?:-op)?(?:$|\s)/.test(h.className)){if(tplname=h.getAttribute("tpl")){return h}}}h=h.parentNode}}})(),e=function(g,j,h){var l;if(!g.initIndex){l={container:g,data:{},handlers:[]};g.initIndex=A.groupData.length+1;A.groupData.push(l)}else{l=A.groupData[g.initIndex-1]}if(typeof j=="function"){l.handlers.push(j)}else{if(typeof j=="object"){for(var m in j){if(j.hasOwnProperty(m)){l.data[m]=j[m]}}}else{l.data[j]=h}}};A.init=A.setup=function(i,h){if(i===undefined||i===null){return}var g=A._currentContainer||a();if(!g){return
 }e(g,i,h)};A.merge=function(h,g){A.mergeFns.push({tplName:h,fn:g})}})()}function ns_c_pj(a,c){var b=encodeURIComponent(window.document.location.href),f="",d="",j="",i=bds&&bds.comm&&bds.comm.did?bds.comm.did:"";wd=bds.comm.queryEnc,nsclickDomain=bds&&bds.util&&bds.util.domain?bds.util.domain.get("http://nsclick.baidu.com"):"http://nsclick.baidu.com",img=window["BD_PS_C"+(new Date()).getTime()]=new Image(),src="";for(v in a){switch(v){case"title":d=encodeURIComponent(a[v].replace(/<[^<>]+>/g,""));break;case"url":d=encodeURIComponent(a[v]);break;default:d=a[v]}f+=v+"="+d+"&"}j="&mu="+b;src=nsclickDomain+"/v.gif?pid=201&"+(c||"")+f+"path="+b+"&wd="+wd+"&rsv_sid="+(bds.comm.ishome&&bds.comm.indexSid?bds.comm.indexSid:bds.comm.sid)+"&rsv_did="+i+"&t="+new Date().getTime();if(typeof Cookie!="undefined"&&typeof Cookie.get!="undefined"){if(Cookie.get("H_PS_SKIN")&&Cookie.get("H_PS_SKIN")!="0"){src+="&rsv_skin=1"}}else{var h="";try{h=parseInt(document.cookie.match(new RegExp("(^| )H_PS_SKIN=([^;]*)(;|$)"))[2])
-}catch(g){}if(h&&h!="0"){src+="&rsv_skin=1"}}img.src=src;return true}function ns_c(b,a){if(a===true){return ns_c_pj(b,"pj=www&rsv_sample=1&")}return ns_c_pj(b,"pj=www&")};</script><style>html { overflow-x:hidden; }</style><style>html { overflow-x:hidden; }</style><style>html { overflow-x:hidden; }</style><style>html { overflow-x:hidden; }</style></head><body link="#0000cc"><div class="wrapper_l" id="wrapper"><script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script><script>bds.base64 = (function () {var _opt = bds._base64;var _containerAllId = "container",_containerLeftId = "content_left",_containerRightId = "content_right",_BOTTAGLSNAME = "BASE64_BOTTAG",_domain = bds._base64.domain, _imgWatch = [], _domLoaded = [], _data = [], _dataLoaded = [], _finish = [], _hasSpImg = false, _expGroup = 0, _reqTime = 0, _reqEnd = 0, _reqEndL = 0, _rsst = 0, _rest = 0, _dt = 1, _loadState = {}, _hasPreload = 0, _ispdc = false; var preXhrs = [],$ = window.$;if($) {$(window).on("swap_begin",function(){_imgWatch = []; _domLoaded = []; _data = []; _dataLoaded = []; _finish = []; _hasSpImg = false; _expGroup = 0; _reqTime = 0; _reqEnd = 0; _reqEndL = 0; _rsst = 0; _rest = 0; _dt = 1; _ispdc = false; for(var i = 0 ; i < preXhrs.length; i++) {preXhrs[i].abort();}});}var init = function(imgRight,imgLeft,isPreload){var imgArr = imgRight || [], imgArr2 = imgLeft || [];if(window.__IS_IMG_PREFETCH){function filter(img){return !window.__IS_IMG_PREFETCH.hasOwnProperty(img);}imgArr=$.grep(imgArr,filter);imgArr2=$.grep(imgArr2,filter);}if(window.__IMG_PRELOAD && isPreload) {_loadState["cbr"] = 0;_loadState["cbpr"] = 0;_hasPreload = 1; var imgPreloadList = window.__IMG_PRELOAD = {};for(var i = 0; i < imgArr.length; i++) {if(!imgPreloadList.hasOwnProperty(imgArr[i])) {window.__IMG_PRELOAD[imgArr[i]] = true;}}} else if(window.__IMG_PRELOAD && !isPreload) {var tmpArr = [];for(var i = 0; i < imgArr.length; i++){if(!window.__IMG_PRELOAD.hasOwnProperty(imgArr[i])) {tmpArr.push(imgArr[i]);}}imgArr = tmpArr;}if(_opt.b64Exp) {_expGroup = _opt.b64Exp;if(_expGroup == 1){_domain = "http://b2.bdstatic.com/"; _dt = 2;}}_ispdc= _opt.pdc>0 ? true : false;_reqTime = new Date()*1;if(_expGroup==2){if(imgArr2.length>0){_hasSpImg = true;loadJs(_domain + "image?imglist=" + imgArr2.join(",") + "&cb=bds.base64.cbl");}if(!isPreload) {cbl({});}}if(imgArr.length>0){if(isPreload) {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbpr");} else {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbr");}if(_ispdc){if(bds.ready){bds.ready(function(){setTimeout(function(){var _bottag = botTag.get();var logstr = "dt=" + _dt + "&time=" + ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "&bot=" + _bottag + "&rcount=" + imgArr.length;window._B64_REQ_LOG = ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "_" + imgArr.length;if(_expGroup==2 && _reqEndL>0){var _apics = document.getElementById("ala_img_pics");var _lcount = (_apics&&_apics.children)?_apics.children.length:0;logstr += "&time2=" + (_reqEndL-_reqTime) + "&lcount=" + _lcount;}if(Math.random()*100<10){sendLog(logstr);}}, 2000);});}}} else {if(!isPreload) {cbr({});}}if(imgArr.length>0 || imgArr2.length>0){if(!isPreload) {watchReq(imgArr.length);}}};function crc32 (str) {if(typeof str=="string"){var i,crc=0,j=0;for(i=0;i<str.length;i++){j=i%20+1;crc+=str.charCodeAt(i)<<j;}return Math.abs(crc);}return 0;}var loadJs = function (url) {var matchs = url.match(/.*(bds\.base64\.cb[rl])/);if(!matchs){return;}var imglist=url.match(/imglist=([^&]*)/);if(!imglist||!imglist[1]){return;}callback_name=crc32(imglist[1].replace(/,/g,""));callback_name="cb_"+(callback_name+"").substr(Math.max(0,callback_name.length-8),8)+"_0";window[callback_name]=function(data){if(matchs[1] == "bds.base64.cbr") {cbr(data);}else if(matchs[1] == "bds.base64.cbl") {cbl(data); }window[callback_name]=null;};var url = matchs[0].replace(/bds\.base64\.cb[rl]/,callback_name);var a = document.createElement("script");a.setAttribute("type", "text/javascript");a.setAttribute("src", url);a.setAttribute("defer", "defer");a.setAttribute("async", "true");document.getElementsByTagName("head")[0].appendChild(a);};var imgLoad = function(data,side){if(_finish[side]){return; }_finish[side] = true;if(side=="right"){botTag.ot(false); }var imgs = document.getElementById(_expGroup!=1?((side=="left")?_containerLeftId:_containerRightId):_containerAllId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){var b64Id = imgs[i].getAttribute("data-b64-id");if(b64Id){var find = false;if(data.hasOwnProperty(b64Id)) {setSrc(imgs[i],data[b64Id]);find = true;} if(!find){failover(imgs[i]);}}}fail_ie7();};function fail_ie7(){setTimeout(function(){for( var i=0; i<_imgWatch.length; i++ ){var n = _imgWatch[i];if(!n.loaded){failover(n.obj);}}_imgWatch=[];},200);}function setSrc(img,data){try{img.onerror = function(){failover(this);};_imgWatch.push({obj:img,loaded:false});img.onload = function(){for( var i=0; i<_imgWatch.length; i++ ){var m = _imgWatch[i];if(m.obj == this){m.loaded = true;}}};img.src = "data:image\/jpeg;base64," + data;}catch(e){failover(img);}}var failover = function(img){if(img.getAttribute("data-b64-id")!=null && img.getAttribute("data-b64-id")!="" && img.getAttribute("data-src")!=null){img.src = img.getAttribute("data-src");}};var watchReq = function(len){var wt = 1250;if(len<6){wt = 1000;}else if(len>10){ wt = 1500; } setTimeout(function(){ if( !_dataLoaded["right"] ){ var imgs = document.getElementById(_containerRightId).getElementsByTagName("IMG"); for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["right"] = true; botTag.ot(true);}setTimeout(function(){if(_hasSpImg && !_dataLoaded["left"]){var imgs = document.getElementById(_containerLeftId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["left"] = true; }},500);},wt);};var botTag = {ot : function(isInc){var _bottag = botTag.get();if(isInc){if(_bottag<6){_bottag++;}}else{if(_bottag>0){_bottag--;}}if( _bottag>=2 ){var date = new Date();date.setTime(date.getTime() + 24*3600*1000*5);document.cookie = "B64_BOT=1; expires=" + date.toGMTString();}else if( _bottag<1 ){if(document.cookie.match('B64_BOT=1')){document.cookie = "B64_BOT=0;";}}try{if(window.localStorage){window.localStorage[_BOTTAGLSNAME] = _bottag;}}catch(e){}},get : function(){try{if(window.localStorage){var _bottag = window.localStorage[_BOTTAGLSNAME];_bottag = _bottag?parseInt(_bottag):0;}else{return 0;}return _bottag;}catch(e){return 0;}}};var cbr = function(data){_reqEnd = new Date()*1;if(_ispdc && bds.comm && _reqTime>0 && _reqEnd>0){bds.comm.cusval = "b64_" + _dt + "_" + ( _reqEnd - _reqTime );}_loadState["cbr"] = 1;callback(data, "right");};var cbl = function(data){_reqEndL = new Date()*1;callback(data, "left");};var cbpr = function(data){_loadState["cbpr"] = 1;callback(data, "right");};var callback = function(data, side){_dataLoaded[side] = _hasPreload ? (_loadState.cbpr && _loadState.cbr) : true;if(data) {if(_data[side] === undefined) {_data[side] = {}};for(var key in data) {if(data.hasOwnProperty(key)) {_data[side][key] = data[key];}}}if(_domLoaded[side] && _dataLoaded[side]){imgLoad(_data[side], side);}};var setDomLoad = function(side){_domLoaded[side] = true;if(_dataLoaded[side]){imgLoad(_data[side],side);}};var predictImg = false; var sendLog = function (src) {var loghost = "http://nsclick.baidu.com/v.gif?pid=315&rsv_yc_log=3&";var n = "b64log__" + (new Date()).getTime(),c = window[n] = new Image();c.onload = (c.onerror = function () {window[n] = null;});c.src = loghost + src + "&_t=" + new Date()*1; c = null; };cbs = function(data){_rest = new Date()*1;if( (_rest - _rsst) < 1500 ){botTag.ot(false); }else{botTag.ot(true); }};ts = function(){_expGroup = 3;_rsst = new Date()*1;loadJs(_domain + "image?imglist=1241886729_3226161681_58,1072899117_2953388635_58,2469877062_2085031320_58,155831992_309216365_58,2539127170_1607411613_58,1160777122_283857721_58,1577144716_3149119526_58,2339041784_1038484334_58&cb=bds.base64.cbs");};return {init : init,cbl : cbl,cbr : cbr,cbpr : cbpr,setDomLoad : setDomLoad,cbs : cbs,ts : ts,predictImg : predictImg}})();</script><div id="wrapper_wrapper"><!--[if IE 8]><style>.c-input input{padding-top:4px}</style><![endif]--><style> .op-pet-multi-title{font-weight:700;position:relative;z-index:5}.op-pet-multi-title-desc{font-weight:400;font-size:.87em}.op-pet-multi-result{padding-top:5px}.op-pet-multi-option{cursor:pointer;color:#00c;display:inline-block;margin-right:7px}.op-pet-multi-option input{position:relative;vertical-align:bottom;_vertical-align:text-bottom;*top:0}.op-pet-multi-typename{color:#999}.op-pet-multi-menu{border-bottom:1px solid #ebebeb}.op-pet-multi-menu p{margin:6px 0}.op-pet-multi-recommand{border-top:1px solid #ebebeb;padding-top:5px}.op-pet-multi-name{display:block;padding:15px 0 8px;position:relative}.op-pet-multi-name span{display:block;position:absolute;width:120%;left:-10%;top:5px;text-align:center}.op-pet-multi-name a{text-decoration:none}.op-pet-multi-name a:hover{text-decoration:underline}.op-pet-mulit-recommand-tip{display:none;position:absolute;width:130px;background:#fff;border:1px solid #e3e3e3;padding:5px 10px}.op-pet-mulit-recommand-tip span{display:block}.op-pet-multi-tip-title{margin:0;font-size:1em}.op-pet-multi-tip-arrow{position:absolute;top:-6px;width:12px;height:12px;overflow:hidden}.op-pet-multi-tip-arrow i,.op-pet-multi-tip-arrow span{display:block;position:absolute;left:0;top:-4px;width:0;height:0;line-height:0;border:5px dashed transparent;border-bottom:5px solid #fff}.op-pet-multi-tip-arrow i{border-width:6px;border-bottom-color:#e3e3e3;left:-1px;top:-6px;z-index:-1}.op-pet-multi-noresult{display:none;padding:210px 0;text-align:center}.op-pet-multi-result-hide .op-pet-multi-noresult{display:block}.op-pet-multi-result-hide .op-pet-multi-result{display:none}.op-pet-multi-title{font-size:1.17em;margin:0;padding:0}.op-pet-multi-for-log{display:none}.op-pet-multi-pricechange{padding:9px 9px 0;position:absolute;top:-9px;background:#fff}.op-pet-multi-priceactive{padding:8px;border:1px solid #e3e3e3;border-bottom-color:#e0e0e0;border-right-color:#ececec;-webkit-box-shadow:1px 2px 1px rgba(0,0,0,.072);height:45px}.op-pet-multi-qingchu,.op-pet-multi-queding{display:none;width:30px;text-decoration:underline;color:#999;cursor:pointer;float:left}.op-pet-multi-qingchu{top:33px;left:10px;position:absolute}.op-pet-multi-queding{position:absolute;right:8px;margin-left:0;border:1px solid #ccc;padding:0 2px 0 6px;text-decoration:none;background:#fafafa;color:#000;top:33px}.op-pet-multi-priceactive .op-pet-multi-queding{display:block}.op-pet-multi-listprice{display:block;text-align:center;color:red}.op-pet-mulit-list li{padding-bottom:7px}.op_pet_price_dropdown{margin-left:2px}.op_pet_price_dropdown ul li{padding-left:10px}.op-pet-multi-city{position:absolute;right:10px;top:0;font-weight:400;zoom:1}.op-pet-multi-cityiframe{position:absolute;top:0;background-color:#fff;z-index:-1}.op-pet-multi-feedback{color:#00c;font-weight:700;text-align:left;cursor:pointer;display:none}.op-pet-multi-tools-fb{text-decoration:none;float:right;color:#999}.op-pet-multi-tools-fb:hover{text-decoration:underline}#ala_img_report{display:none;font-size:13px}#ala_img_report a{color:#77c}#ala_img_pics{position:relative}#ala_img_pics input{position:absolute;display:none;bottom:3px;right:3px;border:1px solid #CCC;background:#FAFAFA;width:36px;height:23px;padding:0 4px;text-align:center;cursor:pointer;opacity:.8;white-space:nowrap;filter:alpha(opacity=80)}#ala_img_bigpic{display:inline-block;position:relative;float:left;overflow:hidden;vertical-align:middle;outline:0;_margin-top:1px}#ala_img_hoverview{position:absolute;display:none;width:0;height:0;overflow:hidden;outline:0;box-shadow:#646464 0 0 10px}#ala_img_desc a{color:#666}.opr-recommends-merge-title{text-decoration:none}.opr-recommends-merge-title:hover{text-decoration:underline}.opr-recommends-merge-imgtext{display:block}.opr-recommends-merge-hide{display:none}.opr-recommends-merge-p{position:relative;_zoom:1}.opr-recommends-merge-item{text-align:center}.opr-recommends-merge-mask{position:absolute;top:0;left:0;width:100%;_background:0 0;background:-webkit-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-moz-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-o-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-ms-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03))}.opr-recommends-merge-more-btn i{cursor:pointer}.opr-recommends-merge-layerbtn{position:absolute;right:0;bottom:0;width:1.23em;height:1.23em;background:url(//www.baidu.com/aladdin/img/right_recommends/layericon.png) no-repeat;_background-image:url(//www.baidu.com/aladdin/img/right_recommends/layericon.gif)}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn2{background-position:-48px 0}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn3{background-color:#999}.opr-recommends-merge-layerbtn1:hover,.opr-recommends-merge-layerbtn2,.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4{background-color:#38f}.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4:hover{background-position:-24px 0}.opr-recommends-merge-layer{padding:4px 9px;width:350px}.opr-recommends-merge-layer table{border-collapse:collapse;border-padding:0}.opr-recommends-merge-layer td{font-size:1em;line-height:1.67;vertical-align:top}.opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-mbGap{margin-bottom:28px}.container_l .opr-recommends-merge-lastspan{display:block}.container_l .cr-content-narrow .opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-dodge-wrap{margin-bottom:24px;font-size:1.1em}</style><script id="head_script">bds.comm.jsversion = "005";bds.comm.domain = "http://www.baidu.com";bds.comm.ubsurl = "https://sp0.baidu.com/5bU_dTmfKgQFm2e88IuM_a/w.gif";bds.comm.tn = "baidu";bds.comm.tng = "organic";bds.comm.queryEnc = "%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC";bds.comm.queryId = "b36ba77e00006afc";bds.comm.inter = "";bds.comm.resTemplateName = "baidu";bds.comm.sugHost = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su";bds.comm.ishome = 0;bds.comm.query = "花的种类大全图鉴图片";bds.comm.qid = "b36ba77e00006afc";bds.comm.eqid = "b36ba77e00006afc0000000356e30892"; bds.comm._se_click_track_flag = ""; bds.comm.cid = "0";bds.comm.sid = "17746_1446_19184_17946_17001_15553_12101";bds.comm.stoken = "";bds.comm.serverTime = "1457719442";bds.comm.user = "";bds.comm.username = "";bds.comm.userid = "0";bds.comm.__rdNum = "4587";bds.comm.useFavo = "";bds.comm.pinyin = "huadezhongleidaquantujiantupian";bds.comm.favoOn = "";bds.comm.speedInfo = "[{\"ModuleId\":9537,\"TimeCost\":153.89,\"TimeSelf\":16.28},{\"ModuleId\":9540,\"TimeCost\":-1,\"TimeSelf\":-1,\"Idc\":\"0\"},{\"ModuleId\":9527,\"TimeCost\":131.97,\"TimeSelf\":17.84,\"isHitCache\":true,\"SubProcess\":[{\"ProcessId\":9531,\"TimeCost\":0,\"isHitCache\":true},{\"ProcessId\":9536,\"TimeCost\":80.48,\"isHitCache\":false},{\"ProcessId\":9535,\"TimeCost\":30.6,\"isHitCache\":false},{\"ProcessId\":9532,\"TimeCost\":83.53}]}]";bds.comm.isDebug = false;bds.comm.iaurl=["http:\/\/www.nongmiao.com\/baike\/","http:\/\/www.qianqianhua.com\/","http:\/\/www.597mm.com\/news\/show.php?itemid=11231"];bds.comm.curResultNum = "10";bds.comm.rightResultExist = false;bds.comm.protectNum = 0;bds.comm.zxlNum = 0;bds.comm.pageNum = parseInt('1')||1;bds.comm.pageSize = parseInt('10')||10;bds.comm.encTn = 'f0f1VlZD9b2Lqyasxgr9rnZ/xbUSNSmdwpOoGwXfPAKaD4XoiYZuOrFq6Lc';bds.se.mon = {'loadedItems':[],'load':function(){},'srvt':-1};try {bds.se.mon.srvt = parseInt(document.cookie.match(new RegExp("(^| )BDSVRTM=([^;]*)(;|$)"))[2]);document.cookie="BDSVRTM=;expires=Sat, 01 Jan 2000 00:00:00 GMT"; }catch(e){bds.se.mon.srvt=-1; }bdUser = bds.comm.user?bds.comm.user:null;bdQuery = bds.comm.query;bdUseFavo = bds.comm.useFavo;bdFavoOn = bds.comm.favoOn;bdCid = bds.comm.cid;bdSid = bds.comm.sid;bdServerTime = bds.comm.serverTime;bdQid = bds.comm.queryId;bdstoken = bds.comm.stoken;_eclipse = "1"; login_success = [];bds.comm.seinfo = {'fm':'se','T':'1457719442','y':'FFDEFEFB','rsv_cache': (bds.se.mon.srvt>0)?0:1 };bds.comm.cgif = "https://sp0.baidu.com/9foIbT3kAMgDnd_/c.gif?t=0&q=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&p=0&pn=1";bds.comm.upn = {"browser":"firefox","ie":"","os":"mac","win":"","browsertype":"firefox"};bds.comm.cookie = null;bds.comm.urlRecFlag = "0";</script><script>(function(){var imgArr = [],imgArr2 = [];imgArr = ["1960001418_2203371732_58","599349020_934623886_58","399974391_3085566750_58","878263798_1094230653_58","1011512880_3817435498_58","2161523432_1428143120_58","1485492996_2374798036_58","3921314544_4142117284_58","71235722_300938010_58","2213379083_2460822948_58","883788497_1904473864_58","4147626932_3360458348_58","1243286387_669316964_58","390541313_791308765_58","4049949680_4147387116_58","2827961832_572172888_58","4009871368_734741994_58","2374954855_669622501_58","3038254376_333546417_58","1499536737_706268764_58","3534888124_3796809025_58","2895941447_662053632_58","2334249426_1161704075_58","853267439_1874232882_58"];bds.base64.init(imgArr,imgArr2);})();</script><div class="container_s" id="container"><script>bds.util.setContainerWidth();bds.ready(function(){$(window).on("resize",function(){bds.util.setContainerWidth();bds.event.trigger("se.window_resize");});bds.util.setContainerWidth();});</script><script>if(bds.base64){bds.base64.setDomLoad("right");}</script><script type="text/javascript">bds.comm.search_tool = {};bds.comm.search_tool.sl_lang = "";bds.comm.search_tool.st = "";bds.comm.search_tool.et = "";bds.comm.search_tool.stftype = "";bds.comm.search_tool.ft = "";bds.comm.search_tool.si = "";bds.comm.search_tool.exact = "";bds.comm.search_tool.oneDay = "1457633042";bds.comm.search_tool.oneWeek = "1457114642";bds.comm.search_tool.oneMonth = "1455213842";bds.comm.search_tool.oneYear = "1426097042";bds.comm.search_tool.thisDay = "1457625600";bds.comm.search_tool.thisWeek = "1457107200";bds.comm.search_tool.thisMonth = "1455206400";bds.comm.search_tool.thisYear = "1426089600";</script><div id="content_left" style="padding-left: 15px">
+}catch(g){}if(h&&h!="0"){src+="&rsv_skin=1"}}img.src=src;return true}function ns_c(b,a){if(a===true){return ns_c_pj(b,"pj=www&rsv_sample=1&")}return ns_c_pj(b,"pj=www&")};</script><style>html { overflow-x:hidden; }</style></head><body link="#0000cc"><div class="wrapper_l" id="wrapper"><script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script><script>bds.base64 = (function () {var _opt = bds._base64;var _containerAllId = "container",_containerLeftId = "content_left",_containerRightId = "content_right",_BOTTAGLSNAME = "BASE64_BOTTAG",_domain = bds._base64.domain, _imgWatch = [], _domLoaded = [], _data = [], _dataLoaded = [], _finish = [], _hasSpImg = false, _expGroup = 0, _reqTime = 0, _reqEnd = 0, _reqEndL = 0, _rsst = 0, _rest = 0, _dt = 1, _loadState = {}, _hasPreload = 0, _ispdc = false; var preXhrs = [],$ = window.$;if($) {$(window).on("swap_begin",function(){_imgWatch = []; _domLoaded = []; _data = []; _dataLoaded = []; _finish = []; _hasSpImg = false; _expGroup = 0; _reqTime = 0; _reqEnd = 0; _reqEndL = 0; _rsst = 0; _rest = 0; _dt = 1; _ispdc = false; for(var i = 0 ; i < preXhrs.length; i++) {preXhrs[i].abort();}});}var init = function(imgRight,imgLeft,isPreload){var imgArr = imgRight || [], imgArr2 = imgLeft || [];if(window.__IS_IMG_PREFETCH){function filter(img){return !window.__IS_IMG_PREFETCH.hasOwnProperty(img);}imgArr=$.grep(imgArr,filter);imgArr2=$.grep(imgArr2,filter);}if(window.__IMG_PRELOAD && isPreload) {_loadState["cbr"] = 0;_loadState["cbpr"] = 0;_hasPreload = 1; var imgPreloadList = window.__IMG_PRELOAD = {};for(var i = 0; i < imgArr.length; i++) {if(!imgPreloadList.hasOwnProperty(imgArr[i])) {window.__IMG_PRELOAD[imgArr[i]] = true;}}} else if(window.__IMG_PRELOAD && !isPreload) {var tmpArr = [];for(var i = 0; i < imgArr.length; i++){if(!window.__IMG_PRELOAD.hasOwnProperty(imgArr[i])) {tmpArr.push(imgArr[i]);}}imgArr = tmpArr;}if(_opt.b64Exp) {_expGroup = _opt.b64Exp;if(_expGroup == 1){_domain = "http://b2.bdstatic.com/"; _dt = 2;}}_ispdc= _opt.pdc>0 ? true : false;_reqTime = new Date()*1;if(_expGroup==2){if(imgArr2.length>0){_hasSpImg = true;loadJs(_domain + "image?imglist=" + imgArr2.join(",") + "&cb=bds.base64.cbl");}if(!isPreload) {cbl({});}}if(imgArr.length>0){if(isPreload) {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbpr");} else {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbr");}if(_ispdc){if(bds.ready){bds.ready(function(){setTimeout(function(){var _bottag = botTag.get();var logstr = "dt=" + _dt + "&time=" + ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "&bot=" + _bottag + "&rcount=" + imgArr.length;window._B64_REQ_LOG = ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "_" + imgArr.length;if(_expGroup==2 && _reqEndL>0){var _apics = document.getElementById("ala_img_pics");var _lcount = (_apics&&_apics.children)?_apics.children.length:0;logstr += "&time2=" + (_reqEndL-_reqTime) + "&lcount=" + _lcount;}if(Math.random()*100<10){sendLog(logstr);}}, 2000);});}}} else {if(!isPreload) {cbr({});}}if(imgArr.length>0 || imgArr2.length>0){if(!isPreload) {watchReq(imgArr.length);}}};function crc32 (str) {if(typeof str=="string"){var i,crc=0,j=0;for(i=0;i<str.length;i++){j=i%20+1;crc+=str.charCodeAt(i)<<j;}return Math.abs(crc);}return 0;}var loadJs = function (url) {var matchs = url.match(/.*(bds\.base64\.cb[rl])/);if(!matchs){return;}var imglist=url.match(/imglist=([^&]*)/);if(!imglist||!imglist[1]){return;}callback_name=crc32(imglist[1].replace(/,/g,""));callback_name="cb_"+(callback_name+"").substr(Math.max(0,callback_name.length-8),8)+"_0";window[callback_name]=function(data){if(matchs[1] == "bds.base64.cbr") {cbr(data);}else if(matchs[1] == "bds.base64.cbl") {cbl(data); }window[callback_name]=null;};var url = matchs[0].replace(/bds\.base64\.cb[rl]/,callback_name);var a = document.createElement("script");a.setAttribute("type", "text/javascript");a.setAttribute("src", url);a.setAttribute("defer", "defer");a.setAttribute("async", "true");document.getElementsByTagName("head")[0].appendChild(a);};var imgLoad = function(data,side){if(_finish[side]){return; }_finish[side] = true;if(side=="right"){botTag.ot(false); }var imgs = document.getElementById(_expGroup!=1?((side=="left")?_containerLeftId:_containerRightId):_containerAllId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){var b64Id = imgs[i].getAttribute("data-b64-id");if(b64Id){var find = false;if(data.hasOwnProperty(b64Id)) {setSrc(imgs[i],data[b64Id]);find = true;} if(!find){failover(imgs[i]);}}}fail_ie7();};function fail_ie7(){setTimeout(function(){for( var i=0; i<_imgWatch.length; i++ ){var n = _imgWatch[i];if(!n.loaded){failover(n.obj);}}_imgWatch=[];},200);}function setSrc(img,data){try{img.onerror = function(){failover(this);};_imgWatch.push({obj:img,loaded:false});img.onload = function(){for( var i=0; i<_imgWatch.length; i++ ){var m = _imgWatch[i];if(m.obj == this){m.loaded = true;}}};img.src = "data:image\/jpeg;base64," + data;}catch(e){failover(img);}}var failover = function(img){if(img.getAttribute("data-b64-id")!=null && img.getAttribute("data-b64-id")!="" && img.getAttribute("data-src")!=null){img.src = img.getAttribute("data-src");}};var watchReq = function(len){var wt = 1250;if(len<6){wt = 1000;}else if(len>10){ wt = 1500; } setTimeout(function(){ if( !_dataLoaded["right"] ){ var imgs = document.getElementById(_containerRightId).getElementsByTagName("IMG"); for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["right"] = true; botTag.ot(true);}setTimeout(function(){if(_hasSpImg && !_dataLoaded["left"]){var imgs = document.getElementById(_containerLeftId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["left"] = true; }},500);},wt);};var botTag = {ot : function(isInc){var _bottag = botTag.get();if(isInc){if(_bottag<6){_bottag++;}}else{if(_bottag>0){_bottag--;}}if( _bottag>=2 ){var date = new Date();date.setTime(date.getTime() + 24*3600*1000*5);document.cookie = "B64_BOT=1; expires=" + date.toGMTString();}else if( _bottag<1 ){if(document.cookie.match('B64_BOT=1')){document.cookie = "B64_BOT=0;";}}try{if(window.localStorage){window.localStorage[_BOTTAGLSNAME] = _bottag;}}catch(e){}},get : function(){try{if(window.localStorage){var _bottag = window.localStorage[_BOTTAGLSNAME];_bottag = _bottag?parseInt(_bottag):0;}else{return 0;}return _bottag;}catch(e){return 0;}}};var cbr = function(data){_reqEnd = new Date()*1;if(_ispdc && bds.comm && _reqTime>0 && _reqEnd>0){bds.comm.cusval = "b64_" + _dt + "_" + ( _reqEnd - _reqTime );}_loadState["cbr"] = 1;callback(data, "right");};var cbl = function(data){_reqEndL = new Date()*1;callback(data, "left");};var cbpr = function(data){_loadState["cbpr"] = 1;callback(data, "right");};var callback = function(data, side){_dataLoaded[side] = _hasPreload ? (_loadState.cbpr && _loadState.cbr) : true;if(data) {if(_data[side] === undefined) {_data[side] = {}};for(var key in data) {if(data.hasOwnProperty(key)) {_data[side][key] = data[key];}}}if(_domLoaded[side] && _dataLoaded[side]){imgLoad(_data[side], side);}};var setDomLoad = function(side){_domLoaded[side] = true;if(_dataLoaded[side]){imgLoad(_data[side],side);}};var predictImg = false; var sendLog = function (src) {var loghost = "http://nsclick.baidu.com/v.gif?pid=315&rsv_yc_log=3&";var n = "b64log__" + (new Date()).getTime(),c = window[n] = new Image();c.onload = (c.onerror = function () {window[n] = null;});c.src = loghost + src + "&_t=" + new Date()*1; c = null; };cbs = function(data){_rest = new Date()*1;if( (_rest - _rsst) < 1500 ){botTag.ot(false); }else{botTag.ot(true); }};ts = function(){_expGroup = 3;_rsst = new Date()*1;loadJs(_domain + "image?imglist=1241886729_3226161681_58,1072899117_2953388635_58,2469877062_2085031320_58,155831992_309216365_58,2539127170_1607411613_58,1160777122_283857721_58,1577144716_3149119526_58,2339041784_1038484334_58&cb=bds.base64.cbs");};return {init : init,cbl : cbl,cbr : cbr,cbpr : cbpr,setDomLoad : setDomLoad,cbs : cbs,ts : ts,predictImg : predictImg}})();</script><div id="wrapper_wrapper"><!--[if IE 8]><style>.c-input input{padding-top:4px}</style><![endif]--><style> .op-pet-multi-title{font-weight:700;position:relative;z-index:5}.op-pet-multi-title-desc{font-weight:400;font-size:.87em}.op-pet-multi-result{padding-top:5px}.op-pet-multi-option{cursor:pointer;color:#00c;display:inline-block;margin-right:7px}.op-pet-multi-option input{position:relative;vertical-align:bottom;_vertical-align:text-bottom;*top:0}.op-pet-multi-typename{color:#999}.op-pet-multi-menu{border-bottom:1px solid #ebebeb}.op-pet-multi-menu p{margin:6px 0}.op-pet-multi-recommand{border-top:1px solid #ebebeb;padding-top:5px}.op-pet-multi-name{display:block;padding:15px 0 8px;position:relative}.op-pet-multi-name span{display:block;position:absolute;width:120%;left:-10%;top:5px;text-align:center}.op-pet-multi-name a{text-decoration:none}.op-pet-multi-name a:hover{text-decoration:underline}.op-pet-mulit-recommand-tip{display:none;position:absolute;width:130px;background:#fff;border:1px solid #e3e3e3;padding:5px 10px}.op-pet-mulit-recommand-tip span{display:block}.op-pet-multi-tip-title{margin:0;font-size:1em}.op-pet-multi-tip-arrow{position:absolute;top:-6px;width:12px;height:12px;overflow:hidden}.op-pet-multi-tip-arrow i,.op-pet-multi-tip-arrow span{display:block;position:absolute;left:0;top:-4px;width:0;height:0;line-height:0;border:5px dashed transparent;border-bottom:5px solid #fff}.op-pet-multi-tip-arrow i{border-width:6px;border-bottom-color:#e3e3e3;left:-1px;top:-6px;z-index:-1}.op-pet-multi-noresult{display:none;padding:210px 0;text-align:center}.op-pet-multi-result-hide .op-pet-multi-noresult{display:block}.op-pet-multi-result-hide .op-pet-multi-result{display:none}.op-pet-multi-title{font-size:1.17em;margin:0;padding:0}.op-pet-multi-for-log{display:none}.op-pet-multi-pricechange{padding:9px 9px 0;position:absolute;top:-9px;background:#fff}.op-pet-multi-priceactive{padding:8px;border:1px solid #e3e3e3;border-bottom-color:#e0e0e0;border-right-color:#ececec;-webkit-box-shadow:1px 2px 1px rgba(0,0,0,.072);height:45px}.op-pet-multi-qingchu,.op-pet-multi-queding{display:none;width:30px;text-decoration:underline;color:#999;cursor:pointer;float:left}.op-pet-multi-qingchu{top:33px;left:10px;position:absolute}.op-pet-multi-queding{position:absolute;right:8px;margin-left:0;border:1px solid #ccc;padding:0 2px 0 6px;text-decoration:none;background:#fafafa;color:#000;top:33px}.op-pet-multi-priceactive .op-pet-multi-queding{display:block}.op-pet-multi-listprice{display:block;text-align:center;color:red}.op-pet-mulit-list li{padding-bottom:7px}.op_pet_price_dropdown{margin-left:2px}.op_pet_price_dropdown ul li{padding-left:10px}.op-pet-multi-city{position:absolute;right:10px;top:0;font-weight:400;zoom:1}.op-pet-multi-cityiframe{position:absolute;top:0;background-color:#fff;z-index:-1}.op-pet-multi-feedback{color:#00c;font-weight:700;text-align:left;cursor:pointer;display:none}.op-pet-multi-tools-fb{text-decoration:none;float:right;color:#999}.op-pet-multi-tools-fb:hover{text-decoration:underline}#ala_img_report{display:none;font-size:13px}#ala_img_report a{color:#77c}#ala_img_pics{position:relative}#ala_img_pics input{position:absolute;display:none;bottom:3px;right:3px;border:1px solid #CCC;background:#FAFAFA;width:36px;height:23px;padding:0 4px;text-align:center;cursor:pointer;opacity:.8;white-space:nowrap;filter:alpha(opacity=80)}#ala_img_bigpic{display:inline-block;position:relative;float:left;overflow:hidden;vertical-align:middle;outline:0;_margin-top:1px}#ala_img_hoverview{position:absolute;display:none;width:0;height:0;overflow:hidden;outline:0;box-shadow:#646464 0 0 10px}#ala_img_desc a{color:#666}.opr-recommends-merge-title{text-decoration:none}.opr-recommends-merge-title:hover{text-decoration:underline}.opr-recommends-merge-imgtext{display:block}.opr-recommends-merge-hide{display:none}.opr-recommends-merge-p{position:relative;_zoom:1}.opr-recommends-merge-item{text-align:center}.opr-recommends-merge-mask{position:absolute;top:0;left:0;width:100%;_background:0 0;background:-webkit-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-moz-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-o-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-ms-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03))}.opr-recommends-merge-more-btn i{cursor:pointer}.opr-recommends-merge-layerbtn{position:absolute;right:0;bottom:0;width:1.23em;height:1.23em;background:url(//www.baidu.com/aladdin/img/right_recommends/layericon.png) no-repeat;_background-image:url(//www.baidu.com/aladdin/img/right_recommends/layericon.gif)}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn2{background-position:-48px 0}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn3{background-color:#999}.opr-recommends-merge-layerbtn1:hover,.opr-recommends-merge-layerbtn2,.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4{background-color:#38f}.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4:hover{background-position:-24px 0}.opr-recommends-merge-layer{padding:4px 9px;width:350px}.opr-recommends-merge-layer table{border-collapse:collapse;border-padding:0}.opr-recommends-merge-layer td{font-size:1em;line-height:1.67;vertical-align:top}.opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-mbGap{margin-bottom:28px}.container_l .opr-recommends-merge-lastspan{display:block}.container_l .cr-content-narrow .opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-dodge-wrap{margin-bottom:24px;font-size:1.1em}</style><script id="head_script">bds.comm.jsversion = "005";bds.comm.domain = "http://www.baidu.com";bds.comm.ubsurl = "https://sp0.baidu.com/5bU_dTmfKgQFm2e88IuM_a/w.gif";bds.comm.tn = "baidu";bds.comm.tng = "organic";bds.comm.queryEnc = "%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC";bds.comm.queryId = "b36ba77e00006afc";bds.comm.inter = "";bds.comm.resTemplateName = "baidu";bds.comm.sugHost = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su";bds.comm.ishome = 0;bds.comm.query = "花的种类大全图鉴图片";bds.comm.qid = "b36ba77e00006afc";bds.comm.eqid = "b36ba77e00006afc0000000356e30892"; bds.comm._se_click_track_flag = ""; bds.comm.cid = "0";bds.comm.sid = "17746_1446_19184_17946_17001_15553_12101";bds.comm.stoken = "";bds.comm.serverTime = "1457719442";bds.comm.user = "";bds.comm.username = "";bds.comm.userid = "0";bds.comm.__rdNum = "4587";bds.comm.useFavo = "";bds.comm.pinyin = "huadezhongleidaquantujiantupian";bds.comm.favoOn = "";bds.comm.speedInfo = "[{\"ModuleId\":9537,\"TimeCost\":153.89,\"TimeSelf\":16.28},{\"ModuleId\":9540,\"TimeCost\":-1,\"TimeSelf\":-1,\"Idc\":\"0\"},{\"ModuleId\":9527,\"TimeCost\":131.97,\"TimeSelf\":17.84,\"isHitCache\":true,\"SubProcess\":[{\"ProcessId\":9531,\"TimeCost\":0,\"isHitCache\":true},{\"ProcessId\":9536,\"TimeCost\":80.48,\"isHitCache\":false},{\"ProcessId\":9535,\"TimeCost\":30.6,\"isHitCache\":false},{\"ProcessId\":9532,\"TimeCost\":83.53}]}]";bds.comm.isDebug = false;bds.comm.iaurl=["http:\/\/www.nongmiao.com\/baike\/","http:\/\/www.qianqianhua.com\/","http:\/\/www.597mm.com\/news\/show.php?itemid=11231"];bds.comm.curResultNum = "10";bds.comm.rightResultExist = false;bds.comm.protectNum = 0;bds.comm.zxlNum = 0;bds.comm.pageNum = parseInt('1')||1;bds.comm.pageSize = parseInt('10')||10;bds.comm.encTn = 'f0f1VlZD9b2Lqyasxgr9rnZ/xbUSNSmdwpOoGwXfPAKaD4XoiYZuOrFq6Lc';bds.se.mon = {'loadedItems':[],'load':function(){},'srvt':-1};try {bds.se.mon.srvt = parseInt(document.cookie.match(new RegExp("(^| )BDSVRTM=([^;]*)(;|$)"))[2]);document.cookie="BDSVRTM=;expires=Sat, 01 Jan 2000 00:00:00 GMT"; }catch(e){bds.se.mon.srvt=-1; }bdUser = bds.comm.user?bds.comm.user:null;bdQuery = bds.comm.query;bdUseFavo = bds.comm.useFavo;bdFavoOn = bds.comm.favoOn;bdCid = bds.comm.cid;bdSid = bds.comm.sid;bdServerTime = bds.comm.serverTime;bdQid = bds.comm.queryId;bdstoken = bds.comm.stoken;_eclipse = "1"; login_success = [];bds.comm.seinfo = {'fm':'se','T':'1457719442','y':'FFDEFEFB','rsv_cache': (bds.se.mon.srvt>0)?0:1 };bds.comm.cgif = "https://sp0.baidu.com/9foIbT3kAMgDnd_/c.gif?t=0&q=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&p=0&pn=1";bds.comm.upn = {"browser":"firefox","ie":"","os":"mac","win":"","browsertype":"firefox"};bds.comm.cookie = null;bds.comm.urlRecFlag = "0";</script><script>(function(){var imgArr = [],imgArr2 = [];imgArr = ["1960001418_2203371732_58","599349020_934623886_58","399974391_3085566750_58","878263798_1094230653_58","1011512880_3817435498_58","2161523432_1428143120_58","1485492996_2374798036_58","3921314544_4142117284_58","71235722_300938010_58","2213379083_2460822948_58","883788497_1904473864_58","4147626932_3360458348_58","1243286387_669316964_58","390541313_791308765_58","4049949680_4147387116_58","2827961832_572172888_58","4009871368_734741994_58","2374954855_669622501_58","3038254376_333546417_58","1499536737_706268764_58","3534888124_3796809025_58","2895941447_662053632_58","2334249426_1161704075_58","853267439_1874232882_58"];bds.base64.init(imgArr,imgArr2);})();</script><div class="container_s" id="container"><script>bds.util.setContainerWidth();bds.ready(function(){$(window).on("resize",function(){bds.util.setContainerWidth();bds.event.trigger("se.window_resize");});bds.util.setContainerWidth();});</script><script>if(bds.base64){bds.base64.setDomLoad("right");}</script><script type="text/javascript">bds.comm.search_tool = {};bds.comm.search_tool.sl_lang = "";bds.comm.search_tool.st = "";bds.comm.search_tool.et = "";bds.comm.search_tool.stftype = "";bds.comm.search_tool.ft = "";bds.comm.search_tool.si = "";bds.comm.search_tool.exact = "";bds.comm.search_tool.oneDay = "1457633042";bds.comm.search_tool.oneWeek = "1457114642";bds.comm.search_tool.oneMonth = "1455213842";bds.comm.search_tool.oneYear = "1426097042";bds.comm.search_tool.thisDay = "1457625600";bds.comm.search_tool.thisWeek = "1457107200";bds.comm.search_tool.thisMonth = "1455206400";bds.comm.search_tool.thisYear = "1426089600";</script><div id="content_left" style="padding-left: 15px">
 <div class="result-op c-container" data-click="{'p1':'1','rsv_bdr':'0','fm':'alop',rsv_stl:'0'}" data-op="{'y':'5DBCFFDB'}" fk="花的种类大全图鉴图片" id="1" mu="http://www.baidu.com/s?wd=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC" srcid="6829" tpl="pet_multi">
 <div class="c-border">
 <style>
@@ -147,7 +147,19 @@ this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window
 <a class="c-gap-right-small" href="http://www.baidu.com/link?url=ZiHhknnAFSidcnqG_1o66-BvZCQdfnBdIg5g2SbkYyKlw0q3RDqp_sVBpJSxFuHmCOCWcqeUTO-vthnWFdN0DKDof6Kd16hIZ_WfUEVxgFqBZ29PIqXW-2HLIoLQkixnbnb3BhkjF4HFuY9Mckcv3q" target="_blank">水培植物</a>
 </div>
 <div class="op-pet-mulit-recommand-tip c-gray"></div>
-
+<script data-compress="off">
+    A.setup( {
+        'dataNum': '432',
+        'pageNumber': '12',
+        'srcid': '6829',
+        'query': '观花植物',
+        'platform': 'pc',
+		'cityname': '',
+        'recordkey':'观花植物',
+        'opendataUrl': 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php',
+		'mainurl':'/s?wd=%7C%7C%3B%7C%7C&usm=2&ie=utf-8&rsv_cq=%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87&rsv_dl=0_left_pet_multi_6829'
+    });
+</script>
 </div>
 </div>
 <div class="result-op c-container xpath-log" data-click="{'p1':'2','rsv_bdr':'0','fm':'alop',rsv_stl:'2'}" data-op="{'y':'A97F7FFE'}" id="2" mu="http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;ie=gbk&amp;word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC" srcid="4" tpl="sp_img">
@@ -164,6 +176,438 @@ this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window
 <a id="ala_img_hoverview" target="_blank"></a>
 </div>
 <span class="c-showurl" id="ala_img_desc"><span class="c-showurl">image.baidu.com </span><span class="c-tools" data-tools="{title:'',url:'http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;ie=gbk&amp;word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC'}" id="tools_8504483817492558556_2"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></span> - <a href="http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;ie=gbk&amp;word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&amp;&amp;fr=ala&amp;ori_query=%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87&amp;ala=0&amp;alatpl=sp&amp;pos=3" target="_blank">查看全部48,661张图片</a></span>
+<script data-compress="off">
+    A.setup( {
+        'imgUrl': 'https://sp0.baidu.com/70cFfyqpA1gCo2Kml5_Y_D3'
+    });
+</script>
+<script>
+      A.setup(function(){
+          var me = this;
+
+          if(typeof(BD)!="undefined"){BD.IMG={}}else{BD={};BD.IMG={}};BD.IMG.fmdata="alop";BD.IMG.query="%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87";BD.IMG.boxwidth=538;BD.IMG.boxheight=105;BD.IMG.bleed=5;BD.IMG.margin=0;          BD.IMG.pics = [[650,420,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=39008181,269215283&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=199123799050&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=4258180406,2958532443&cs=39008181,269215283&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0805%2F20150805110146378.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/0805/20150805110146378.jpg","","http://img2.imgtn.bdimg.com/it/u=39008181,269215283&fm=116&gp=0.jpg","","","","1970-01-01 08:00","閮侀噾棣欏搧绉嶅浘鐗囧ぇ鍏  ","ebbb5a76a4ff68b255a3fcb00bb7986b", "1457719442"],[580,435,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2545619083,2107396583&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=135863683010&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=3090872564,4172271888&cs=2545619083,2107396583&objurl=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3D53bd662d67380cd7e61ea2e59145ad14%2Fce1b9d16fdfaaf51101d18228e5494eef11f7ab5.jpg&bdtype=0&simid=3381833045,354250850","","http://imgsrc.baidu.com/forum/w%3D580/sign=53bd662d67380cd7e61ea2e59145ad14/ce1b9d16fdfaaf51101d18228e5494eef11f7ab5.jpg","","http://img2.imgtn.bdimg.com/it/u=2545619083,2107396583&fm=116&gp=0.jpg","","","","1970-01-01 08:00","銆愬浘閴磋创銆戝浗鍐呭凡鏈夊ぇ鑺卞ぉ绔鸿懙鍝佺澶у叏","225f1222f08259c6929967217e858840", "1457719442"],[650,420,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=769493741,3511698831&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=200229495950&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=96084385,3033312034&cs=769493741,3511698831&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0715%2F20150715092034905.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/0715/20150715092034905.jpg","","http://img2.imgtn.bdimg.com/it/u=769493741,3511698831&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鐧惧悎鑺卞搧绉嶅強鍥剧墖澶у叏","4fa33a593d596805c1cfa48bd2af6f76", "1457719442"],[312,383,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=550632580,1462437514&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=191029455650&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=2914678789,256003045&cs=550632580,1462437514&objurl=http%3A%2F%2Fwww.365mmjg.com%2Ffile%2Fupload%2F201412%2F25%2F11-04-00-30-1.jpg&bdtype=0&simid=3599816174,498307395","","http://www.365mmjg.com/file/upload/201412/25/11-04-00-30-1.jpg","","http://img2.imgtn.bdimg.com/it/u=550632580,1462437514&fm=116&gp=0.jpg","","","","1970-01-01 08:00","椋庝俊瀛愬浘鐗囧ぇ鍏 ,鍚勭棰滆壊鐨勯淇″瓙鍚嶇О鍥鹃壌","5da27a932a63e32fad837ac67102aac4", "1457719442"],[650,420,"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4231067554,3735943805&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=90226314860&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=4246580615,2815471921&cs=4231067554,3735943805&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F1022%2F20151022082448361.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/1022/20151022082448361.jpg","","http://img5.imgtn.bdimg.com/it/u=4231067554,3735943805&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍑ゆⅷ鑺辩绫诲浘鐗囧ぇ鍏  ","794d1f28f9c283d128044650f2095b22", "1457719442"],[650,420,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=165470760,1578227557&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=143580682300&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=48254074,2913325611&cs=165470760,1578227557&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F1022%2F20151022081959788.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/1022/20151022081959788.jpg","","http://img1.imgtn.bdimg.com/it/u=165470760,1578227557&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍑ゆⅷ鑺辩绫诲浘鐗囧ぇ鍏  ","4ac552f882c999b93b8b7a26d1f6e27c", "1457719442"],[650,420,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3176053915,1620897401&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=201521943920&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=4221923623,2833543276&cs=3176053915,1620897401&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0730%2F20150730101113982.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/0730/20150730101113982.jpg","","http://img2.imgtn.bdimg.com/it/u=3176053915,1620897401&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鐗′腹鑺卞搧绉嶅強鍥剧墖澶у叏","15e097589cd040f0ca7a4fa23a72acb9", "1457719442"],[1200,900,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=244429346,3569031355&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=17226876150&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=464843920,151860876&cs=244429346,3569031355&objurl=http%3A%2F%2Fimage51.360doc.com%2FDownloadImg%2F2012%2F04%2F3022%2F23625720_21.jpg&bdtype=0&simid=4282549842,926395751","","http://image51.360doc.com/DownloadImg/2012/04/3022/23625720_21.jpg","","http://img3.imgtn.bdimg.com/it/u=244429346,3569031355&fm=116&gp=0.jpg","","","","1970-01-01 08:00","妗傝姳鍝佺鍥鹃壌","8bf1c054ec5be3a253b7a34fffdda7bb", "1457719442"],[650,420,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1964329506,4279852490&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=91890609690&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=4239045907,2804555729&cs=1964329506,4279852490&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F1022%2F20151022082526623.jpg&bdtype=0&simid=46726571,837190100","","http://www.qnong.com.cn/uploadfile/2015/1022/20151022082526623.jpg","","http://img4.imgtn.bdimg.com/it/u=1964329506,4279852490&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍑ゆⅷ鑺辩绫诲浘鐗囧ぇ鍏  ","851787d52c91afcb8f45f2e6c8f41935", "1457719442"],[550,441,"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2956198154,1970536448&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=62789286670&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=3041290881,2379372898&cs=2956198154,1970536448&objurl=http%3A%2F%2Fwww.drlmeng.com%2Fwp-content%2Fuploads%2F2014%2F10%2Fzise.jpg&bdtype=0&simid=3447509757,307950860","","http://www.drlmeng.com/wp-content/uploads/2014/10/zise.jpg","","http://img0.imgtn.bdimg.com/it/u=2956198154,1970536448&fm=116&gp=0.jpg","","","","1970-01-01 08:00","闀垮鑺卞搧绉嶅浘閴  | 澶氳倝鑱旇悓","9525ee0e7678e439fddf648f5c9ab3a2", "1457719442"],[550,418,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=254321704,1987609427&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=103495903280&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=3901740670,2897158272&cs=254321704,1987609427&objurl=http%3A%2F%2Fwww.drlmeng.com%2Fwp-content%2Fuploads%2F2014%2F10%2Fbaihu.jpg&bdtype=0&simid=3101687981,3910240220","","http://www.drlmeng.com/wp-content/uploads/2014/10/baihu.jpg","","http://img3.imgtn.bdimg.com/it/u=254321704,1987609427&fm=116&gp=0.jpg","","","","1970-01-01 08:00","闀垮鑺卞搧绉嶅浘閴  | 澶氳倝鑱旇悓","ff50759b7067569872c3233d0a0cbf4b", "1457719442"],[650,420,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3692605891,18479181&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=170729649860&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=56282018,2978646829&cs=3692605891,18479181&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0622%2F20150622090854726.jpg&bdtype=0&simid=4146428166,739046518","","http://www.qnong.com.cn/uploadfile/2015/0622/20150622090854726.jpg","","http://img4.imgtn.bdimg.com/it/u=3692605891,18479181&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鐜懓鑺辩殑鍝佺鍙婂浘鐗囧ぇ鍏 ","8d015786c27f53f98b2880f00929d5b0", "1457719442"],[312,383,"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1351708880,2018615368&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=191541429750&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=2999456408,319163256&cs=1351708880,2018615368&objurl=http%3A%2F%2Fwww.365mmjg.com%2Ffile%2Fupload%2F201412%2F25%2F11-04-00-75-1.jpg&bdtype=0&simid=3316542488,216359002","","http://www.365mmjg.com/file/upload/201412/25/11-04-00-75-1.jpg","","http://img0.imgtn.bdimg.com/it/u=1351708880,2018615368&fm=116&gp=0.jpg","","","","1970-01-01 08:00","椋庝俊瀛愬浘鐗囧ぇ鍏 ,鍚勭棰滆壊鐨勯淇″瓙鍚嶇О鍥鹃壌","71010294ccc638446d6cec2f21e9c91d", "1457719442"],[690,517,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=782402876,905846346&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=7892329720&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=2094565570,2472399005&cs=782402876,905846346&objurl=http%3A%2F%2Fwww.zuihua.com%2Fdata%2Fattachment%2Fportal%2F201501%2F02%2F112639uq04ngcccxca94ot.jpg&bdtype=0&simid=3324233381,258748377","","http://www.zuihua.com/data/attachment/portal/201501/02/112639uq04ngcccxca94ot.jpg","","http://img2.imgtn.bdimg.com/it/u=782402876,905846346&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍥鹃壌 69 鐗′腹鑺  69 鐗′腹鑺遍噾闃 ","fccd421ecfb208c84762f8ea514b8746", "1457719442"],[580,435,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1742412809,3988404205&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=142399237970&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=3874106731,921235112&cs=1742412809,3988404205&objurl=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3D33c2e0a56c061d957d4637304bf50a5d%2Ff21fbe096b63f624f1a3a09e8544ebf81b4ca3b5.jpg&bdtype=0&simid=4281250898,648030191","","http://imgsrc.baidu.com/forum/w%3D580/sign=33c2e0a56c061d957d4637304bf50a5d/f21fbe096b63f624f1a3a09e8544ebf81b4ca3b5.jpg","","http://img2.imgtn.bdimg.com/it/u=1742412809,3988404205&fm=116&gp=0.jpg","","","","1970-01-01 08:00","銆愬浘閴磋创銆戝浗鍐呭凡鏈夊ぇ鑺卞ぉ绔鸿懙鍝佺澶у叏","5d79c653f0b1e97c2180c2b6c4fdcfae", "1457719442"],[650,420,"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2512694631,1880692584&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=198764041300&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=47608777,2905644637&cs=2512694631,1880692584&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F1022%2F20151022082349995.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/1022/20151022082349995.jpg","","http://img5.imgtn.bdimg.com/it/u=2512694631,1880692584&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍑ゆⅷ鑺辩绫诲浘鐗囧ぇ鍏  ","25a142a3e39b728773e9967df18bd903", "1457719442"],[580,773,"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3296332472,2586116665&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=121156971650&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=3596883335,25984632&cs=3296332472,2586116665&objurl=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3Dcaaa4069b54543a9f51bfac42e168a7b%2F7ff3ff2309f79052e191d9a30ef3d7ca7acbd57d.jpg&bdtype=0&simid=4075486444,409667223","","http://imgsrc.baidu.com/forum/w%3D580/sign=caaa4069b54543a9f51bfac42e168a7b/7ff3ff2309f79052e191d9a30ef3d7ca7acbd57d.jpg","","http://img5.imgtn.bdimg.com/it/u=3296332472,2586116665&fm=116&gp=0.jpg","","","","1970-01-01 08:00","銆愬浘閴磋创銆戝浗鍐呭凡鏈夊ぇ鑺卞ぉ绔鸿懙鍝佺澶у叏","0b9142c9f233f0aec26e858a447d188d", "1457719442"],[650,420,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3504721429,1528510896&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=50689207030&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=115252974,3083225454&cs=3504721429,1528510896&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0814%2F20150814092851862.jpg&bdtype=0&simid=0,0","","http://www.qnong.com.cn/uploadfile/2015/0814/20150814092851862.jpg","","http://img3.imgtn.bdimg.com/it/u=3504721429,1528510896&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑼惰姳鍝佺鍥剧墖澶у叏 - 绗 2椤 ","4d659e6e5db2c61bc2a386aade61c62c", "1457719442"],[650,420,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3051640182,1919830927&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=91558743210&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=92496299,3038615572&cs=3051640182,1919830927&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0907%2F20150907070539206.jpg&bdtype=0&simid=3517789392,420042500","","http://www.qnong.com.cn/uploadfile/2015/0907/20150907070539206.jpg","","http://img3.imgtn.bdimg.com/it/u=3051640182,1919830927&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍏拌姳鍝佺鍥剧墖澶у叏 - 绗 4椤 ","d558085779b397e4b2bf5c6390b1fb57", "1457719442"],[650,435,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3682587467,3142368170&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=116875848100&ln=30&word=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&os=49111772,2966090166&cs=3682587467,3142368170&objurl=http%3A%2F%2Fwww.qnong.com.cn%2Fuploadfile%2F2015%2F0318%2F20150318042536556.jpg&bdtype=0&simid=25803858,835841964","","http://www.qnong.com.cn/uploadfile/2015/0318/20150318042536556.jpg","","http://img3.imgtn.bdimg.com/it/u=3682587467,3142368170&fm=116&gp=0.jpg","","","","1970-01-01 08:00","钄疯枃鑺卞浘鐗  - 鍐滀笟鍥鹃壌","666f6468629b66a62566d8bda1ac0e6f", "1457719442"]];
+
+          BD.IMG.err = function(obj){
+              obj.style.display ="none";
+              obj.parentNode.style.display ="none";
+          };
+          BD.IMG.disabledInput = [];
+          BD.IMG.actions = {
+              ini : function(){
+                  var titleHtml = "<a href='#' onclick='return BD.IMG.actions.showReport();'>举报图片</a>";
+                  document.getElementById("ala_img_report").innerHTML = titleHtml;
+                  BD.IMG.hideReportDiv();
+                  return false;
+              },
+              showReport : function(){
+                  var titleHtml = "请举报图片&nbsp;-&nbsp;<a href='#' onclick='return BD.IMG.actions.ini();'>取消</a>&nbsp;";
+                  document.getElementById("ala_img_report").innerHTML = titleHtml;
+
+                  BD.IMG.showReportDiv();
+                  return false;
+              },
+              reportPic : function (f,u,di,q,_this){
+                  _this.value="已报";
+                  _this.disabled = true;
+                  BD.IMG.disabledInput.push(di);
+                  var matches = document.cookie.match(/BAIDUID=([^;]+)/);
+                  var cookie = "";
+                  if(matches !=null){
+                      cookie = "&uid="+matches[1];
+                  }
+
+                  var img = new Image();
+                  img.src = me.data.imgUrl + "/4.gif?p=18&fr=ala&hostfr=imgstat&u="+u+"&f="+f+"&di="+di+"&q="+q+cookie+"&"+new Date()*Math.random();
+                  this.hideReport();
+              },
+              hideReport : function(){
+                  var picNum = (document.getElementById("ala_img_pics").getElementsByTagName("a").length-1)/2;
+                  var continueHtml = "感谢您的举报&nbsp;-&nbsp;<a href='#'  onclick='return BD.IMG.actions.showReport();'>继续举报</a>";
+                  var endHtml = "感谢您的举报";
+                  var reportLength = BD.IMG.disabledInput.length;
+                  if(reportLength<picNum&&reportLength>0){
+                      document.getElementById("ala_img_report").innerHTML = continueHtml;
+                  }else if(reportLength ==0){
+                      this.ini();
+                  }else{
+                      document.getElementById("ala_img_report").innerHTML = endHtml;
+                  }
+                  BD.IMG.hideReportDiv();
+                  return false;
+              }
+          };
+          BD.IMG.showReportDiv = function(){
+              var reportdivs = document.getElementById("ala_img_pics").getElementsByTagName("input");
+              for(var i=0;i<reportdivs.length;i++){
+                  var rd = reportdivs[i];
+                  if(rd!=null){rd.style.display = "block"};
+              };
+              BD.IMG.reporting = 1;
+          };
+          BD.IMG.hideReportDiv = function(){
+              var reportdivs = document.getElementById("ala_img_pics").getElementsByTagName("input");
+              for(var i=0;i<reportdivs.length;i++){
+                  var rd = reportdivs[i];
+                  if(rd!=null){rd.style.display = "none"};
+              };
+              BD.IMG.reporting = 0;
+          };
+          //图像两端对齐处理
+          BD.IMG.justify = function(pics,images,boxwidth,boxheight,bleed,margin){
+              //缩放图片
+              var scaleimg = function(){
+                  var totalwidth = 0;
+                  for(var i=0;i<pics.length;i++){
+                      var scale = boxheight/pics[i][1];
+                      pics[i][0] = Math.round(pics[i][0] * scale);
+                      pics[i][1] = Math.round(pics[i][1] * scale);
+                      totalwidth += pics[i][0] + ((i==pics.length - 1) ? 0 : margin);
+                  };
+                  //容器超宽处理
+                  if(boxwidth > totalwidth){
+                      var lack = boxwidth - totalwidth;
+                      var last = pics.length - 1;
+                      var scale = (pics[last][0]+lack)/pics[last][0];
+                      pics[last][0] = pics[last][0]+lack;
+                      pics[last][1] = Math.round(pics[last][1]*scale);
+                  };
+              };
+
+              //计算实际显示宽高
+              var calculate = function(){
+                  var totalwidth = 0;
+                  var totalshowwidth = 0;
+                  //计算剪裁值
+                  for(var i=0;i<pics.length;i++){
+                      totalwidth += pics[i][0] + margin;
+
+                      if(totalwidth >= boxwidth){
+                          //最后一张图片不计算间距
+                          totalwidth = totalwidth - margin;
+                          var cut = Math.ceil((totalwidth - boxwidth) / (i + 1));
+                          var paddingleft = Math.round(cut/2);
+                          var paddingtop = 0;
+                          //检查是否超出裁剪界限
+                          if(paddingleft <= bleed){
+                              for(var index=0;index<(i+1);index++){
+                                  //显示的宽度
+                                  var showwidth = pics[index][0] - cut;
+                                  totalshowwidth += showwidth;
+                                  if(index!=i){totalshowwidth += margin};
+                                  //显示的高度
+                                  var showheight = boxheight;
+                                  paddingtop = Math.round((pics[index][1] - boxheight)/2);
+                                  //图片间距
+                                  var marginleft = margin;
+                                  if(index==0){marginleft = 0};
+                                  //生成图片数据
+                                  var imgobj = {};
+                                  imgobj.rw = pics[index][0];
+                                  imgobj.rh = pics[index][1];
+                                  imgobj.sw = showwidth;
+                                  imgobj.sh = showheight;
+                                  imgobj.pl = paddingleft;
+                                  imgobj.src = pics[index][2];
+                                  imgobj.href = pics[index][3];
+                                  imgobj.fromurl = pics[index][4];
+                                  imgobj.objurl = pics[index][5];
+                                  imgobj.imgid = pics[index][6];
+                                  imgobj.query = pics[index][7];
+                                  //imgobj.hsrc = pics[index][8];
+                                  imgobj.b64sid=pics[index][8]?pics[index][8]:pics[index][9];
+                                  imgobj.os = pics[index][10];
+                                  imgobj.bdtime = pics[index][11] ? pics[index][11] : "1970-01-01 08:00";
+                                  imgobj.imgdesc = pics[index][12];
+                                  imgobj.di = pics[index][13];
+                                  imgobj.sec = pics[index][14];
+                                  imgobj.ml = marginleft;
+                                  images.push(imgobj);
+                              }
+                              //最终宽度修正(修正Math.round产生的误差)
+                              var widthfixnum = boxwidth - totalshowwidth;
+                              if(widthfixnum > i + 1){widthfixnum = i + 1};
+                              //只有出现裁剪情况的时候才修正
+                              if(paddingleft > 0){
+                                  for(var f=0;f<widthfixnum;f++){
+                                      images[f].sw++;
+                                      images[f].pl--;
+                                  }
+                              }
+                              return 0;
+                          }else{
+                              return paddingleft - bleed;
+                          }
+                          break;
+                      }
+                  }
+              };
+              scaleimg();
+              return calculate();
+          };
+
+          var parseDate= function (source) {
+            var reg = new RegExp("^\\d+(\\-|\\/)\\d+(\\-|\\/)\\d+\x24");
+            if ('string' == typeof source) {
+              if (reg.test(source) || isNaN(Date.parse(source))) {
+                var d = source.split(/ |T/),
+                  d1 = d.length > 1
+                    ? d[1].split(/[^\d]/)
+                    : [0, 0, 0],
+                  d0 = d[0].split(/[^\d]/);
+                return new Date(d0[0] - 0,
+                  d0[1] - 1,
+                  d0[2] - 0,
+                  d1[0] - 0,
+                  d1[1] - 0,
+                  d1[2] - 0);
+              } else {
+                return new Date(source);
+              }
+            }
+
+            return new Date();
+          };
+          var timeCalculate= function(time){
+            var str;
+            if(time < 1){
+              str = "1小时内";
+            }else if(time < 24){
+              str = Math.round( time )+"小时前";
+            }else if(time < 24 * 8){
+              str = Math.round((time - time % 24) / 24)+"天前";
+            }
+            return str;
+          };
+
+          //rsv_dit计数
+          var rsv_dit_count = 0;
+
+          BD.IMG.appendpic = function(box,img){
+              //左侧base64实验：根据是否有base64 ID决定图片如何渲染输出
+              var srcstr = "", bdtime;
+              if(img.b64sid!=""){
+                  BD.IMG.base64Exp = true;
+                  srcstr = "data-b64-id='" + img.b64sid + "' data-src='" + img.src + "'";
+              }else{
+                  srcstr = "src='" + img.src + "'";
+              }
+
+              if(img.bdtime){
+                bdtime = timeCalculate((new Date().getTime()- parseDate(img.bdtime.replace(/-/g,"/")).getTime())/(1000*3600));
+              }
+              if(bdtime){
+                box.innerHTML = box.innerHTML + "<a style='display:inline-block;position:relative;overflow:hidden;vertical-align:middle;outline:none;margin-left:"+img.ml+"px;width:"+img.sw+"px;height:"+img.sh+"px;' target='_blank' data-objurl='" + img.objurl + "' data-di='" + img.di + "' data-sec='" + img.sec + "' data-click={rsv_cit:1} href='"+img.href+"&fr=ala&ori_query="+BD.IMG.query+"&ala=0&alatpl=sp&pos=1"+"'><img style='height:"+img.rh+"px;width:"+img.rw+"px;margin-left:-"+img.pl+"px;' onerror='BD.IMG.err(this)' " + srcstr + "/><input type='button' class='OP_LOG_BTN' value='举报' onclick=\"BD.IMG.actions.reportPic('"+img.fromurl+"','"+img.objurl+"','"+img.imgid+"','"+BD.IMG.query+"',this);return false;\"/></a>";
+                rsv_dit_count += 1;
+              }else{
+
+              box.innerHTML = box.innerHTML + "<a style='display:inline-block;position:relative;overflow:hidden;vertical-align:middle;outline:none;margin-left:"+img.ml+"px;width:"+img.sw+"px;height:"+img.sh+"px;' target='_blank' data-objurl='" + img.objurl + "' data-di='" + img.di + "' data-sec='" + img.sec + "' href='"+img.href+"&fr=ala&ori_query="+BD.IMG.query+"&ala=0&alatpl=sp&pos=1"+"'><img style='height:"+img.rh+"px;width:"+img.rw+"px;margin-left:-"+img.pl+"px;' onerror='BD.IMG.err(this)' " + srcstr + " /><input type='button' class='OP_LOG_BTN' value='举报' onclick=\"BD.IMG.actions.reportPic('"+img.fromurl+"','"+img.objurl+"','"+img.imgid+"','"+BD.IMG.query+"',this);return false;\"/></a>";
+              }
+          };
+
+          if(BD.IMG.complex){
+              BD.IMG.picts=[];
+              BD.IMG.picbs=[];
+              BD.IMG.imagets = [];
+              BD.IMG.imagebs = [];
+              BD.IMG.boxtheight = BD.IMG.boxheight;
+              BD.IMG.boxbheight = BD.IMG.boxheight;
+              for(var b=1;b<BD.IMG.pics.length;b++){
+                  if(b%2){
+                      BD.IMG.picbs.push(BD.IMG.pics[b]);
+                  }else{
+                      BD.IMG.picts.push(BD.IMG.pics[b]);
+                  }
+              };
+
+              var bigimg = $('#ala_img_bigimg');
+              var bigimg_bdtime = timeCalculate((new Date().getTime()- parseDate(BD.IMG.pics[0][11].replace(/-/g,"/")).getTime())/(1000*3600));
+              if (bigimg && bigimg_bdtime) {
+                rsv_dit_count += 1;
+              }
+
+              //处理上方单行
+              while(BD.IMG.justify(BD.IMG.picts,BD.IMG.imagets,BD.IMG.boxwidth,BD.IMG.boxtheight,BD.IMG.bleed,BD.IMG.margin)){
+                  BD.IMG.boxtheight--;
+                  if(BD.IMG.boxtheight<=0){break};
+              };
+              for(var m=0;m<BD.IMG.imagets.length;m++){
+                  BD.IMG.appendpic(document.getElementById("ala_img_ptline"),BD.IMG.imagets[m]);
+              };
+              //处理下方单行
+              while(BD.IMG.justify(BD.IMG.picbs,BD.IMG.imagebs,BD.IMG.boxwidth,BD.IMG.boxbheight,BD.IMG.bleed,BD.IMG.margin)){
+                  BD.IMG.boxbheight--;
+                  if(BD.IMG.boxbheight<=0){break};
+              };
+              for(var m=0;m<BD.IMG.imagebs.length;m++){
+                  BD.IMG.appendpic(document.getElementById("ala_img_pbline"),BD.IMG.imagebs[m]);
+              };
+              //调整大图的高度，IE浏览器下需要设置各区块高度
+              document.getElementById("ala_img_bigpic").style.height = (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)+"px";
+              if(document.getElementById("ala_img_bigimg").offsetHeight < (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)){
+                  document.getElementById("ala_img_bigimg").style.height = (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)+"px";
+              };
+              document.getElementById("ala_img_pics").style.height = (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)+"px";
+              document.getElementById("ala_img_ptline").style.height = BD.IMG.boxtheight+"px";
+              document.getElementById("ala_img_pbline").style.height = BD.IMG.boxbheight+"px";
+             
+          }else{
+              BD.IMG.images = [];
+              while(BD.IMG.justify(BD.IMG.pics,BD.IMG.images,BD.IMG.boxwidth,BD.IMG.boxheight,BD.IMG.bleed,BD.IMG.margin)){
+                  BD.IMG.boxheight--;
+                  if(BD.IMG.boxheight<=0){break};
+              };
+              for(var m=0;m<BD.IMG.images.length;m++){
+                  BD.IMG.appendpic(document.getElementById("ala_img_pics"),BD.IMG.images[m]);
+              };
+                
+              //处理左移图片高度
+              var $left;
+              if(($left = me.find(".op_sp_img_toleft")).length){
+                  $left.css("height", BD.IMG.boxheight);
+                  var $leftimg = $left.find("img");
+                  
+                  if($leftimg.hasClass("op_sp_img_hleftimg")){
+                      $leftimg.css("height", BD.IMG.boxheight);
+                  }else{
+                      // 竖图
+                      var data = JSON.parse("(" + $leftimg.attr("data-attr") + ")");
+                      if(data.width/data.height > 98/BD.IMG.boxheight){
+                            $leftimg.css({"height": BD.IMG.boxheight, "width":"auto"});
+                      }
+                  }
+              }
+             
+               
+          };
+          
+          //发送一次统计
+          if (rsv_dit_count > 0) {
+            c({fm:'inlo',rsv_dit: rsv_dit_count});
+          }
+
+          //清除预设高度
+           document.getElementById("ala_img_pics").style.height = "";
+
+          if(BD.IMG.base64Exp && bds.base64){
+              //设置base64左侧dom准备就绪，可以回填。
+              bds.base64.setDomLoad("left");
+          }
+
+          //性能统计代码
+          $.each($('#ala_img_results').find('img'),function(i,imgDom){bds.se.mon.load(imgDom,'left');});
+
+          //鼠标悬停逻辑
+          bds.ready(function(){
+              A.use('jquery', function(){
+                  var $ = A.ui.jquery;
+                  var $container = $("#ala_img_results");
+                  var $con = $("#ala_img_pics");
+                  var $imgs = $con.find("a");
+                  var $vb = $("#ala_img_hoverview");
+                  var $alink,$img,dclick,dhref,ol,ot,w,h,rw,rh,scale,nw,nh;
+                  $imgs.bind("mouseenter",function(){
+                      if(!BD.IMG.reporting){
+                          $(this).css("cursor","default");
+                          showViewBox(this);
+                          preloadImg(this);
+                      }
+                  });
+                  $vb.bind("mouseleave",function(){
+                      hideViewBox();
+                  });
+                  $container.bind("mouseleave",function(){
+                      hideViewBox();
+                  });
+                  function showViewBox(alink){
+                      $alink = $(alink);
+                      $vb.html($alink.html()).css({"left":ol+"px","top":ot+"px"}).show();
+                      $img = $vb.find("img");
+                      dclick = $alink.attr("data-click");
+                      dhref = $alink.attr("href");
+                      ol = alink.offsetLeft;
+                      ot = alink.offsetTop;
+                      w = $alink.width();
+                      h = $alink.height();
+                      rw = $alink.find("img").width();
+                      rh = $alink.find("img").height();
+                      scale = 0.1;
+                      nw = w + w*scale*2;
+                      nh = h + h*scale*2;
+                      //放大的高度不宜过高
+                      if(scale*h > 10){
+                          scale = 10/h;
+                          nh = h + h*0.2;
+                          nw = w + w*scale*2;
+                      }
+                      $img.stop().animate({
+                          width : rw + rw*scale*2 + "px",
+                          height : rh + rh*scale*2 + "px"
+                      },100);
+                      $vb.stop().attr({"data-click":dclick,"href":dhref}).css({
+                          display : "block",
+                          left : ol,
+                          top : ot,
+                          width : w + "px",
+                          height : h + "px"
+                      }).animate({
+                          left : ol - w*scale,
+                          top : ot - h*scale,
+                          width : w + w*scale*2 + "px",
+                          height : h + h*scale*2 + "px"
+                      },100);         
+                      $vb.click(function (e) {
+                        e.stopImmediatePropagation();
+                        var target = $(e.target).parent();
+                        var dataIsLoaded = $alink.attr('data-isloaded') === 'true' ? 1 : 0;
+                        var href = target.attr('href')
+                          + '&timg=' + encodeURIComponent($alink.attr('data-timgUrl'))
+                          + '&ctd=' + new Date().getTime() + '^' + dataIsLoaded + '_' + $(window).width() + 'X' + $(window).height() + '%1';
+                        target.attr('href', href);
+                      });
+                  };
+                  function hideViewBox(){
+                      if($img && $vb){
+                          $img.stop().animate({
+                              width : rw + "px",
+                              height : rh + "px"
+                          },100).css("cursor","pointer");
+                          $vb.stop().animate({
+                              left : ol,
+                              top : ot,
+                              width : w + "px",
+                              height : h + "px"
+                          },100).hide();
+                      }
+                  };
+                function preloadImg (dom) {
+                    var imgUrl = dom.getAttribute('data-objurl');
+                    var imgDi = dom.getAttribute('data-di');
+                    var imgSec = dom.getAttribute('data-sec');
+                    var isHttps = window.location.protocol === 'https:' ? true : false;
+                    var timgUrlHeader = isHttps ? 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_' : 'http://a.cphotos.bdimg.com';
+                    var timgUrl = timgUrlHeader + '/timg?image&quality=100&size=b'
+                            + '4000_4000'
+                            + '&sec=' + imgSec + '&di=' + imgDi + '&src=' + imgUrl;
+                    
+                    var img = new Image();
+                    $(img).bind('load', function () {
+                      if(this.width < 200 || this.height < 200) {
+                        $(dom).attr('data-isloaded', false);
+                        $(dom).attr('data-timgUrl', '');
+                      } else {
+                        $(dom).attr('data-isloaded', true);
+                        $(dom).attr('data-timgUrl', timgUrl);
+                      }
+                    }).bind('error', function () {
+                      $(dom).attr('data-isloaded', false);
+                      $(dom).attr('data-timgUrl', '');
+                    });
+                    img.src = decodeURIComponent(timgUrl);
+                }
+              });
+          });
+      });
+  </script>
 </div>
 <div class="result c-container " data-click="{'rsv_bdr':'0' }" id="3" srcid="1599" tpl="se_com_default"><h3 class="t"><a data-click="{
 			'F':'778717EA',
@@ -173,7 +617,7 @@ this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window
 			'T':'1457719442',
 						'y':'E51DBDE8'
 			 
-									}" href="http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif" target="_blank">最全的花卉<em>图片</em>及名称<em>大全</em>_<em>花的种类</em>-农苗网植物百科</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" href="http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif" style="height:75px" target="_blank"><img class="c-img c-img6" src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=3791938129,2366136662&amp;fm=96&amp;s=5C3A67D9CA36DADC58A9CE14030050C7" style="height:75px;"/></a></div><div class="c-span18 c-span-last"><div class="c-abstract">农苗网植物百科,拥有海量花卉<em>图片</em>及名称<em>大全</em>,其中包括各种<em>花的种类</em>:百合, 向日葵, 绿萝, 栀子花, 菠萝蜜, 菊花, 樱桃, 荷花, 金银花, 茉莉花, 龙眼, 玫瑰, ...</div><div class="f13"><a class="c-showurl" href="http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif" style="text-decoration:none;" target="_blank">www.nongmiao.com/baike/ </a><div class="c-tools" data-tools='{"title":"最全的花卉图片及名称大全_花的种类-农苗网植物百科","url":"http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif"}' id="tools_11009966153074485556_3"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span> - <a class="m" data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9d431df4f9e9e690c66c0161e43f1652bd6a00209d0843e97732a435011e1ac26520774d5d2086616de434b99802173471451c18cb8f95dadca855c259f2644676df05662a20edecf5156b034d71ab7a043a1fcb22592ddcfce9a1116dd537226ddacde055b479778f06360bef98418460449edf0&amp;p=8b2a9717cc9611a058ee95345440cc&amp;newp=92759a45d5c250e9469fc7710f0c94231610db2151d0d10439cae1&amp;user=baidu&amp;fm=sc&amp;query=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&amp;qid=b36ba77e00006afc&amp;p1=3" target="_blank">快照</a> - <a class="m" data-click="{'rsv_comments':'1'}" href="http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DJG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif&amp;jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%01%E6%9C%80%01%E5%85%A8%01%E7%9A%84%01%E8%8A%B1%E5%8D%89%02%E5%9B%BE%E7%89%87%03%E5%8F%8A%01%E5%90%8D%E7%A7%B0%02%E5%A4%A7%E5%85%A8%03_%02%E8%8A%B1%01%E7%9A%84%01%E7%A7%8D%E7%B1%BB%03-%01%E5%86%9C%01%E8%8B%97%01%E7%BD%91%01%E6%A4%8D%E7%89%A9%01%E7%99%BE%E7%A7%91%01%26q%3D%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&amp;key=surl" target="_blank">评价</a></div></div></div><div class="c-gap-top c-recommend" data-extquery="花的图片头像 花卉图片及名称大全 室内花卉 铃兰 发财树 " style="display:none;"><i class="c-icon c-icon-bear-circle c-gap-right-small"></i><span class="c-gray">为您推荐：</span><a class="res-gap-right16" href="/s?wd=%E8%8A%B1%E7%9A%84%E5%9B%BE%E7%89%87%E5%A4%B4%E5%83%8F&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87" target="_blank">花的图片头像</a><a class="res-gap-right16" href="/s?wd=%E8%8A%B1%E5%8D%89%E5%9B%BE%E7%89%87%E5%8F%8A%E5%90%8D%E7%A7%B0%E5%A4%A7%E5%85%A8+%E5%AE%A4%E5%86%85%E8%8A%B1%E5%8D%89&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87" target="_blank">花卉图片及名称大全 室内花卉</a><a class="res-gap-right16" href="/s?wd=%E9%93%83%E5%85%B0&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87" target="_blank">铃兰</a><a href="/s?wd=%E5%8F%91%E8%B4%A2%E6%A0%91&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8A%B1%E7%9A%84%E7%A7%8D%E7%B1%BB%E5%A4%A7%E5%85%A8%E5%9B%BE%E9%89%B4%E5%9B%BE%E7%89%87" target="_blank">发财树</a></div></div><div class="result c-container " data-click="{'rsv_bdr':'0' ,'rsv_cd':'pt:40520|vLevel:3'}" id="4" srcid="1526" tpl="se_com_default"><h3 class="t"><span class="c-icon c-icon-doc c-gap-icon-right-small"></span><a data-click="{
+									}" href="http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif" target="_blank">最全的花卉<em>图片</em>及名称<em>大全</em>_<em>花的种类</em>-农苗网植物百科</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" href="http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif" style="height:75px" target="_blank"><img class="c-img c-img6" src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=3791938129,2366136662&amp;fm=96&amp;s=5C3A67D9CA36DADC58A9CE14030050C7" style="height:75px;"/></a></div><div class="c-span18 c-span-last"><div class="c-abstract">农苗网植物百科,拥有海量花卉<em>图片</em>及名称<em>大全</em>,其中包括各种<em>花的种类</em>:百合, 向日葵, 绿萝, 栀子花, 菠萝蜜, 菊花, 樱桃, 荷花, 金银花, 茉莉花, 龙眼, 玫瑰, ...</div><div class="f13"><a class="c-showurl" href="http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif" style="text-decoration:none;" target="_blank">www.nongmiao.com/baike/ </a><div class="c-tools" data-tools='{"title":"最全的花卉图片及名称大全_花的种类-农苗网植物百科","url":"http://www.baidu.com/link?url=JG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif"}' id="tools_11009966153074485556_3"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span> - <a class="m" data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9d431df4f9e9e690c66c0161e43f1652bd6a00209d0843e97732a435011e1ac26520774d5d2086616de434b99802173471451c18cb8f95dadca855c259f2644676df05662a20edecf5156b034d71ab7a043a1fcb22592ddcfce9a1116dd537226ddacde055b479778f06360bef98418460449edf0&amp;p=8b2a9717cc9611a058ee95345440cc&amp;newp=92759a45d5c250e9469fc7710f0c94231610db2151d0d10439cae1&amp;user=baidu&amp;fm=sc&amp;query=%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&amp;qid=b36ba77e00006afc&amp;p1=3" target="_blank">快照</a> - <a class="m" data-click="{'rsv_comments':'1'}" href="http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DJG5m99p-q-yBxOBJ6fTAybSkhgqZBkBoVXLZW4tXb4JEkyjpk4GmRJ8sySkkZtif&amp;jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%01%E6%9C%80%01%E5%85%A8%01%E7%9A%84%01%E8%8A%B1%E5%8D%89%02%E5%9B%BE%E7%89%87%03%E5%8F%8A%01%E5%90%8D%E7%A7%B0%02%E5%A4%A7%E5%85%A8%03_%02%E8%8A%B1%01%E7%9A%84%01%E7%A7%8D%E7%B1%BB%03-%01%E5%86%9C%01%E8%8B%97%01%E7%BD%91%01%E6%A4%8D%E7%89%A9%01%E7%99%BE%E7%A7%91%01%26q%3D%BB%A8%B5%C4%D6%D6%C0%E0%B4%F3%C8%AB%CD%BC%BC%F8%CD%BC%C6%AC&amp;key=surl" target="_blank">评价</a></div></div></div></div><div class="result c-container " data-click="{'rsv_bdr':'0' ,'rsv_cd':'pt:40520|vLevel:3'}" id="4" srcid="1526" tpl="se_com_default"><h3 class="t"><span class="c-icon c-icon-doc c-gap-icon-right-small"></span><a data-click="{
 			'F':'778717EA',
 			'F1':'BD73F1E4',
 			'F2':'4CA6DE6B',

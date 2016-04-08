@@ -63,7 +63,7 @@ button.c-btn-large{height:30px;_line-height:24px}.c-btn-large .c-icon{margin-top
 <script data-for="result" type="text/javascript">if(!window.A){function G(a){return document.getElementById(a)}window.bds=window.bds||{};bds.util=bds.util||{};bds.util.getWinWidth=function(){return window.document.documentElement.clientWidth};bds.util.setContainerWidth=function(){var f=G("container"),b=G("wrapper"),a=function(c,g){g.className=g.className.replace(c,"")},e=function(c,g){g.className=(g.className+" "+c).replace(/^\s+/g,"")},d=function(c,g){return c.test(g.className)};if(bds.util.getWinWidth()<1207){if(f){a(/\bcontainer_l\b/g,f);if(!d(/\bcontainer_s\b/,f)){e("container_s",f)}}if(b){a(/\bwrapper_l\b/g,b);if(!d(/\bwrapper_s\b/,b)){e("wrapper_s",b)}}bds.comm.containerSize="s"}else{if(f){a(/\bcontainer_s\b/g,f);if(!d(/\bcontainer_l\b/,f)){e("container_l",f)}}if(b){a(/\bwrapper_s\b/g,b);if(!d(/\bwrapper_l\b/,b)){e("wrapper_l",b)}}bds.comm.containerSize="l"}};(function(){var c=[],f=false;var b=function(h,g){try{h.call(g)}catch(i){}},d=function(){this.ids=[];this.has=true;this.list=[];this.logs=[];this.loadTimes=[];this.groupData=[];
 this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window.A);bds.ready=function(g){if(typeof g!="function"){return}if(f){b(g)}else{c.push(g)}};bds.doReady=function(){f=true;while(c.length){b(c.shift())}};bds.clearReady=function(){f=false;c=[]};A.__reset=d;var a=(function(){var g=document.getElementsByTagName("script");return function(){var i=g[g.length-1];if(window.currentScriptElem){i=window.currentScriptElem}var h=i;while(h){if(h.className){if(/(?:^|\s)result(?:-op)?(?:$|\s)/.test(h.className)){if(tplname=h.getAttribute("tpl")){return h}}}h=h.parentNode}}})(),e=function(g,j,h){var l;if(!g.initIndex){l={container:g,data:{},handlers:[]};g.initIndex=A.groupData.length+1;A.groupData.push(l)}else{l=A.groupData[g.initIndex-1]}if(typeof j=="function"){l.handlers.push(j)}else{if(typeof j=="object"){for(var m in j){if(j.hasOwnProperty(m)){l.data[m]=j[m]}}}else{l.data[j]=h}}};A.init=A.setup=function(i,h){if(i===undefined||i===null){return}var g=A._currentContainer||a();if(!g){return
 }e(g,i,h)};A.merge=function(h,g){A.mergeFns.push({tplName:h,fn:g})}})()}function ns_c_pj(a,c){var b=encodeURIComponent(window.document.location.href),f="",d="",j="",i=bds&&bds.comm&&bds.comm.did?bds.comm.did:"";wd=bds.comm.queryEnc,nsclickDomain=bds&&bds.util&&bds.util.domain?bds.util.domain.get("http://nsclick.baidu.com"):"http://nsclick.baidu.com",img=window["BD_PS_C"+(new Date()).getTime()]=new Image(),src="";for(v in a){switch(v){case"title":d=encodeURIComponent(a[v].replace(/<[^<>]+>/g,""));break;case"url":d=encodeURIComponent(a[v]);break;default:d=a[v]}f+=v+"="+d+"&"}j="&mu="+b;src=nsclickDomain+"/v.gif?pid=201&"+(c||"")+f+"path="+b+"&wd="+wd+"&rsv_sid="+(bds.comm.ishome&&bds.comm.indexSid?bds.comm.indexSid:bds.comm.sid)+"&rsv_did="+i+"&t="+new Date().getTime();if(typeof Cookie!="undefined"&&typeof Cookie.get!="undefined"){if(Cookie.get("H_PS_SKIN")&&Cookie.get("H_PS_SKIN")!="0"){src+="&rsv_skin=1"}}else{var h="";try{h=parseInt(document.cookie.match(new RegExp("(^| )H_PS_SKIN=([^;]*)(;|$)"))[2])
-}catch(g){}if(h&&h!="0"){src+="&rsv_skin=1"}}img.src=src;return true}function ns_c(b,a){if(a===true){return ns_c_pj(b,"pj=www&rsv_sample=1&")}return ns_c_pj(b,"pj=www&")};</script><style>html { overflow-x:hidden; }</style><style>html { overflow-x:hidden; }</style><style>html { overflow-x:hidden; }</style><style>html { overflow-x:hidden; }</style></head><body link="#0000cc"><div class="wrapper_l" id="wrapper"><script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script><script>bds.base64 = (function () {var _opt = bds._base64;var _containerAllId = "container",_containerLeftId = "content_left",_containerRightId = "content_right",_BOTTAGLSNAME = "BASE64_BOTTAG",_domain = bds._base64.domain, _imgWatch = [], _domLoaded = [], _data = [], _dataLoaded = [], _finish = [], _hasSpImg = false, _expGroup = 0, _reqTime = 0, _reqEnd = 0, _reqEndL = 0, _rsst = 0, _rest = 0, _dt = 1, _loadState = {}, _hasPreload = 0, _ispdc = false; var preXhrs = [],$ = window.$;if($) {$(window).on("swap_begin",function(){_imgWatch = []; _domLoaded = []; _data = []; _dataLoaded = []; _finish = []; _hasSpImg = false; _expGroup = 0; _reqTime = 0; _reqEnd = 0; _reqEndL = 0; _rsst = 0; _rest = 0; _dt = 1; _ispdc = false; for(var i = 0 ; i < preXhrs.length; i++) {preXhrs[i].abort();}});}var init = function(imgRight,imgLeft,isPreload){var imgArr = imgRight || [], imgArr2 = imgLeft || [];if(window.__IS_IMG_PREFETCH){function filter(img){return !window.__IS_IMG_PREFETCH.hasOwnProperty(img);}imgArr=$.grep(imgArr,filter);imgArr2=$.grep(imgArr2,filter);}if(window.__IMG_PRELOAD && isPreload) {_loadState["cbr"] = 0;_loadState["cbpr"] = 0;_hasPreload = 1; var imgPreloadList = window.__IMG_PRELOAD = {};for(var i = 0; i < imgArr.length; i++) {if(!imgPreloadList.hasOwnProperty(imgArr[i])) {window.__IMG_PRELOAD[imgArr[i]] = true;}}} else if(window.__IMG_PRELOAD && !isPreload) {var tmpArr = [];for(var i = 0; i < imgArr.length; i++){if(!window.__IMG_PRELOAD.hasOwnProperty(imgArr[i])) {tmpArr.push(imgArr[i]);}}imgArr = tmpArr;}if(_opt.b64Exp) {_expGroup = _opt.b64Exp;if(_expGroup == 1){_domain = "http://b2.bdstatic.com/"; _dt = 2;}}_ispdc= _opt.pdc>0 ? true : false;_reqTime = new Date()*1;if(_expGroup==2){if(imgArr2.length>0){_hasSpImg = true;loadJs(_domain + "image?imglist=" + imgArr2.join(",") + "&cb=bds.base64.cbl");}if(!isPreload) {cbl({});}}if(imgArr.length>0){if(isPreload) {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbpr");} else {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbr");}if(_ispdc){if(bds.ready){bds.ready(function(){setTimeout(function(){var _bottag = botTag.get();var logstr = "dt=" + _dt + "&time=" + ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "&bot=" + _bottag + "&rcount=" + imgArr.length;window._B64_REQ_LOG = ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "_" + imgArr.length;if(_expGroup==2 && _reqEndL>0){var _apics = document.getElementById("ala_img_pics");var _lcount = (_apics&&_apics.children)?_apics.children.length:0;logstr += "&time2=" + (_reqEndL-_reqTime) + "&lcount=" + _lcount;}if(Math.random()*100<10){sendLog(logstr);}}, 2000);});}}} else {if(!isPreload) {cbr({});}}if(imgArr.length>0 || imgArr2.length>0){if(!isPreload) {watchReq(imgArr.length);}}};function crc32 (str) {if(typeof str=="string"){var i,crc=0,j=0;for(i=0;i<str.length;i++){j=i%20+1;crc+=str.charCodeAt(i)<<j;}return Math.abs(crc);}return 0;}var loadJs = function (url) {var matchs = url.match(/.*(bds\.base64\.cb[rl])/);if(!matchs){return;}var imglist=url.match(/imglist=([^&]*)/);if(!imglist||!imglist[1]){return;}callback_name=crc32(imglist[1].replace(/,/g,""));callback_name="cb_"+(callback_name+"").substr(Math.max(0,callback_name.length-8),8)+"_0";window[callback_name]=function(data){if(matchs[1] == "bds.base64.cbr") {cbr(data);}else if(matchs[1] == "bds.base64.cbl") {cbl(data); }window[callback_name]=null;};var url = matchs[0].replace(/bds\.base64\.cb[rl]/,callback_name);var a = document.createElement("script");a.setAttribute("type", "text/javascript");a.setAttribute("src", url);a.setAttribute("defer", "defer");a.setAttribute("async", "true");document.getElementsByTagName("head")[0].appendChild(a);};var imgLoad = function(data,side){if(_finish[side]){return; }_finish[side] = true;if(side=="right"){botTag.ot(false); }var imgs = document.getElementById(_expGroup!=1?((side=="left")?_containerLeftId:_containerRightId):_containerAllId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){var b64Id = imgs[i].getAttribute("data-b64-id");if(b64Id){var find = false;if(data.hasOwnProperty(b64Id)) {setSrc(imgs[i],data[b64Id]);find = true;} if(!find){failover(imgs[i]);}}}fail_ie7();};function fail_ie7(){setTimeout(function(){for( var i=0; i<_imgWatch.length; i++ ){var n = _imgWatch[i];if(!n.loaded){failover(n.obj);}}_imgWatch=[];},200);}function setSrc(img,data){try{img.onerror = function(){failover(this);};_imgWatch.push({obj:img,loaded:false});img.onload = function(){for( var i=0; i<_imgWatch.length; i++ ){var m = _imgWatch[i];if(m.obj == this){m.loaded = true;}}};img.src = "data:image\/jpeg;base64," + data;}catch(e){failover(img);}}var failover = function(img){if(img.getAttribute("data-b64-id")!=null && img.getAttribute("data-b64-id")!="" && img.getAttribute("data-src")!=null){img.src = img.getAttribute("data-src");}};var watchReq = function(len){var wt = 1250;if(len<6){wt = 1000;}else if(len>10){ wt = 1500; } setTimeout(function(){ if( !_dataLoaded["right"] ){ var imgs = document.getElementById(_containerRightId).getElementsByTagName("IMG"); for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["right"] = true; botTag.ot(true);}setTimeout(function(){if(_hasSpImg && !_dataLoaded["left"]){var imgs = document.getElementById(_containerLeftId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["left"] = true; }},500);},wt);};var botTag = {ot : function(isInc){var _bottag = botTag.get();if(isInc){if(_bottag<6){_bottag++;}}else{if(_bottag>0){_bottag--;}}if( _bottag>=2 ){var date = new Date();date.setTime(date.getTime() + 24*3600*1000*5);document.cookie = "B64_BOT=1; expires=" + date.toGMTString();}else if( _bottag<1 ){if(document.cookie.match('B64_BOT=1')){document.cookie = "B64_BOT=0;";}}try{if(window.localStorage){window.localStorage[_BOTTAGLSNAME] = _bottag;}}catch(e){}},get : function(){try{if(window.localStorage){var _bottag = window.localStorage[_BOTTAGLSNAME];_bottag = _bottag?parseInt(_bottag):0;}else{return 0;}return _bottag;}catch(e){return 0;}}};var cbr = function(data){_reqEnd = new Date()*1;if(_ispdc && bds.comm && _reqTime>0 && _reqEnd>0){bds.comm.cusval = "b64_" + _dt + "_" + ( _reqEnd - _reqTime );}_loadState["cbr"] = 1;callback(data, "right");};var cbl = function(data){_reqEndL = new Date()*1;callback(data, "left");};var cbpr = function(data){_loadState["cbpr"] = 1;callback(data, "right");};var callback = function(data, side){_dataLoaded[side] = _hasPreload ? (_loadState.cbpr && _loadState.cbr) : true;if(data) {if(_data[side] === undefined) {_data[side] = {}};for(var key in data) {if(data.hasOwnProperty(key)) {_data[side][key] = data[key];}}}if(_domLoaded[side] && _dataLoaded[side]){imgLoad(_data[side], side);}};var setDomLoad = function(side){_domLoaded[side] = true;if(_dataLoaded[side]){imgLoad(_data[side],side);}};var predictImg = false; var sendLog = function (src) {var loghost = "http://nsclick.baidu.com/v.gif?pid=315&rsv_yc_log=3&";var n = "b64log__" + (new Date()).getTime(),c = window[n] = new Image();c.onload = (c.onerror = function () {window[n] = null;});c.src = loghost + src + "&_t=" + new Date()*1; c = null; };cbs = function(data){_rest = new Date()*1;if( (_rest - _rsst) < 1500 ){botTag.ot(false); }else{botTag.ot(true); }};ts = function(){_expGroup = 3;_rsst = new Date()*1;loadJs(_domain + "image?imglist=1241886729_3226161681_58,1072899117_2953388635_58,2469877062_2085031320_58,155831992_309216365_58,2539127170_1607411613_58,1160777122_283857721_58,1577144716_3149119526_58,2339041784_1038484334_58&cb=bds.base64.cbs");};return {init : init,cbl : cbl,cbr : cbr,cbpr : cbpr,setDomLoad : setDomLoad,cbs : cbs,ts : ts,predictImg : predictImg}})();</script><div id="wrapper_wrapper"><style>.G_kKsQ_tg{line-height:24px;margin:0 0 4px 0;font-size:12px;}.G_kKsQ_tg a{color:#666;}.NKRorH{word-break:break-all;cursor:hand;width:270px;font-size:medium;line-height:1.15em;}.G_kKsQ .evSXWd{font-size:1em;}.G_kKsQ .evSXWd font{text-decoration:underline;}.EC_pic a{text-decoration:none;}.G_kKsQ{margin-bottom:1em;}.G_kKsQ .JwhUqB{color:#080;}#ec_im_container .EC_idea1009{position:relative;}.G_kKsQ .IzRoqi,.G_kKsQ .JwhUqB{text-decoration:none;font-size:small;}.G_kKsQ .IzRoqi{color:#000;}.icons{display:inline-block;line-height:12px;margin:0 5px 0 3px;}.icon{display:inline-block;width:16px;height:16px;line-height:16px;vertical-align:text-top;background-image:url(https://ss0.bdstatic.com/94oIbT3kAMgDnd_/xianzhi/wholeIconNew.gif);background-repeat:no-repeat;margin:0 5px 0 0;}.evSXWdip{display:none;white-space:nowrap;background:white;border:1px solid #CCC;color:#575757;font-size:12px;line-height:16px;padding:5px 9px;width:auto!important;*width:140px;position:absolute;text-align:left;box-shadow:1px 1px 1px #DFDFDF;z-index:9;}.evSXWdip_content{font-size:12px;padding:0;line-height:16px;white-space:nowrap;vertical-align:middle;zoom:1;}.evSXWdip_dir{background:url(https://ss0.bdstatic.com/94oIbT3kAMgDnd_/xianzhi/evSXWdip_dir.png) no-repeat 5px 5px;background-position:5px 7px\9;*background-position:5px 5px;width:50px;height:14px;position:absolute;top:-11px;top:-16px\9;*top:-12px;left:0;}.evSXWdip_title{font-size:12px;display:inline-block;height:14px;line-height:14px;margin-bottom:8px;color:#000;}.poNzvb{display:inline-block;}.ec-vertical-baseline{vertical-align:baseline\9!important;}.icon{display:inline-block;width:16px;height:16px;line-height:16px;vertical-align:text-top;background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/biz/ecom/common/api/tip0624/wholeIconNew.gif);background-repeat:no-repeat;margin:0 5px 0 0;}.icon-coupon{background-position:0 0;}.icon-tel{background-position:0 -32px;}.icon-yiliao{background-position:2px -94px;}.icon-vshenfen{background-position:0 -117px;}.ec_vshenfen_level{margin-left:5px;padding-right:59px;background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/biz/ecom/common/api/tip0624/wholeIconNew.gif);background-repeat:no-repeat;display:none;}.ec_vshenfen_level1{background-position:76px -570px;display:inline;padding-right:15px;}.ec_vshenfen_level2{background-position:76px -610px;display:inline;padding-right:27px;}.ec_vshenfen_level3{background-position:76px -650px;display:inline;padding-right:38px;}.ec_vshenfen_level4{background-position:76px -690px;display:inline;padding-right:48px;}.ec_vshenfen_level5{background-position:76px -730px;display:inline;padding-right:59px;}.EC_certify_tip .icon{margin-right:5px;}.EC_certify_tip li{height:18px;line-height:18px;font-size:12px;}.EC_certify_tip li img{vertical-align:top;}.EC_certify_tip_logo,.EC_safeguard_tip_logo{margin-right:5px;}#wrapper_wrapper .container_s .QpZCNd{width:570px;}#wrapper_wrapper .container_l .QpZCNd{width:640px;}</style><!--[if IE 8]><style>.c-input input{padding-top:4px}</style><![endif]--><style> #ala_img_report{display:none;font-size:13px}#ala_img_report a{color:#77c}#ala_img_pics{position:relative}#ala_img_pics input{position:absolute;display:none;bottom:3px;right:3px;border:1px solid #CCC;background:#FAFAFA;width:36px;height:23px;padding:0 4px;text-align:center;cursor:pointer;opacity:.8;white-space:nowrap;filter:alpha(opacity=80)}#ala_img_bigpic{display:inline-block;position:relative;float:left;overflow:hidden;vertical-align:middle;outline:0;_margin-top:1px}#ala_img_hoverview{position:absolute;display:none;width:0;height:0;overflow:hidden;outline:0;box-shadow:#646464 0 0 10px}#ala_img_desc a{color:#666}.op_sp_realtime_bigpic5_img_con{position:relative}.op_sp_realtime_bigpic5_subTitle_0{font-size:1.69em;font-family:Microsoft YaHei;font-weight:400;line-height:22px}.op_sp_realtime_bigpic5_imgTitle{text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;position:absolute;bottom:0;left:0;width:100%;color:#fff;height:30px;line-height:31px;text-indent:10px;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#99000000', endColorstr='#99000000');background-color:rgba(0,0,0,.6)}:root .op_sp_realtime_bigpic5_imgTitle{filter:none;background-color:rgba(0,0,0,.6)}.op_sp_realtime_bigpic5_imgTitle span:hover{text-decoration:underline}.op_sp_realtime_bigpic5_img_con_icon{position:absolute;top:0;right:0;padding:5px}.op_sp_realtime_bigpic5_first_abs{text-indent:2em}.op_sp_realtime_bigpic5_list{padding-top:6px}.op_sp_realtime_bigpic5_list div{line-height:1.7}.op_sp_realtime_bigpic5_list_last span{padding-bottom:5px}.op_sp_realtime_bigpic5_list_date{float:left;padding-right:10px;*padding-right:0;margin-right:8px;border-right:1px solid #ddd;display:inline}.op_sp_realtime_bigpic5_list_info{clear:right}.op_sp_realtime_bigpic5_more-cont-date{display:block;position:relative}.op_sp_realtime_bigpic5_more-cont-dot{display:inline-block;width:5px;height:12px;position:absolute;right:-13px;*right:-3px;_right:-2px;top:4px;*top:0;background:#fff url(//www.baidu.com/aladdin/img/right_timeline/timeline-1.1.png) no-repeat -59px 0;_background-position:-58px 0}.op_sp_realtime_bigpic5_more-cont-date{float:right;width:65px;text-align:right;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.op_sp_realtime_bigpic5_subTitle_con{text-overflow:ellipsis;white-space:nowrap;width:100%}.op_sp_realtime_bigpic5_preBox{text-decoration:none;position:relative;overflow:hidden}.op_sp_realtime_bigpic5_preBox img{vertical-align:top;float:left;height:81px}.op_sp_realtime_bigpic5_preBox b,.op_sp_realtime_bigpic5_preBox span{display:block;position:absolute;bottom:0;left:1px;height:20px;cursor:pointer}.op_sp_realtime_bigpic5_preBox span{display:block;background:#000;opacity:.65;filter:alpha(opacity=65);width:119px}.op_sp_realtime_bigpic5_preBox b{font:400 13px/20px arial;color:#fff;background:url(//www.baidu.com/aladdin/img/sp_realtime/play-1.0.png) no-repeat 4px center;padding-left:20px}.opr-recommends-merge-title{text-decoration:none}.opr-recommends-merge-title:hover{text-decoration:underline}.opr-recommends-merge-imgtext{display:block}.opr-recommends-merge-hide{display:none}.opr-recommends-merge-p{position:relative;_zoom:1}.opr-recommends-merge-item{text-align:center}.opr-recommends-merge-mask{position:absolute;top:0;left:0;width:100%;_background:0 0;background:-webkit-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-moz-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-o-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-ms-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03))}.opr-recommends-merge-more-btn i{cursor:pointer}.opr-recommends-merge-layerbtn{position:absolute;right:0;bottom:0;width:1.23em;height:1.23em;background:url(//www.baidu.com/aladdin/img/right_recommends/layericon.png) no-repeat;_background-image:url(//www.baidu.com/aladdin/img/right_recommends/layericon.gif)}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn2{background-position:-48px 0}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn3{background-color:#999}.opr-recommends-merge-layerbtn1:hover,.opr-recommends-merge-layerbtn2,.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4{background-color:#38f}.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4:hover{background-position:-24px 0}.opr-recommends-merge-layer{padding:4px 9px;width:350px}.opr-recommends-merge-layer table{border-collapse:collapse;border-padding:0}.opr-recommends-merge-layer td{font-size:1em;line-height:1.67;vertical-align:top}.opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-mbGap{margin-bottom:28px}.container_l .opr-recommends-merge-lastspan{display:block}.container_l .cr-content-narrow .opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-dodge-wrap{margin-bottom:24px;font-size:1.1em}</style><script id="head_script">bds.comm.jsversion = "005";bds.comm.domain = "http://www.baidu.com";bds.comm.ubsurl = "https://sp0.baidu.com/5bU_dTmfKgQFm2e88IuM_a/w.gif";bds.comm.tn = "baidu";bds.comm.tng = "organic";bds.comm.queryEnc = "%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC";bds.comm.queryId = "e832b9950007e12e";bds.comm.inter = "";bds.comm.resTemplateName = "baidu";bds.comm.sugHost = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su";bds.comm.ishome = 0;bds.comm.query = "苹果手机7代图片";bds.comm.qid = "e832b9950007e12e";bds.comm.eqid = "e832b9950007e12e0000000356e3c368"; bds.comm._se_click_track_flag = ""; bds.comm.cid = "0";bds.comm.sid = "18880_18962_1436_18241_17942_18560_17000_15328_12173_18016";bds.comm.stoken = "";bds.comm.serverTime = "1457767273";bds.comm.user = "";bds.comm.username = "";bds.comm.userid = "0";bds.comm.__rdNum = "3021";bds.comm.useFavo = "";bds.comm.pinyin = "pingguoshouji7daitupian";bds.comm.favoOn = "";bds.comm.speedInfo = "[{\"ModuleId\":9537,\"TimeCost\":663.57,\"TimeSelf\":14.35},{\"ModuleId\":9540,\"TimeCost\":-1,\"TimeSelf\":-1,\"Idc\":\"0\"},{\"ModuleId\":9527,\"TimeCost\":644.29,\"TimeSelf\":25.28,\"isHitCache\":true,\"SubProcess\":[{\"ProcessId\":9531,\"TimeCost\":542.68,\"isHitCache\":true},{\"ProcessId\":9536,\"TimeCost\":452.06,\"isHitCache\":false},{\"ProcessId\":9535,\"TimeCost\":74.85,\"isHitCache\":false},{\"ProcessId\":9532,\"TimeCost\":544.16}]}]";bds.comm.isDebug = false;bds.comm.iaurl=["http:\/\/www.chinaz.com\/mobile\/2015\/0324\/392648.shtml","http:\/\/product.pconline.com.cn\/mobile\/apple\/575351.html","http:\/\/www.cnmo.com\/hui\/pg7dsmshss\/"];bds.comm.curResultNum = "10";bds.comm.rightResultExist = false;bds.comm.protectNum = 0;bds.comm.zxlNum = 0;bds.comm.pageNum = parseInt('1')||1;bds.comm.pageSize = parseInt('10')||10;bds.comm.encTn = 'b5f3JkJIsj6Nkp61K7j+VjbJ7OUErJg4TyBUUosS2xd2TMacwPKqVf+AZaU';bds.se.mon = {'loadedItems':[],'load':function(){},'srvt':-1};try {bds.se.mon.srvt = parseInt(document.cookie.match(new RegExp("(^| )BDSVRTM=([^;]*)(;|$)"))[2]);document.cookie="BDSVRTM=;expires=Sat, 01 Jan 2000 00:00:00 GMT"; }catch(e){bds.se.mon.srvt=-1; }bdUser = bds.comm.user?bds.comm.user:null;bdQuery = bds.comm.query;bdUseFavo = bds.comm.useFavo;bdFavoOn = bds.comm.favoOn;bdCid = bds.comm.cid;bdSid = bds.comm.sid;bdServerTime = bds.comm.serverTime;bdQid = bds.comm.queryId;bdstoken = bds.comm.stoken;_eclipse = "1"; login_success = [];bds.comm.seinfo = {'fm':'se','T':'1457767273','y':'6DF87EF7','rsv_cache': (bds.se.mon.srvt>0)?0:1 };bds.comm.cgif = "https://sp0.baidu.com/9foIbT3kAMgDnd_/c.gif?t=0&q=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&p=0&pn=1";bds.comm.upn = {"browser":"firefox","ie":"","os":"mac","win":"","browsertype":"firefox"};bds.comm.cookie = null;bds.comm.urlRecFlag = "0";</script><script>(function(){var imgArr = [],imgArr2 = [];imgArr = ["1973062479_3018096844_58","211687290_1430755899_58","2097862550_2298544223_58","3349332480_2690250765_58","3602741124_332666271_58","2356679333_2714464244_58","1008865527_497463874_58","2046945906_174640255_58","2543438042_3836225091_58","2628293858_3860765268_58","2447464013_2502797133_58","281973467_464700541_58"];bds.base64.init(imgArr,imgArr2);})();</script><div class="container_s" id="container"><script>bds.util.setContainerWidth();bds.ready(function(){$(window).on("resize",function(){bds.util.setContainerWidth();bds.event.trigger("se.window_resize");});bds.util.setContainerWidth();});</script><script>if(bds.base64){bds.base64.setDomLoad("right");}</script><div id="content_left" style="padding-left: 15px">
+}catch(g){}if(h&&h!="0"){src+="&rsv_skin=1"}}img.src=src;return true}function ns_c(b,a){if(a===true){return ns_c_pj(b,"pj=www&rsv_sample=1&")}return ns_c_pj(b,"pj=www&")};</script><style>html { overflow-x:hidden; }</style></head><body link="#0000cc"><div class="wrapper_l" id="wrapper"><script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script><script>bds.base64 = (function () {var _opt = bds._base64;var _containerAllId = "container",_containerLeftId = "content_left",_containerRightId = "content_right",_BOTTAGLSNAME = "BASE64_BOTTAG",_domain = bds._base64.domain, _imgWatch = [], _domLoaded = [], _data = [], _dataLoaded = [], _finish = [], _hasSpImg = false, _expGroup = 0, _reqTime = 0, _reqEnd = 0, _reqEndL = 0, _rsst = 0, _rest = 0, _dt = 1, _loadState = {}, _hasPreload = 0, _ispdc = false; var preXhrs = [],$ = window.$;if($) {$(window).on("swap_begin",function(){_imgWatch = []; _domLoaded = []; _data = []; _dataLoaded = []; _finish = []; _hasSpImg = false; _expGroup = 0; _reqTime = 0; _reqEnd = 0; _reqEndL = 0; _rsst = 0; _rest = 0; _dt = 1; _ispdc = false; for(var i = 0 ; i < preXhrs.length; i++) {preXhrs[i].abort();}});}var init = function(imgRight,imgLeft,isPreload){var imgArr = imgRight || [], imgArr2 = imgLeft || [];if(window.__IS_IMG_PREFETCH){function filter(img){return !window.__IS_IMG_PREFETCH.hasOwnProperty(img);}imgArr=$.grep(imgArr,filter);imgArr2=$.grep(imgArr2,filter);}if(window.__IMG_PRELOAD && isPreload) {_loadState["cbr"] = 0;_loadState["cbpr"] = 0;_hasPreload = 1; var imgPreloadList = window.__IMG_PRELOAD = {};for(var i = 0; i < imgArr.length; i++) {if(!imgPreloadList.hasOwnProperty(imgArr[i])) {window.__IMG_PRELOAD[imgArr[i]] = true;}}} else if(window.__IMG_PRELOAD && !isPreload) {var tmpArr = [];for(var i = 0; i < imgArr.length; i++){if(!window.__IMG_PRELOAD.hasOwnProperty(imgArr[i])) {tmpArr.push(imgArr[i]);}}imgArr = tmpArr;}if(_opt.b64Exp) {_expGroup = _opt.b64Exp;if(_expGroup == 1){_domain = "http://b2.bdstatic.com/"; _dt = 2;}}_ispdc= _opt.pdc>0 ? true : false;_reqTime = new Date()*1;if(_expGroup==2){if(imgArr2.length>0){_hasSpImg = true;loadJs(_domain + "image?imglist=" + imgArr2.join(",") + "&cb=bds.base64.cbl");}if(!isPreload) {cbl({});}}if(imgArr.length>0){if(isPreload) {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbpr");} else {loadJs(_domain + "image?imglist=" + imgArr.join(",") + "&cb=bds.base64.cbr");}if(_ispdc){if(bds.ready){bds.ready(function(){setTimeout(function(){var _bottag = botTag.get();var logstr = "dt=" + _dt + "&time=" + ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "&bot=" + _bottag + "&rcount=" + imgArr.length;window._B64_REQ_LOG = ((_reqEnd>0)?(_reqEnd-_reqTime):0) + "_" + imgArr.length;if(_expGroup==2 && _reqEndL>0){var _apics = document.getElementById("ala_img_pics");var _lcount = (_apics&&_apics.children)?_apics.children.length:0;logstr += "&time2=" + (_reqEndL-_reqTime) + "&lcount=" + _lcount;}if(Math.random()*100<10){sendLog(logstr);}}, 2000);});}}} else {if(!isPreload) {cbr({});}}if(imgArr.length>0 || imgArr2.length>0){if(!isPreload) {watchReq(imgArr.length);}}};function crc32 (str) {if(typeof str=="string"){var i,crc=0,j=0;for(i=0;i<str.length;i++){j=i%20+1;crc+=str.charCodeAt(i)<<j;}return Math.abs(crc);}return 0;}var loadJs = function (url) {var matchs = url.match(/.*(bds\.base64\.cb[rl])/);if(!matchs){return;}var imglist=url.match(/imglist=([^&]*)/);if(!imglist||!imglist[1]){return;}callback_name=crc32(imglist[1].replace(/,/g,""));callback_name="cb_"+(callback_name+"").substr(Math.max(0,callback_name.length-8),8)+"_0";window[callback_name]=function(data){if(matchs[1] == "bds.base64.cbr") {cbr(data);}else if(matchs[1] == "bds.base64.cbl") {cbl(data); }window[callback_name]=null;};var url = matchs[0].replace(/bds\.base64\.cb[rl]/,callback_name);var a = document.createElement("script");a.setAttribute("type", "text/javascript");a.setAttribute("src", url);a.setAttribute("defer", "defer");a.setAttribute("async", "true");document.getElementsByTagName("head")[0].appendChild(a);};var imgLoad = function(data,side){if(_finish[side]){return; }_finish[side] = true;if(side=="right"){botTag.ot(false); }var imgs = document.getElementById(_expGroup!=1?((side=="left")?_containerLeftId:_containerRightId):_containerAllId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){var b64Id = imgs[i].getAttribute("data-b64-id");if(b64Id){var find = false;if(data.hasOwnProperty(b64Id)) {setSrc(imgs[i],data[b64Id]);find = true;} if(!find){failover(imgs[i]);}}}fail_ie7();};function fail_ie7(){setTimeout(function(){for( var i=0; i<_imgWatch.length; i++ ){var n = _imgWatch[i];if(!n.loaded){failover(n.obj);}}_imgWatch=[];},200);}function setSrc(img,data){try{img.onerror = function(){failover(this);};_imgWatch.push({obj:img,loaded:false});img.onload = function(){for( var i=0; i<_imgWatch.length; i++ ){var m = _imgWatch[i];if(m.obj == this){m.loaded = true;}}};img.src = "data:image\/jpeg;base64," + data;}catch(e){failover(img);}}var failover = function(img){if(img.getAttribute("data-b64-id")!=null && img.getAttribute("data-b64-id")!="" && img.getAttribute("data-src")!=null){img.src = img.getAttribute("data-src");}};var watchReq = function(len){var wt = 1250;if(len<6){wt = 1000;}else if(len>10){ wt = 1500; } setTimeout(function(){ if( !_dataLoaded["right"] ){ var imgs = document.getElementById(_containerRightId).getElementsByTagName("IMG"); for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["right"] = true; botTag.ot(true);}setTimeout(function(){if(_hasSpImg && !_dataLoaded["left"]){var imgs = document.getElementById(_containerLeftId).getElementsByTagName("IMG");for(var i=0;i<imgs.length;i++){failover(imgs[i]);}_finish["left"] = true; }},500);},wt);};var botTag = {ot : function(isInc){var _bottag = botTag.get();if(isInc){if(_bottag<6){_bottag++;}}else{if(_bottag>0){_bottag--;}}if( _bottag>=2 ){var date = new Date();date.setTime(date.getTime() + 24*3600*1000*5);document.cookie = "B64_BOT=1; expires=" + date.toGMTString();}else if( _bottag<1 ){if(document.cookie.match('B64_BOT=1')){document.cookie = "B64_BOT=0;";}}try{if(window.localStorage){window.localStorage[_BOTTAGLSNAME] = _bottag;}}catch(e){}},get : function(){try{if(window.localStorage){var _bottag = window.localStorage[_BOTTAGLSNAME];_bottag = _bottag?parseInt(_bottag):0;}else{return 0;}return _bottag;}catch(e){return 0;}}};var cbr = function(data){_reqEnd = new Date()*1;if(_ispdc && bds.comm && _reqTime>0 && _reqEnd>0){bds.comm.cusval = "b64_" + _dt + "_" + ( _reqEnd - _reqTime );}_loadState["cbr"] = 1;callback(data, "right");};var cbl = function(data){_reqEndL = new Date()*1;callback(data, "left");};var cbpr = function(data){_loadState["cbpr"] = 1;callback(data, "right");};var callback = function(data, side){_dataLoaded[side] = _hasPreload ? (_loadState.cbpr && _loadState.cbr) : true;if(data) {if(_data[side] === undefined) {_data[side] = {}};for(var key in data) {if(data.hasOwnProperty(key)) {_data[side][key] = data[key];}}}if(_domLoaded[side] && _dataLoaded[side]){imgLoad(_data[side], side);}};var setDomLoad = function(side){_domLoaded[side] = true;if(_dataLoaded[side]){imgLoad(_data[side],side);}};var predictImg = false; var sendLog = function (src) {var loghost = "http://nsclick.baidu.com/v.gif?pid=315&rsv_yc_log=3&";var n = "b64log__" + (new Date()).getTime(),c = window[n] = new Image();c.onload = (c.onerror = function () {window[n] = null;});c.src = loghost + src + "&_t=" + new Date()*1; c = null; };cbs = function(data){_rest = new Date()*1;if( (_rest - _rsst) < 1500 ){botTag.ot(false); }else{botTag.ot(true); }};ts = function(){_expGroup = 3;_rsst = new Date()*1;loadJs(_domain + "image?imglist=1241886729_3226161681_58,1072899117_2953388635_58,2469877062_2085031320_58,155831992_309216365_58,2539127170_1607411613_58,1160777122_283857721_58,1577144716_3149119526_58,2339041784_1038484334_58&cb=bds.base64.cbs");};return {init : init,cbl : cbl,cbr : cbr,cbpr : cbpr,setDomLoad : setDomLoad,cbs : cbs,ts : ts,predictImg : predictImg}})();</script><div id="wrapper_wrapper"><style>.G_kKsQ_tg{line-height:24px;margin:0 0 4px 0;font-size:12px;}.G_kKsQ_tg a{color:#666;}.NKRorH{word-break:break-all;cursor:hand;width:270px;font-size:medium;line-height:1.15em;}.G_kKsQ .evSXWd{font-size:1em;}.G_kKsQ .evSXWd font{text-decoration:underline;}.EC_pic a{text-decoration:none;}.G_kKsQ{margin-bottom:1em;}.G_kKsQ .JwhUqB{color:#080;}#ec_im_container .EC_idea1009{position:relative;}.G_kKsQ .IzRoqi,.G_kKsQ .JwhUqB{text-decoration:none;font-size:small;}.G_kKsQ .IzRoqi{color:#000;}.icons{display:inline-block;line-height:12px;margin:0 5px 0 3px;}.icon{display:inline-block;width:16px;height:16px;line-height:16px;vertical-align:text-top;background-image:url(https://ss0.bdstatic.com/94oIbT3kAMgDnd_/xianzhi/wholeIconNew.gif);background-repeat:no-repeat;margin:0 5px 0 0;}.evSXWdip{display:none;white-space:nowrap;background:white;border:1px solid #CCC;color:#575757;font-size:12px;line-height:16px;padding:5px 9px;width:auto!important;*width:140px;position:absolute;text-align:left;box-shadow:1px 1px 1px #DFDFDF;z-index:9;}.evSXWdip_content{font-size:12px;padding:0;line-height:16px;white-space:nowrap;vertical-align:middle;zoom:1;}.evSXWdip_dir{background:url(https://ss0.bdstatic.com/94oIbT3kAMgDnd_/xianzhi/evSXWdip_dir.png) no-repeat 5px 5px;background-position:5px 7px\9;*background-position:5px 5px;width:50px;height:14px;position:absolute;top:-11px;top:-16px\9;*top:-12px;left:0;}.evSXWdip_title{font-size:12px;display:inline-block;height:14px;line-height:14px;margin-bottom:8px;color:#000;}.poNzvb{display:inline-block;}.ec-vertical-baseline{vertical-align:baseline\9!important;}.icon{display:inline-block;width:16px;height:16px;line-height:16px;vertical-align:text-top;background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/biz/ecom/common/api/tip0624/wholeIconNew.gif);background-repeat:no-repeat;margin:0 5px 0 0;}.icon-coupon{background-position:0 0;}.icon-tel{background-position:0 -32px;}.icon-yiliao{background-position:2px -94px;}.icon-vshenfen{background-position:0 -117px;}.ec_vshenfen_level{margin-left:5px;padding-right:59px;background-image:url(https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/biz/ecom/common/api/tip0624/wholeIconNew.gif);background-repeat:no-repeat;display:none;}.ec_vshenfen_level1{background-position:76px -570px;display:inline;padding-right:15px;}.ec_vshenfen_level2{background-position:76px -610px;display:inline;padding-right:27px;}.ec_vshenfen_level3{background-position:76px -650px;display:inline;padding-right:38px;}.ec_vshenfen_level4{background-position:76px -690px;display:inline;padding-right:48px;}.ec_vshenfen_level5{background-position:76px -730px;display:inline;padding-right:59px;}.EC_certify_tip .icon{margin-right:5px;}.EC_certify_tip li{height:18px;line-height:18px;font-size:12px;}.EC_certify_tip li img{vertical-align:top;}.EC_certify_tip_logo,.EC_safeguard_tip_logo{margin-right:5px;}#wrapper_wrapper .container_s .QpZCNd{width:570px;}#wrapper_wrapper .container_l .QpZCNd{width:640px;}</style><!--[if IE 8]><style>.c-input input{padding-top:4px}</style><![endif]--><style> #ala_img_report{display:none;font-size:13px}#ala_img_report a{color:#77c}#ala_img_pics{position:relative}#ala_img_pics input{position:absolute;display:none;bottom:3px;right:3px;border:1px solid #CCC;background:#FAFAFA;width:36px;height:23px;padding:0 4px;text-align:center;cursor:pointer;opacity:.8;white-space:nowrap;filter:alpha(opacity=80)}#ala_img_bigpic{display:inline-block;position:relative;float:left;overflow:hidden;vertical-align:middle;outline:0;_margin-top:1px}#ala_img_hoverview{position:absolute;display:none;width:0;height:0;overflow:hidden;outline:0;box-shadow:#646464 0 0 10px}#ala_img_desc a{color:#666}.op_sp_realtime_bigpic5_img_con{position:relative}.op_sp_realtime_bigpic5_subTitle_0{font-size:1.69em;font-family:Microsoft YaHei;font-weight:400;line-height:22px}.op_sp_realtime_bigpic5_imgTitle{text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;position:absolute;bottom:0;left:0;width:100%;color:#fff;height:30px;line-height:31px;text-indent:10px;filter:progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#99000000', endColorstr='#99000000');background-color:rgba(0,0,0,.6)}:root .op_sp_realtime_bigpic5_imgTitle{filter:none;background-color:rgba(0,0,0,.6)}.op_sp_realtime_bigpic5_imgTitle span:hover{text-decoration:underline}.op_sp_realtime_bigpic5_img_con_icon{position:absolute;top:0;right:0;padding:5px}.op_sp_realtime_bigpic5_first_abs{text-indent:2em}.op_sp_realtime_bigpic5_list{padding-top:6px}.op_sp_realtime_bigpic5_list div{line-height:1.7}.op_sp_realtime_bigpic5_list_last span{padding-bottom:5px}.op_sp_realtime_bigpic5_list_date{float:left;padding-right:10px;*padding-right:0;margin-right:8px;border-right:1px solid #ddd;display:inline}.op_sp_realtime_bigpic5_list_info{clear:right}.op_sp_realtime_bigpic5_more-cont-date{display:block;position:relative}.op_sp_realtime_bigpic5_more-cont-dot{display:inline-block;width:5px;height:12px;position:absolute;right:-13px;*right:-3px;_right:-2px;top:4px;*top:0;background:#fff url(//www.baidu.com/aladdin/img/right_timeline/timeline-1.1.png) no-repeat -59px 0;_background-position:-58px 0}.op_sp_realtime_bigpic5_more-cont-date{float:right;width:65px;text-align:right;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.op_sp_realtime_bigpic5_subTitle_con{text-overflow:ellipsis;white-space:nowrap;width:100%}.op_sp_realtime_bigpic5_preBox{text-decoration:none;position:relative;overflow:hidden}.op_sp_realtime_bigpic5_preBox img{vertical-align:top;float:left;height:81px}.op_sp_realtime_bigpic5_preBox b,.op_sp_realtime_bigpic5_preBox span{display:block;position:absolute;bottom:0;left:1px;height:20px;cursor:pointer}.op_sp_realtime_bigpic5_preBox span{display:block;background:#000;opacity:.65;filter:alpha(opacity=65);width:119px}.op_sp_realtime_bigpic5_preBox b{font:400 13px/20px arial;color:#fff;background:url(//www.baidu.com/aladdin/img/sp_realtime/play-1.0.png) no-repeat 4px center;padding-left:20px}.opr-recommends-merge-title{text-decoration:none}.opr-recommends-merge-title:hover{text-decoration:underline}.opr-recommends-merge-imgtext{display:block}.opr-recommends-merge-hide{display:none}.opr-recommends-merge-p{position:relative;_zoom:1}.opr-recommends-merge-item{text-align:center}.opr-recommends-merge-mask{position:absolute;top:0;left:0;width:100%;_background:0 0;background:-webkit-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-moz-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-o-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03));background:-ms-radial-gradient(center,closest-side,rgba(255,255,255,0),rgba(0,0,0,.03))}.opr-recommends-merge-more-btn i{cursor:pointer}.opr-recommends-merge-layerbtn{position:absolute;right:0;bottom:0;width:1.23em;height:1.23em;background:url(//www.baidu.com/aladdin/img/right_recommends/layericon.png) no-repeat;_background-image:url(//www.baidu.com/aladdin/img/right_recommends/layericon.gif)}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn2{background-position:-48px 0}.opr-recommends-merge-layerbtn1,.opr-recommends-merge-layerbtn3{background-color:#999}.opr-recommends-merge-layerbtn1:hover,.opr-recommends-merge-layerbtn2,.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4{background-color:#38f}.opr-recommends-merge-layerbtn3:hover,.opr-recommends-merge-layerbtn4:hover{background-position:-24px 0}.opr-recommends-merge-layer{padding:4px 9px;width:350px}.opr-recommends-merge-layer table{border-collapse:collapse;border-padding:0}.opr-recommends-merge-layer td{font-size:1em;line-height:1.67;vertical-align:top}.opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-mbGap{margin-bottom:28px}.container_l .opr-recommends-merge-lastspan{display:block}.container_l .cr-content-narrow .opr-recommends-merge-lastspan{display:none}.opr-recommends-merge-dodge-wrap{margin-bottom:24px;font-size:1.1em}</style><script id="head_script">bds.comm.jsversion = "005";bds.comm.domain = "http://www.baidu.com";bds.comm.ubsurl = "https://sp0.baidu.com/5bU_dTmfKgQFm2e88IuM_a/w.gif";bds.comm.tn = "baidu";bds.comm.tng = "organic";bds.comm.queryEnc = "%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC";bds.comm.queryId = "e832b9950007e12e";bds.comm.inter = "";bds.comm.resTemplateName = "baidu";bds.comm.sugHost = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su";bds.comm.ishome = 0;bds.comm.query = "苹果手机7代图片";bds.comm.qid = "e832b9950007e12e";bds.comm.eqid = "e832b9950007e12e0000000356e3c368"; bds.comm._se_click_track_flag = ""; bds.comm.cid = "0";bds.comm.sid = "18880_18962_1436_18241_17942_18560_17000_15328_12173_18016";bds.comm.stoken = "";bds.comm.serverTime = "1457767273";bds.comm.user = "";bds.comm.username = "";bds.comm.userid = "0";bds.comm.__rdNum = "3021";bds.comm.useFavo = "";bds.comm.pinyin = "pingguoshouji7daitupian";bds.comm.favoOn = "";bds.comm.speedInfo = "[{\"ModuleId\":9537,\"TimeCost\":663.57,\"TimeSelf\":14.35},{\"ModuleId\":9540,\"TimeCost\":-1,\"TimeSelf\":-1,\"Idc\":\"0\"},{\"ModuleId\":9527,\"TimeCost\":644.29,\"TimeSelf\":25.28,\"isHitCache\":true,\"SubProcess\":[{\"ProcessId\":9531,\"TimeCost\":542.68,\"isHitCache\":true},{\"ProcessId\":9536,\"TimeCost\":452.06,\"isHitCache\":false},{\"ProcessId\":9535,\"TimeCost\":74.85,\"isHitCache\":false},{\"ProcessId\":9532,\"TimeCost\":544.16}]}]";bds.comm.isDebug = false;bds.comm.iaurl=["http:\/\/www.chinaz.com\/mobile\/2015\/0324\/392648.shtml","http:\/\/product.pconline.com.cn\/mobile\/apple\/575351.html","http:\/\/www.cnmo.com\/hui\/pg7dsmshss\/"];bds.comm.curResultNum = "10";bds.comm.rightResultExist = false;bds.comm.protectNum = 0;bds.comm.zxlNum = 0;bds.comm.pageNum = parseInt('1')||1;bds.comm.pageSize = parseInt('10')||10;bds.comm.encTn = 'b5f3JkJIsj6Nkp61K7j+VjbJ7OUErJg4TyBUUosS2xd2TMacwPKqVf+AZaU';bds.se.mon = {'loadedItems':[],'load':function(){},'srvt':-1};try {bds.se.mon.srvt = parseInt(document.cookie.match(new RegExp("(^| )BDSVRTM=([^;]*)(;|$)"))[2]);document.cookie="BDSVRTM=;expires=Sat, 01 Jan 2000 00:00:00 GMT"; }catch(e){bds.se.mon.srvt=-1; }bdUser = bds.comm.user?bds.comm.user:null;bdQuery = bds.comm.query;bdUseFavo = bds.comm.useFavo;bdFavoOn = bds.comm.favoOn;bdCid = bds.comm.cid;bdSid = bds.comm.sid;bdServerTime = bds.comm.serverTime;bdQid = bds.comm.queryId;bdstoken = bds.comm.stoken;_eclipse = "1"; login_success = [];bds.comm.seinfo = {'fm':'se','T':'1457767273','y':'6DF87EF7','rsv_cache': (bds.se.mon.srvt>0)?0:1 };bds.comm.cgif = "https://sp0.baidu.com/9foIbT3kAMgDnd_/c.gif?t=0&q=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&p=0&pn=1";bds.comm.upn = {"browser":"firefox","ie":"","os":"mac","win":"","browsertype":"firefox"};bds.comm.cookie = null;bds.comm.urlRecFlag = "0";</script><script>(function(){var imgArr = [],imgArr2 = [];imgArr = ["1973062479_3018096844_58","211687290_1430755899_58","2097862550_2298544223_58","3349332480_2690250765_58","3602741124_332666271_58","2356679333_2714464244_58","1008865527_497463874_58","2046945906_174640255_58","2543438042_3836225091_58","2628293858_3860765268_58","2447464013_2502797133_58","281973467_464700541_58"];bds.base64.init(imgArr,imgArr2);})();</script><div class="container_s" id="container"><script>bds.util.setContainerWidth();bds.ready(function(){$(window).on("resize",function(){bds.util.setContainerWidth();bds.event.trigger("se.window_resize");});bds.util.setContainerWidth();});</script><script>if(bds.base64){bds.base64.setDomLoad("right");}</script><script type="text/javascript">bds.comm.search_tool = {};bds.comm.search_tool.sl_lang = "";bds.comm.search_tool.st = "";bds.comm.search_tool.et = "";bds.comm.search_tool.stftype = "";bds.comm.search_tool.ft = "";bds.comm.search_tool.si = "";bds.comm.search_tool.exact = "";bds.comm.search_tool.oneDay = "1457680873";bds.comm.search_tool.oneWeek = "1457162473";bds.comm.search_tool.oneMonth = "1455261673";bds.comm.search_tool.oneYear = "1426144873";bds.comm.search_tool.thisDay = "1457625600";bds.comm.search_tool.thisWeek = "1457107200";bds.comm.search_tool.thisMonth = "1455206400";bds.comm.search_tool.thisYear = "1426089600";</script><div id="content_left" style="padding-left: 15px">
 <div class="result-op c-container xpath-log" data-click="{'p1':'1','rsv_bdr':'0','fm':'alop',rsv_stl:'2'}" data-op="{'y':'FF7FBFFE'}" id="1" mu="http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;ie=gbk&amp;word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC" srcid="4" tpl="sp_img">
 <style>
     .op_img_content{position:relative;width:538px;}
@@ -78,6 +78,438 @@ this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window
 <a id="ala_img_hoverview" target="_blank"></a>
 </div>
 <span class="c-showurl" id="ala_img_desc"><span class="c-showurl">image.baidu.com </span><span class="c-tools" data-tools="{title:'',url:'http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;ie=gbk&amp;word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC'}" id="tools_17417989391119826190_1"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></span> - <a href="http://image.baidu.com/search/index?tn=baiduimage&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;ie=gbk&amp;word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&amp;&amp;fr=ala&amp;ori_query=%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA7%E4%BB%A3%E5%9B%BE%E7%89%87&amp;ala=0&amp;alatpl=sp&amp;pos=3" target="_blank">查看全部776,579张图片</a></span>
+<script data-compress="off">
+    A.setup( {
+        'imgUrl': 'https://sp0.baidu.com/70cFfyqpA1gCo2Kml5_Y_D3'
+    });
+</script>
+<script>
+      A.setup(function(){
+          var me = this;
+
+          if(typeof(BD)!="undefined"){BD.IMG={}}else{BD={};BD.IMG={}};BD.IMG.fmdata="alop";BD.IMG.query="%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA7%E4%BB%A3%E5%9B%BE%E7%89%87";BD.IMG.boxwidth=538;BD.IMG.boxheight=105;BD.IMG.bleed=5;BD.IMG.margin=0;          BD.IMG.pics = [[700,393,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=388816586,730568735&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=188088715980&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=2754351939,641664571&cs=388816586,730568735&objurl=http%3A%2F%2Fimage.cnsc8.com%2Ftupian_201503%2FBig_Pic%2FCl5MHYnVvD.jpg&bdtype=0&simid=4181611872,615684926","","http://image.cnsc8.com/tupian_201503/Big_Pic/Cl5MHYnVvD.jpg","","http://img1.imgtn.bdimg.com/it/u=388816586,730568735&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉7浠ｆ墜鏈哄浘鐗嘷绱犳潗澶╀笅","287713717a069deebbf321e1248ff5e1", "1457767273"],[1000,563,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3256437698,2740429284&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=35341548880&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=2904359539,2437687918&cs=3256437698,2740429284&objurl=http%3A%2F%2Fi2.qihuiwang.com%2Fweb%2F2015-02-28%2F0149075f13ca32b6b4.jpg&bdtype=0&simid=3449594756,359644484","","http://i2.qihuiwang.com/web/2015-02-28/0149075f13ca32b6b4.jpg","","http://img4.imgtn.bdimg.com/it/u=3256437698,2740429284&fm=116&gp=0.jpg","","","","1970-01-01 08:00","iphone7浠 涔堟椂鍊欎笂甯  鑻规灉6s浠 涔堟椂鍊欎笂甯 ","5c6fe2074e06b1943305da44c7e21113", "1457767273"],[600,402,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1885037232,3664609961&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=180463305330&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=1123560161,1533901832&cs=1885037232,3664609961&objurl=http%3A%2F%2Fimg15.3lian.com%2F2015%2Ff2%2F118%2Fd%2F83.jpg&bdtype=0&simid=4199812023,720170250","","http://img15.3lian.com/2015/f2/118/d/83.jpg","","http://img1.imgtn.bdimg.com/it/u=1885037232,3664609961&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉7浠ｆ墜鏈哄浘鐗 ","81f02168e019e7ebfe11f12402ab0653", "1457767273"],[600,449,"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3155299773,1818669289&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=55826757800&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=1246363307,4284155941&cs=3155299773,1818669289&objurl=http%3A%2F%2Fstatic.oeofo.com%2F201502%2F20%2F09-20-32-13-11332.jpg&bdtype=0&simid=4118360811,735014297","","http://static.oeofo.com/201502/20/09-20-32-13-11332.jpg","","http://img0.imgtn.bdimg.com/it/u=3155299773,1818669289&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉鎵嬫満","492bb6387ea02227fe7c4e974c74a329", "1457767273"],[600,400,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=689132319,210115728&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=165730029740&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=3146122622,1242257590&cs=689132319,210115728&objurl=http%3A%2F%2Fimage.kejixun.com%2F2015%2F1018%2F20151018114942674.jpg&bdtype=0&simid=0,0","","http://image.kejixun.com/2015/1018/20151018114942674.jpg","","http://img3.imgtn.bdimg.com/it/u=689132319,210115728&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉iphone7姒傚康鎵嬫満鍥剧墖","4c5c6ab4cae11bc391d1fb7fc0b15e12", "1457767273"],[500,281,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1618251693,1639569436&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=158880510140&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=1063709358,2494722084&cs=1618251693,1639569436&objurl=http%3A%2F%2Fwww.mba-mba.cn%2Fuploads%2Fallimg%2F150628%2F01111W526_1.jpg&bdtype=0&simid=3439431409,301973980","","http://www.mba-mba.cn/uploads/allimg/150628/01111W526_1.jpg","","http://img1.imgtn.bdimg.com/it/u=1618251693,1639569436&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉鎵嬫満7浠 涔堟椂鍊欎笂甯 ","68e02efc21cf393ad5c7299529fa5d0c", "1457767273"],[560,329,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3962603594,1361718735&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=26479537150&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=958741952,3530588955&cs=3962603594,1361718735&objurl=http%3A%2F%2Fwww.southmoney.com%2Fuploads%2Fallimg%2F150910%2F1G6362594-2.jpg&bdtype=0&simid=0,0","","http://www.southmoney.com/uploads/allimg/150910/1G6362594-2.jpg","","http://img1.imgtn.bdimg.com/it/u=3962603594,1361718735&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉7浠 涔堟椂鍊欏湪涓浗涓婂競?","491cfc289eb54dff2af12498ef1598c5", "1457767273"],[520,357,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1289878162,1028265496&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=63753977320&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=2975823874,2286247246&cs=1289878162,1028265496&objurl=http%3A%2F%2Fwww.xker.com%2Fxkerfiles%2Fallimg%2F1411%2F2054554J8-0.jpg&bdtype=0&simid=4196413711,627854748","","http://www.xker.com/xkerfiles/allimg/1411/2054554J8-0.jpg","","http://img2.imgtn.bdimg.com/it/u=1289878162,1028265496&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鍦╥phone7涓 ,鑻规灉鍙兘璁剧疆涓や釜鎺ュ彛","35382a1c21d120122b2ea95ab4ebfbfd", "1457767273"],[1440,900,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2876157594,2056492619&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=92955333130&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=3860815856,2840431615&cs=2876157594,2056492619&objurl=http%3A%2F%2Fimg.cnmo-img.com.cn%2F946%2F945555.jpg&bdtype=0&simid=4257303181,742806830","","http://img.cnmo-img.com.cn/946/945555.jpg","","http://img1.imgtn.bdimg.com/it/u=2876157594,2056492619&fm=116&gp=0.jpg","","","","1970-01-01 08:00","銆愯嫻鏋 7浠ｆ墜鏈哄浘鐗噟iphone7浠ｆ墜鏈哄浘鐗囥  -鎵嬫満涓浗","40a37385135b4e41487196a8d8da23af", "1457767273"],[550,309,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2135511921,1658410282&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=60045069480&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=81299874,877437877&cs=2135511921,1658410282&objurl=http%3A%2F%2Fwww.cnr.cn%2F2014jkpd%2Fjkgdxw%2F20150823%2FW020150823462531762506.jpg&bdtype=0&simid=3466902639,259628940","","http://www.cnr.cn/2014jkpd/jkgdxw/20150823/W020150823462531762506.jpg","","http://img1.imgtn.bdimg.com/it/u=2135511921,1658410282&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉7浠ｆ墜鏈哄浘鐗囨璧  鑷充粖鏈 璧炵殑iphone7姒傚康浣滃搧","82cbc7057a778c108e225dd1035cd853", "1457767273"],[902,597,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1591151040,540666808&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=60226945240&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=1791715199,1295413072&cs=1591151040,540666808&objurl=http%3A%2F%2Fwww.nanrenwo.net%2Fuploads%2Fallimg%2F120913%2F10-1209131141124Q.jpg&bdtype=0&simid=3345516378,283586469","","http://www.nanrenwo.net/uploads/allimg/120913/10-1209131141124Q.jpg","","http://img4.imgtn.bdimg.com/it/u=1591151040,540666808&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉鍙戝竷绗 7浠pod nano銆愮粍鍥俱  ","9d67f1d47705ce98bb933e125cfdce9a", "1457767273"],[1024,890,"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2455061547,3912522199&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=463606770&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=4292294538,130063542&cs=2455061547,3912522199&objurl=http%3A%2F%2Fpic33.nipic.com%2F20131010%2F9885883_105317220002_2.jpg&bdtype=0&simid=3449330959,442997676","","http://pic33.nipic.com/20131010/9885883_105317220002_2.jpg","","http://img0.imgtn.bdimg.com/it/u=2455061547,3912522199&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉 鑻规灉鎵嬫満 鑻规灉浜斾唬","73914dd8b398048fdbfd2638ac75f632", "1457767273"],[500,339,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2719175128,3593733622&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=69186602210&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=534416520,4136084839&cs=2719175128,3593733622&objurl=http%3A%2F%2Fphoto.l99.com%2Fbigger%2F01%2F1384130719175_16p1xr.jpg&bdtype=0&simid=3352801531,405714989","","http://photo.l99.com/bigger/01/1384130719175_16p1xr.jpg","","http://img4.imgtn.bdimg.com/it/u=2719175128,3593733622&fm=116&gp=0.jpg","","","","1970-01-01 08:00","璇ュ叕鍙稿笇鏈涘 熸宸╁浐鍏跺湪鏅鸿兘鎵嬫満甯傚満浠介涓婂鑻规灉鐨 ","8f351aae1ac0a94201cfd5f138c5d1f3", "1457767273"],[500,375,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=68253038,912010039&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=148144143070&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=2851876692,2597018277&cs=68253038,912010039&objurl=http%3A%2F%2Fimg2.zol.com.cn%2Fproduct%2F124%2F17%2FceG0PyUYdoA8U.jpg&bdtype=0&simid=3403240583,309976524","","http://img2.zol.com.cn/product/124/17/ceG0PyUYdoA8U.jpg","","http://img3.imgtn.bdimg.com/it/u=68253038,912010039&fm=116&gp=0.jpg","","","","1970-01-01 08:00","澶╂触鑻规灉鎵嬫満鎶ヤ环_澶╂触鑻规灉鎵嬫満琛屾儏","2412cf37e3732efd475373c4f9a186eb", "1457767273"],[447,310,"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3291693615,352654955&fm=111&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=181840178330&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=3004304623,3058478682&cs=3291693615,352654955&objurl=http%3A%2F%2Fimg.bbs.ejinqiao.com%2FEditorUpload%2Fimage%2F2016-03%2F1603050546460410.jpg&bdtype=11&simid=0,0","","http://img.bbs.ejinqiao.com/EditorUpload/image/2016-03/1603050546460410.jpg","","http://img2.imgtn.bdimg.com/it/u=3291693615,352654955&fm=111&gp=0.jpg","","","","1970-01-01 08:00","鍢庡暒鑻规灉鍥剧墖 鑻规灉7浠ｆ墜鏈哄浘鐗 ","35961b01efb8471f36c48b5d080de0e2", "1457767273"],[478,301,"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1241003707,4110625941&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=109829737380&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=4140651328,3206138951&cs=1241003707,4110625941&objurl=http%3A%2F%2Fwww.bjzq.com.cn%2FUploadImgs%2F2015_09%2F20150928_135J53342-0.jpg&bdtype=0&simid=0,0","","http://www.bjzq.com.cn/UploadImgs/2015_09/20150928_135J53342-0.jpg","","http://img0.imgtn.bdimg.com/it/u=1241003707,4110625941&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉7浠ｆ墜鏈轰粈涔堟椂鍊欎笂甯 ?","8c708b58cae19072c07dd5b96f1e437d", "1457767273"],[550,309,"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3573489417,4106746912&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=10316065100&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=1105357055,3075504329&cs=3573489417,4106746912&objurl=http%3A%2F%2Fwww.nx.cninfo.net%2Ftrsnew%2Fnxweb%2Fnews%2Fsylb%2F201503%2FW020150303311662829538.jpg&bdtype=0&simid=3492025278,241870404","","http://www.nx.cninfo.net/trsnew/nxweb/news/sylb/201503/W020150303311662829538.jpg","","http://img3.imgtn.bdimg.com/it/u=3573489417,4106746912&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉7浠ｆ墜鏈哄浘鐗囨璧  鑷充粖鏈 璧炵殑iphone7姒傚康浣滃搧","89996534c326a57f701d4480301f7997", "1457767273"],[710,532,"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=109543492,1728112279&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=82127526360&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=2963311637,89437984&cs=109543492,1728112279&objurl=http%3A%2F%2Fimage6.huangye88.com%2F2014%2F11%2F18%2Fbc6489539547cd38.jpg&bdtype=0&simid=3600240727,645009559","","http://image6.huangye88.com/2014/11/18/bc6489539547cd38.jpg","","http://img5.imgtn.bdimg.com/it/u=109543492,1728112279&fm=116&gp=0.jpg","","","","1970-01-01 08:00","7鎶樹紭鎯犱績閿    iphone6","f00c4d2fdcc87553d4f4db1750dd132e", "1457767273"],[600,458,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2696752672,4045599961&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=186487603720&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=2776601215,3851608460&cs=2696752672,4045599961&objurl=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2015%2F334%2F54%2F7DT5L1R8T3RH_b33tnufsmv4jpg_600.jpg&bdtype=0&simid=0,0","","http://image.tianjimedia.com/uploadImages/2015/334/54/7DT5L1R8T3RH_b33tnufsmv4jpg_600.jpg","","http://img1.imgtn.bdimg.com/it/u=2696752672,4045599961&fm=116&gp=0.jpg","","","","1970-01-01 08:00","鑻规灉鏅鸿兘鎵嬫満iphone 7鎴栧彇娑 3.5mm鑰虫満鎻掑彛","e15c03968f21b08fbdbd22a17c5afd5d", "1457767273"],[960,589,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1018513976,3099690860&fm=116&gp=0.jpg","http://image.baidu.com/search/detail?ct=503316480&z=0&tn=baiduimagedetail&ipn=d&cl=2&cm=1&sc=0&lm=-1&ie=gbk&pn=0&rn=1&di=57659378040&ln=30&word=%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&os=1121599473,204403887&cs=1018513976,3099690860&objurl=http%3A%2F%2Fimg006.hc360.cn%2Fm1%2FM03%2F0E%2F00%2FwKhQcFRoj8uEJj3UAAAAAH23YgU004.jpg&bdtype=0&simid=3263732017,157800783","","http://img006.hc360.cn/m1/M03/0E/00/wKhQcFRoj8uEJj3UAAAAAH23YgU004.jpg","","http://img4.imgtn.bdimg.com/it/u=1018513976,3099690860&fm=116&gp=0.jpg","","","","1970-01-01 08:00","銆愯嫻鏋 6浠 4.7/5","ef37279eada251c0f613d9f65bcd180a", "1457767273"]];
+
+          BD.IMG.err = function(obj){
+              obj.style.display ="none";
+              obj.parentNode.style.display ="none";
+          };
+          BD.IMG.disabledInput = [];
+          BD.IMG.actions = {
+              ini : function(){
+                  var titleHtml = "<a href='#' onclick='return BD.IMG.actions.showReport();'>举报图片</a>";
+                  document.getElementById("ala_img_report").innerHTML = titleHtml;
+                  BD.IMG.hideReportDiv();
+                  return false;
+              },
+              showReport : function(){
+                  var titleHtml = "请举报图片&nbsp;-&nbsp;<a href='#' onclick='return BD.IMG.actions.ini();'>取消</a>&nbsp;";
+                  document.getElementById("ala_img_report").innerHTML = titleHtml;
+
+                  BD.IMG.showReportDiv();
+                  return false;
+              },
+              reportPic : function (f,u,di,q,_this){
+                  _this.value="已报";
+                  _this.disabled = true;
+                  BD.IMG.disabledInput.push(di);
+                  var matches = document.cookie.match(/BAIDUID=([^;]+)/);
+                  var cookie = "";
+                  if(matches !=null){
+                      cookie = "&uid="+matches[1];
+                  }
+
+                  var img = new Image();
+                  img.src = me.data.imgUrl + "/4.gif?p=18&fr=ala&hostfr=imgstat&u="+u+"&f="+f+"&di="+di+"&q="+q+cookie+"&"+new Date()*Math.random();
+                  this.hideReport();
+              },
+              hideReport : function(){
+                  var picNum = (document.getElementById("ala_img_pics").getElementsByTagName("a").length-1)/2;
+                  var continueHtml = "感谢您的举报&nbsp;-&nbsp;<a href='#'  onclick='return BD.IMG.actions.showReport();'>继续举报</a>";
+                  var endHtml = "感谢您的举报";
+                  var reportLength = BD.IMG.disabledInput.length;
+                  if(reportLength<picNum&&reportLength>0){
+                      document.getElementById("ala_img_report").innerHTML = continueHtml;
+                  }else if(reportLength ==0){
+                      this.ini();
+                  }else{
+                      document.getElementById("ala_img_report").innerHTML = endHtml;
+                  }
+                  BD.IMG.hideReportDiv();
+                  return false;
+              }
+          };
+          BD.IMG.showReportDiv = function(){
+              var reportdivs = document.getElementById("ala_img_pics").getElementsByTagName("input");
+              for(var i=0;i<reportdivs.length;i++){
+                  var rd = reportdivs[i];
+                  if(rd!=null){rd.style.display = "block"};
+              };
+              BD.IMG.reporting = 1;
+          };
+          BD.IMG.hideReportDiv = function(){
+              var reportdivs = document.getElementById("ala_img_pics").getElementsByTagName("input");
+              for(var i=0;i<reportdivs.length;i++){
+                  var rd = reportdivs[i];
+                  if(rd!=null){rd.style.display = "none"};
+              };
+              BD.IMG.reporting = 0;
+          };
+          //图像两端对齐处理
+          BD.IMG.justify = function(pics,images,boxwidth,boxheight,bleed,margin){
+              //缩放图片
+              var scaleimg = function(){
+                  var totalwidth = 0;
+                  for(var i=0;i<pics.length;i++){
+                      var scale = boxheight/pics[i][1];
+                      pics[i][0] = Math.round(pics[i][0] * scale);
+                      pics[i][1] = Math.round(pics[i][1] * scale);
+                      totalwidth += pics[i][0] + ((i==pics.length - 1) ? 0 : margin);
+                  };
+                  //容器超宽处理
+                  if(boxwidth > totalwidth){
+                      var lack = boxwidth - totalwidth;
+                      var last = pics.length - 1;
+                      var scale = (pics[last][0]+lack)/pics[last][0];
+                      pics[last][0] = pics[last][0]+lack;
+                      pics[last][1] = Math.round(pics[last][1]*scale);
+                  };
+              };
+
+              //计算实际显示宽高
+              var calculate = function(){
+                  var totalwidth = 0;
+                  var totalshowwidth = 0;
+                  //计算剪裁值
+                  for(var i=0;i<pics.length;i++){
+                      totalwidth += pics[i][0] + margin;
+
+                      if(totalwidth >= boxwidth){
+                          //最后一张图片不计算间距
+                          totalwidth = totalwidth - margin;
+                          var cut = Math.ceil((totalwidth - boxwidth) / (i + 1));
+                          var paddingleft = Math.round(cut/2);
+                          var paddingtop = 0;
+                          //检查是否超出裁剪界限
+                          if(paddingleft <= bleed){
+                              for(var index=0;index<(i+1);index++){
+                                  //显示的宽度
+                                  var showwidth = pics[index][0] - cut;
+                                  totalshowwidth += showwidth;
+                                  if(index!=i){totalshowwidth += margin};
+                                  //显示的高度
+                                  var showheight = boxheight;
+                                  paddingtop = Math.round((pics[index][1] - boxheight)/2);
+                                  //图片间距
+                                  var marginleft = margin;
+                                  if(index==0){marginleft = 0};
+                                  //生成图片数据
+                                  var imgobj = {};
+                                  imgobj.rw = pics[index][0];
+                                  imgobj.rh = pics[index][1];
+                                  imgobj.sw = showwidth;
+                                  imgobj.sh = showheight;
+                                  imgobj.pl = paddingleft;
+                                  imgobj.src = pics[index][2];
+                                  imgobj.href = pics[index][3];
+                                  imgobj.fromurl = pics[index][4];
+                                  imgobj.objurl = pics[index][5];
+                                  imgobj.imgid = pics[index][6];
+                                  imgobj.query = pics[index][7];
+                                  //imgobj.hsrc = pics[index][8];
+                                  imgobj.b64sid=pics[index][8]?pics[index][8]:pics[index][9];
+                                  imgobj.os = pics[index][10];
+                                  imgobj.bdtime = pics[index][11] ? pics[index][11] : "1970-01-01 08:00";
+                                  imgobj.imgdesc = pics[index][12];
+                                  imgobj.di = pics[index][13];
+                                  imgobj.sec = pics[index][14];
+                                  imgobj.ml = marginleft;
+                                  images.push(imgobj);
+                              }
+                              //最终宽度修正(修正Math.round产生的误差)
+                              var widthfixnum = boxwidth - totalshowwidth;
+                              if(widthfixnum > i + 1){widthfixnum = i + 1};
+                              //只有出现裁剪情况的时候才修正
+                              if(paddingleft > 0){
+                                  for(var f=0;f<widthfixnum;f++){
+                                      images[f].sw++;
+                                      images[f].pl--;
+                                  }
+                              }
+                              return 0;
+                          }else{
+                              return paddingleft - bleed;
+                          }
+                          break;
+                      }
+                  }
+              };
+              scaleimg();
+              return calculate();
+          };
+
+          var parseDate= function (source) {
+            var reg = new RegExp("^\\d+(\\-|\\/)\\d+(\\-|\\/)\\d+\x24");
+            if ('string' == typeof source) {
+              if (reg.test(source) || isNaN(Date.parse(source))) {
+                var d = source.split(/ |T/),
+                  d1 = d.length > 1
+                    ? d[1].split(/[^\d]/)
+                    : [0, 0, 0],
+                  d0 = d[0].split(/[^\d]/);
+                return new Date(d0[0] - 0,
+                  d0[1] - 1,
+                  d0[2] - 0,
+                  d1[0] - 0,
+                  d1[1] - 0,
+                  d1[2] - 0);
+              } else {
+                return new Date(source);
+              }
+            }
+
+            return new Date();
+          };
+          var timeCalculate= function(time){
+            var str;
+            if(time < 1){
+              str = "1小时内";
+            }else if(time < 24){
+              str = Math.round( time )+"小时前";
+            }else if(time < 24 * 8){
+              str = Math.round((time - time % 24) / 24)+"天前";
+            }
+            return str;
+          };
+
+          //rsv_dit计数
+          var rsv_dit_count = 0;
+
+          BD.IMG.appendpic = function(box,img){
+              //左侧base64实验：根据是否有base64 ID决定图片如何渲染输出
+              var srcstr = "", bdtime;
+              if(img.b64sid!=""){
+                  BD.IMG.base64Exp = true;
+                  srcstr = "data-b64-id='" + img.b64sid + "' data-src='" + img.src + "'";
+              }else{
+                  srcstr = "src='" + img.src + "'";
+              }
+
+              if(img.bdtime){
+                bdtime = timeCalculate((new Date().getTime()- parseDate(img.bdtime.replace(/-/g,"/")).getTime())/(1000*3600));
+              }
+              if(bdtime){
+                box.innerHTML = box.innerHTML + "<a style='display:inline-block;position:relative;overflow:hidden;vertical-align:middle;outline:none;margin-left:"+img.ml+"px;width:"+img.sw+"px;height:"+img.sh+"px;' target='_blank' data-objurl='" + img.objurl + "' data-di='" + img.di + "' data-sec='" + img.sec + "' data-click={rsv_cit:1} href='"+img.href+"&fr=ala&ori_query="+BD.IMG.query+"&ala=0&alatpl=sp&pos=1"+"'><img style='height:"+img.rh+"px;width:"+img.rw+"px;margin-left:-"+img.pl+"px;' onerror='BD.IMG.err(this)' " + srcstr + "/><input type='button' class='OP_LOG_BTN' value='举报' onclick=\"BD.IMG.actions.reportPic('"+img.fromurl+"','"+img.objurl+"','"+img.imgid+"','"+BD.IMG.query+"',this);return false;\"/></a>";
+                rsv_dit_count += 1;
+              }else{
+
+              box.innerHTML = box.innerHTML + "<a style='display:inline-block;position:relative;overflow:hidden;vertical-align:middle;outline:none;margin-left:"+img.ml+"px;width:"+img.sw+"px;height:"+img.sh+"px;' target='_blank' data-objurl='" + img.objurl + "' data-di='" + img.di + "' data-sec='" + img.sec + "' href='"+img.href+"&fr=ala&ori_query="+BD.IMG.query+"&ala=0&alatpl=sp&pos=1"+"'><img style='height:"+img.rh+"px;width:"+img.rw+"px;margin-left:-"+img.pl+"px;' onerror='BD.IMG.err(this)' " + srcstr + " /><input type='button' class='OP_LOG_BTN' value='举报' onclick=\"BD.IMG.actions.reportPic('"+img.fromurl+"','"+img.objurl+"','"+img.imgid+"','"+BD.IMG.query+"',this);return false;\"/></a>";
+              }
+          };
+
+          if(BD.IMG.complex){
+              BD.IMG.picts=[];
+              BD.IMG.picbs=[];
+              BD.IMG.imagets = [];
+              BD.IMG.imagebs = [];
+              BD.IMG.boxtheight = BD.IMG.boxheight;
+              BD.IMG.boxbheight = BD.IMG.boxheight;
+              for(var b=1;b<BD.IMG.pics.length;b++){
+                  if(b%2){
+                      BD.IMG.picbs.push(BD.IMG.pics[b]);
+                  }else{
+                      BD.IMG.picts.push(BD.IMG.pics[b]);
+                  }
+              };
+
+              var bigimg = $('#ala_img_bigimg');
+              var bigimg_bdtime = timeCalculate((new Date().getTime()- parseDate(BD.IMG.pics[0][11].replace(/-/g,"/")).getTime())/(1000*3600));
+              if (bigimg && bigimg_bdtime) {
+                rsv_dit_count += 1;
+              }
+
+              //处理上方单行
+              while(BD.IMG.justify(BD.IMG.picts,BD.IMG.imagets,BD.IMG.boxwidth,BD.IMG.boxtheight,BD.IMG.bleed,BD.IMG.margin)){
+                  BD.IMG.boxtheight--;
+                  if(BD.IMG.boxtheight<=0){break};
+              };
+              for(var m=0;m<BD.IMG.imagets.length;m++){
+                  BD.IMG.appendpic(document.getElementById("ala_img_ptline"),BD.IMG.imagets[m]);
+              };
+              //处理下方单行
+              while(BD.IMG.justify(BD.IMG.picbs,BD.IMG.imagebs,BD.IMG.boxwidth,BD.IMG.boxbheight,BD.IMG.bleed,BD.IMG.margin)){
+                  BD.IMG.boxbheight--;
+                  if(BD.IMG.boxbheight<=0){break};
+              };
+              for(var m=0;m<BD.IMG.imagebs.length;m++){
+                  BD.IMG.appendpic(document.getElementById("ala_img_pbline"),BD.IMG.imagebs[m]);
+              };
+              //调整大图的高度，IE浏览器下需要设置各区块高度
+              document.getElementById("ala_img_bigpic").style.height = (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)+"px";
+              if(document.getElementById("ala_img_bigimg").offsetHeight < (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)){
+                  document.getElementById("ala_img_bigimg").style.height = (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)+"px";
+              };
+              document.getElementById("ala_img_pics").style.height = (BD.IMG.boxtheight+BD.IMG.boxbheight+BD.IMG.margin)+"px";
+              document.getElementById("ala_img_ptline").style.height = BD.IMG.boxtheight+"px";
+              document.getElementById("ala_img_pbline").style.height = BD.IMG.boxbheight+"px";
+             
+          }else{
+              BD.IMG.images = [];
+              while(BD.IMG.justify(BD.IMG.pics,BD.IMG.images,BD.IMG.boxwidth,BD.IMG.boxheight,BD.IMG.bleed,BD.IMG.margin)){
+                  BD.IMG.boxheight--;
+                  if(BD.IMG.boxheight<=0){break};
+              };
+              for(var m=0;m<BD.IMG.images.length;m++){
+                  BD.IMG.appendpic(document.getElementById("ala_img_pics"),BD.IMG.images[m]);
+              };
+                
+              //处理左移图片高度
+              var $left;
+              if(($left = me.find(".op_sp_img_toleft")).length){
+                  $left.css("height", BD.IMG.boxheight);
+                  var $leftimg = $left.find("img");
+                  
+                  if($leftimg.hasClass("op_sp_img_hleftimg")){
+                      $leftimg.css("height", BD.IMG.boxheight);
+                  }else{
+                      // 竖图
+                      var data = JSON.parse("(" + $leftimg.attr("data-attr") + ")");
+                      if(data.width/data.height > 98/BD.IMG.boxheight){
+                            $leftimg.css({"height": BD.IMG.boxheight, "width":"auto"});
+                      }
+                  }
+              }
+             
+               
+          };
+          
+          //发送一次统计
+          if (rsv_dit_count > 0) {
+            c({fm:'inlo',rsv_dit: rsv_dit_count});
+          }
+
+          //清除预设高度
+           document.getElementById("ala_img_pics").style.height = "";
+
+          if(BD.IMG.base64Exp && bds.base64){
+              //设置base64左侧dom准备就绪，可以回填。
+              bds.base64.setDomLoad("left");
+          }
+
+          //性能统计代码
+          $.each($('#ala_img_results').find('img'),function(i,imgDom){bds.se.mon.load(imgDom,'left');});
+
+          //鼠标悬停逻辑
+          bds.ready(function(){
+              A.use('jquery', function(){
+                  var $ = A.ui.jquery;
+                  var $container = $("#ala_img_results");
+                  var $con = $("#ala_img_pics");
+                  var $imgs = $con.find("a");
+                  var $vb = $("#ala_img_hoverview");
+                  var $alink,$img,dclick,dhref,ol,ot,w,h,rw,rh,scale,nw,nh;
+                  $imgs.bind("mouseenter",function(){
+                      if(!BD.IMG.reporting){
+                          $(this).css("cursor","default");
+                          showViewBox(this);
+                          preloadImg(this);
+                      }
+                  });
+                  $vb.bind("mouseleave",function(){
+                      hideViewBox();
+                  });
+                  $container.bind("mouseleave",function(){
+                      hideViewBox();
+                  });
+                  function showViewBox(alink){
+                      $alink = $(alink);
+                      $vb.html($alink.html()).css({"left":ol+"px","top":ot+"px"}).show();
+                      $img = $vb.find("img");
+                      dclick = $alink.attr("data-click");
+                      dhref = $alink.attr("href");
+                      ol = alink.offsetLeft;
+                      ot = alink.offsetTop;
+                      w = $alink.width();
+                      h = $alink.height();
+                      rw = $alink.find("img").width();
+                      rh = $alink.find("img").height();
+                      scale = 0.1;
+                      nw = w + w*scale*2;
+                      nh = h + h*scale*2;
+                      //放大的高度不宜过高
+                      if(scale*h > 10){
+                          scale = 10/h;
+                          nh = h + h*0.2;
+                          nw = w + w*scale*2;
+                      }
+                      $img.stop().animate({
+                          width : rw + rw*scale*2 + "px",
+                          height : rh + rh*scale*2 + "px"
+                      },100);
+                      $vb.stop().attr({"data-click":dclick,"href":dhref}).css({
+                          display : "block",
+                          left : ol,
+                          top : ot,
+                          width : w + "px",
+                          height : h + "px"
+                      }).animate({
+                          left : ol - w*scale,
+                          top : ot - h*scale,
+                          width : w + w*scale*2 + "px",
+                          height : h + h*scale*2 + "px"
+                      },100);         
+                      $vb.click(function (e) {
+                        e.stopImmediatePropagation();
+                        var target = $(e.target).parent();
+                        var dataIsLoaded = $alink.attr('data-isloaded') === 'true' ? 1 : 0;
+                        var href = target.attr('href')
+                          + '&timg=' + encodeURIComponent($alink.attr('data-timgUrl'))
+                          + '&ctd=' + new Date().getTime() + '^' + dataIsLoaded + '_' + $(window).width() + 'X' + $(window).height() + '%1';
+                        target.attr('href', href);
+                      });
+                  };
+                  function hideViewBox(){
+                      if($img && $vb){
+                          $img.stop().animate({
+                              width : rw + "px",
+                              height : rh + "px"
+                          },100).css("cursor","pointer");
+                          $vb.stop().animate({
+                              left : ol,
+                              top : ot,
+                              width : w + "px",
+                              height : h + "px"
+                          },100).hide();
+                      }
+                  };
+                function preloadImg (dom) {
+                    var imgUrl = dom.getAttribute('data-objurl');
+                    var imgDi = dom.getAttribute('data-di');
+                    var imgSec = dom.getAttribute('data-sec');
+                    var isHttps = window.location.protocol === 'https:' ? true : false;
+                    var timgUrlHeader = isHttps ? 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_' : 'http://a.cphotos.bdimg.com';
+                    var timgUrl = timgUrlHeader + '/timg?image&quality=100&size=b'
+                            + '4000_4000'
+                            + '&sec=' + imgSec + '&di=' + imgDi + '&src=' + imgUrl;
+                    
+                    var img = new Image();
+                    $(img).bind('load', function () {
+                      if(this.width < 200 || this.height < 200) {
+                        $(dom).attr('data-isloaded', false);
+                        $(dom).attr('data-timgUrl', '');
+                      } else {
+                        $(dom).attr('data-isloaded', true);
+                        $(dom).attr('data-timgUrl', timgUrl);
+                      }
+                    }).bind('error', function () {
+                      $(dom).attr('data-isloaded', false);
+                      $(dom).attr('data-timgUrl', '');
+                    });
+                    img.src = decodeURIComponent(timgUrl);
+                }
+              });
+          });
+      });
+  </script>
 </div>
 <div class="result c-container " data-click="{'rsv_bdr':'0' ,'rsv_cd':'vLevel:1'}" id="2" srcid="1545" tpl="se_com_irregular_gallery"><h3 class="t"><a data-click="{
 			'F':'778717EA',
@@ -95,7 +527,7 @@ this.mergeFns=[];this._currentContainer=null};window.A=bds.aladdin={};b(d,window
     .se_com_irregular_gallery span{position: absolute;left: 0;top: 0;}
     .se_com_irregular_gallery_linkhover{box-shadow:rgb(100,100,100) 0 0 10px;z-index:1;width:0;height:0;display:none;position:absolute;overflow:hidden;}
     .se_com_irregular_gallery_linkhover a{float:none;display:block}
-    .se_com_irregular_gallery_linkhover a img{width:100%;height:100%}</style><div class="se_com_irregular_gallery c-gap-top-small c-gap-bottom-small"><ul><li><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=1574951159,1602467699&amp;fm=73" title=""/></a></li><li><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1999076754,758112845&amp;fm=73" title=""/></a></li><li><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=987694627,424518640&amp;fm=73" title=""/></a></li><li style="padding-right:0"><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1527560839,3050912469&amp;fm=73" title=""/></a></li></ul><div class="se_com_irregular_gallery_linkhover" target="_blank"></div></div><div class="f13"><a class="c-showurl" href="http://www.baidu.com/link?url=X-sH5Ii8f8cT_30jUT37ypg9pWIn8aASRvAT78OQftGZBnDG6z5v0BBJCpwnMz2e4tFgFCW4g9-iXByt_Qptra" style="text-decoration:none;" target="_blank">www.chinaz.com/mobile/... </a><div class="c-tools" data-tools='{"title":"苹果7代手机图片欣赏 至今最赞的iPhone7概念作品 - 站长之家","url":"http://www.baidu.com/link?url=X-sH5Ii8f8cT_30jUT37ypg9pWIn8aASRvAT78OQftGZBnDG6z5v0BBJCpwnMz2e4tFgFCW4g9-iXByt_Qptra"}' id="tools_18293496242602246263_2"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"><span class="c-vline"></span><span class="c-trust-as vstar" data_key="10762863489166205926" hint-data='{"label":"厦门享联科技有限公司","url":"https://www.baidu.com/s?wd=www.chinaz.com@v&amp;vmp_ec=1b8d7df82bacd7728b34ffdb05tX79ja2YyX23sd11b480aouu8dfadYlG44adb73dX76J5f451f08f1&amp;vmp_ectm=1457698003&amp;from=vs","hint":[{"txt":"[ecard 20]","vlevel":"1"}]}' hint-type="vstar"><a class="c-icon c-icon-v c-icon-v1" data-click="{'title':'vstar','rsv_vlevel':'1'}" href="https://www.baidu.com/s?wd=www.chinaz.com@v&amp;vmp_ec=1b8d7df82bacd7728b34ffdb05tX79ja2YyX23sd11b480aouu8dfadYlG44adb73dX76J5f451f08f1&amp;vmp_ectm=1457698003&amp;from=vs&amp;rsv_dl=0_left_v_1" target="_blank"></a></span></span></span><span> - <a class="m" data-click="{'rsv_comments':'1'}" href="http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DX-sH5Ii8f8cT_30jUT37ypg9pWIn8aASRvAT78OQftGZBnDG6z5v0BBJCpwnMz2e4tFgFCW4g9-iXByt_Qptra&amp;jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%02%E8%8B%B9%E6%9E%9C%017%01%E4%BB%A3%01%E6%89%8B%E6%9C%BA%01%E5%9B%BE%E7%89%87%03%E6%AC%A3%E8%B5%8F%01%20%01%E8%87%B3%E4%BB%8A%01%E6%9C%80%01%E8%B5%9E%01%E7%9A%84%02iPhone%017%03%E6%A6%82%E5%BF%B5%01%E4%BD%9C%E5%93%81%01%20%01-%01%20%01%E7%AB%99%E9%95%BF%01%E4%B9%8B%01%E5%AE%B6%01%26q%3D%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&amp;key=surl" target="_blank">83%好评</a></span></div><div class="c-gap-top c-recommend" data-extquery="苹果7什么时候上市 苹果7图片大全大图 苹果8代手机图片 " style="display:none;"><i class="c-icon c-icon-bear-circle c-gap-right-small"></i><span class="c-gray">为您推荐：</span><a class="res-gap-right16" href="/s?wd=%E8%8B%B9%E6%9E%9C7%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8A%E5%B8%82&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA7%E4%BB%A3%E5%9B%BE%E7%89%87" target="_blank">苹果7什么时候上市</a><a class="res-gap-right16" href="/s?wd=%E8%8B%B9%E6%9E%9C7%E5%9B%BE%E7%89%87%E5%A4%A7%E5%85%A8%E5%A4%A7%E5%9B%BE&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA7%E4%BB%A3%E5%9B%BE%E7%89%87" target="_blank">苹果7图片大全大图</a><a href="/s?wd=%E8%8B%B9%E6%9E%9C8%E4%BB%A3%E6%89%8B%E6%9C%BA%E5%9B%BE%E7%89%87&amp;usm=2&amp;ie=utf-8&amp;rsv_crq=7&amp;bs=%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA7%E4%BB%A3%E5%9B%BE%E7%89%87" target="_blank">苹果8代手机图片</a></div></div><div class="result c-container " data-click="{'rsv_bdr':'0' }" id="3" srcid="1599" tpl="se_com_default"><h3 class="t"><a data-click="{
+    .se_com_irregular_gallery_linkhover a img{width:100%;height:100%}</style><div class="se_com_irregular_gallery c-gap-top-small c-gap-bottom-small"><ul><li><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73x1bjeh1BF3odCf/it/u=1574951159,1602467699&amp;fm=73" title=""/></a></li><li><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1999076754,758112845&amp;fm=73" title=""/></a></li><li><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=987694627,424518640&amp;fm=73" title=""/></a></li><li style="padding-right:0"><a href="http://www.chinaz.com/mobile/2015/0324/392648.shtml" target="_blank"><img src="https://ss0.baidu.com/73t1bjeh1BF3odCf/it/u=1527560839,3050912469&amp;fm=73" title=""/></a></li></ul><div class="se_com_irregular_gallery_linkhover" target="_blank"></div></div><div class="f13"><a class="c-showurl" href="http://www.baidu.com/link?url=X-sH5Ii8f8cT_30jUT37ypg9pWIn8aASRvAT78OQftGZBnDG6z5v0BBJCpwnMz2e4tFgFCW4g9-iXByt_Qptra" style="text-decoration:none;" target="_blank">www.chinaz.com/mobile/... </a><div class="c-tools" data-tools='{"title":"苹果7代手机图片欣赏 至今最赞的iPhone7概念作品 - 站长之家","url":"http://www.baidu.com/link?url=X-sH5Ii8f8cT_30jUT37ypg9pWIn8aASRvAT78OQftGZBnDG6z5v0BBJCpwnMz2e4tFgFCW4g9-iXByt_Qptra"}' id="tools_18293496242602246263_2"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"><span class="c-vline"></span><span class="c-trust-as vstar" data_key="10762863489166205926" hint-data='{"label":"厦门享联科技有限公司","url":"https://www.baidu.com/s?wd=www.chinaz.com@v&amp;vmp_ec=1b8d7df82bacd7728b34ffdb05tX79ja2YyX23sd11b480aouu8dfadYlG44adb73dX76J5f451f08f1&amp;vmp_ectm=1457698003&amp;from=vs","hint":[{"txt":"[ecard 20]","vlevel":"1"}]}' hint-type="vstar"><a class="c-icon c-icon-v c-icon-v1" data-click="{'title':'vstar','rsv_vlevel':'1'}" href="https://www.baidu.com/s?wd=www.chinaz.com@v&amp;vmp_ec=1b8d7df82bacd7728b34ffdb05tX79ja2YyX23sd11b480aouu8dfadYlG44adb73dX76J5f451f08f1&amp;vmp_ectm=1457698003&amp;from=vs&amp;rsv_dl=0_left_v_1" target="_blank"></a></span></span></span><span> - <a class="m" data-click="{'rsv_comments':'1'}" href="http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DX-sH5Ii8f8cT_30jUT37ypg9pWIn8aASRvAT78OQftGZBnDG6z5v0BBJCpwnMz2e4tFgFCW4g9-iXByt_Qptra&amp;jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%02%E8%8B%B9%E6%9E%9C%017%01%E4%BB%A3%01%E6%89%8B%E6%9C%BA%01%E5%9B%BE%E7%89%87%03%E6%AC%A3%E8%B5%8F%01%20%01%E8%87%B3%E4%BB%8A%01%E6%9C%80%01%E8%B5%9E%01%E7%9A%84%02iPhone%017%03%E6%A6%82%E5%BF%B5%01%E4%BD%9C%E5%93%81%01%20%01-%01%20%01%E7%AB%99%E9%95%BF%01%E4%B9%8B%01%E5%AE%B6%01%26q%3D%C6%BB%B9%FB%CA%D6%BB%FA7%B4%FA%CD%BC%C6%AC&amp;key=surl" target="_blank">83%好评</a></span></div></div><div class="result c-container " data-click="{'rsv_bdr':'0' }" id="3" srcid="1599" tpl="se_com_default"><h3 class="t"><a data-click="{
 			'F':'778717EA',
 			'F1':'9D73F1E4',
 			'F2':'4CA6DD6B',
