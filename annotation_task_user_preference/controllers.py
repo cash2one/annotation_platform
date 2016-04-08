@@ -36,7 +36,7 @@ class UserPreferenceTaskManager(TaskManager):
         random.shuffle(task_units)
         task_unit_tags = [t.tag for t in task_units]
         annotations = Annotation.objects(task=task, user=user)
-        annotated_tags = set([a.task_unit.tag for a in annotations])
+        annotated_tags = set([a.task_unit.tag for a in annotations]) | set([query for query in check_querys])
 
         # 在6,16,26,36,46各设一个check point
         if len(annotations) % 10 == 5:
@@ -44,8 +44,6 @@ class UserPreferenceTaskManager(TaskManager):
             return TaskUnit.objects(task=task, tag=check_querys[i])[0]
         for tag in task_unit_tags:
             if tag in annotated_tags:
-                continue
-            elif tag in check_querys:
                 continue
             else:
                 return TaskUnit.objects(task=task, tag=tag)[0]
