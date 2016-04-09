@@ -38,6 +38,9 @@ class User(Document):
     email = EmailField(required=True)
     sex = StringField(choices=sex_choices)
     class_no = StringField()
+    name = StringField(required=True)
+    age = IntField(required=True)
+    search_frequency = StringField(required=True, choices=search_frequency_choices)
 
     user_groups = ListField(StringField(choices=user_group_list), default=['normal_user'])
 

@@ -64,6 +64,9 @@ def signup(request):
             user.email = form.cleaned_data['email']
             user.sex = form.cleaned_data['sex']
             user.class_no = form.cleaned_data['class_no']
+            user.name = form.cleaned_data['name']
+            user.age = form.cleaned_data['age']
+            user.search_frequency = form.cleaned_data['search_frequency']
 
             user.signup_time = datetime.datetime.now()
             user.last_login = datetime.datetime.now()
