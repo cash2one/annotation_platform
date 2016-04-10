@@ -23,7 +23,7 @@
 
 <div class="row annotation-div">
     <script src="/static/raty/jquery.raty.js"></script>
-    <div class="col-xs-7 col-xs-offset-3">
+    <div class="col-xs-6 col-xs-offset-4">
         <div class="row">
         <form id="submit-form" action="" method="post">
             {% csrf_token %}
@@ -33,31 +33,31 @@
             <input type="hidden" name="html2" value="{{ html2 }}">
             <label for="user preference">你的偏好：</label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="-3">左边特别好
+                <input type="radio" name="score" value="-3">左+3
             </label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="-2">左边较好
+                <input type="radio" name="score" value="-2">左+2
             </label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="-1">左边略好
+                <input type="radio" name="score" value="-1">左+1
             </label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="0">左右接近
+                <input type="radio" name="score" value="0">0
             </label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="1">右边略好
+                <input type="radio" name="score" value="1">右+1
             </label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="2">右边较好
+                <input type="radio" name="score" value="2">右+2
             </label>
             <label class="radio-inline">
-                <input type="radio" name="score" value="3">右边特别好
+                <input type="radio" name="score" value="3">右+3
             </label>
             <!--你的偏好：<span id="annotation_raty"></span>-->
         </form>
         </div>
         <div class="row">
-            <div class="col-xs-2 col-xs-offset-4">
+            <div class="col-xs-2 col-xs-offset-3">
             <div id="submit-btn" class="submit-btn btn btn-block btn-lg btn-primary">
             提交
             </div>
