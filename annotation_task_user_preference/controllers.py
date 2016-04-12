@@ -29,23 +29,28 @@ class UserPreferenceTaskManager(TaskManager):
         :return: next task unit, None if no new task needs annotation
         """
 
-        check_querys = ('窗花的剪法', '龙珠国语', '腾讯游戏大全', '怎样开红酒瓶塞', '金铃怨攻略')
+        check_querys = ['窗花的剪法', '龙珠国语', '腾讯游戏大全', '怎样开红酒瓶塞', '金铃怨攻略']
 
         task_units = TaskUnit.objects(task=task)
         task_units = sorted(task_units, key=lambda x: json.loads(x.unit_content)['query'])
         random.shuffle(task_units)
         task_unit_tags = [t.tag for t in task_units]
         annotations = Annotation.objects(task=task, user=user)
-        annotated_tags = set([a.task_unit.tag for a in annotations]) | set([query for query in check_querys])
+        annotated_tags = set([a.task_unit.tag for a in annotations]) | set(check_querys)
 
         # 在6,16,26,36,46各设一个check point
-        if len(annotations) % 10 == 5:
+        check_units = []
+        for i in range(0, 5):
+            check_units.append(TaskUnit.objects(task=task, tag=check_querys[i])[0])
+        if len(annotations) < 50 and len(annotations) % 10 == 5:
             i = (len(annotations) - 5) / 10
-            return TaskUnit.objects(task=task, tag=check_querys[i])[0]
+            return check_units[i]
         for tag in task_unit_tags:
             if tag in annotated_tags:
                 continue
             else:
+                if TaskUnit.objects(task=task, tag=tag)[0] in check_units:
+                    continue
                 return TaskUnit.objects(task=task, tag=tag)[0]
         if len(task_units) > 0:
             self.send_task_finished_emails(request, task, user, admin_emails=['zhangfan12@mails.tsinghua.edu.cn'])
