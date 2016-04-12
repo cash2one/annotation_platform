@@ -34,8 +34,6 @@ window.onbeforeunload = function(ev){
     mouse_tracking_group_limit = 1;
     ev = ev || window.event;
     send_mouse_info(formInfo("html", "UNIT_END", ""));
-    ev.returnValue = "确认提交？";
-    //return ev.returnValue;
 };
 
 function get_set(url_str) {

@@ -276,8 +276,12 @@ class UserPreferenceTaskManager(TaskManager):
                             this_user_score_sogou = score_sogou
                         else:
                             others_score_sogous.append(score_sogou)
-                    if this_user_score_sogou != others_score_sogous[0] and this_user_score_sogou != others_score_sogous[1]:
-                        conflict3 += 1
+                    if len(others_score_sogous) == 2:
+                        if this_user_score_sogou != others_score_sogous[0] and this_user_score_sogou != others_score_sogous[1]:
+                            conflict3 += 1
+                    if len(others_score_sogous) == 1:
+                        if this_user_score_sogou != others_score_sogous[0]:
+                            conflict2 += 1
 
             ret[str(user.username)] = '冲突2--' + str(conflict2) + '\t冲突3--' + str(conflict3) + '\t总冲突--' + str(conflict2 + conflict3)
         return ret

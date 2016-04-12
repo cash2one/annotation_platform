@@ -13,6 +13,7 @@ user_group_list = (
     ('normal_user', u'普通用户'),
 )
 
+
 class TimestampGenerator(object):
 
     def __init__(self, seconds=0):
