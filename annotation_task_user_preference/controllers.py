@@ -288,5 +288,5 @@ class UserPreferenceTaskManager(TaskManager):
                         if this_user_score_sogou != others_score_sogous[0]:
                             conflict2 += 1
 
-            ret[str(user.username)] = '冲突2--' + str(conflict2) + '\t冲突3--' + str(conflict3) + '\t总冲突--' + str(conflict2 + conflict3)
+            ret[str(user.username.encode('utf-8'))] = '冲突2--' + str(conflict2) + '\t冲突3--' + str(conflict3) + '\t总冲突--' + str(conflict2 + conflict3)
         return ret
