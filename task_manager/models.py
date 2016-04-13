@@ -52,3 +52,12 @@ class Log(Document):
     content = StringField()               # Timestamp, Action, Info
 
 
+class ExtensionLog(Document):
+    user = ReferenceField(User)
+    task = ReferenceField(Task)
+    task_unit = ReferenceField(TaskUnit)
+    action = StringField()
+    action_object = StringField()
+    content = StringField()
+
+

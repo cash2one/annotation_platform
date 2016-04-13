@@ -24,6 +24,23 @@ def fromString(line, user, task_id, unit_tag):
     return logObj
 
 
+def extensionfromString(line, user, task_id, unit_tag):
+    time = patterns['TIME'].search(line).group(1)
+    action = patterns['ACTION'].search(line).group(1)
+    # html = patterns['HTML'].search(line).group(1)
+    task = Task.objects.get(id=task_id)
+    task_unit = TaskUnit.objects.get(task=task, tag=unit_tag)
+    extensionlogObj = ExtensionLog.objects.create(
+        user=user,
+        task=task,
+        task_unit=task_unit,
+        action=action,
+        action_object='',
+        content=line
+    )
+    return extensionlogObj
+
+
 def insertMessageToDB(message, user, task_id, unit_tag):
     try:
         for line in message.split('\n'):
@@ -36,3 +53,19 @@ def insertMessageToDB(message, user, task_id, unit_tag):
         transaction.rollback()
     else:
         transaction.commit()
+
+
+def insertExtensionMessageToDB(message, user, task_id, unit_tag):
+    try:
+        for line in message.split('\n'):
+            print line
+            if line == '':
+                continue
+
+            extensionlog = extensionfromString(line, user, task_id, unit_tag)
+            extensionlog.save()
+    except Exception:
+        transaction.rollback()
+    else:
+        transaction.commit()
+

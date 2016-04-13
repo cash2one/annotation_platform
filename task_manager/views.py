@@ -210,3 +210,11 @@ def log(user, request, task_id, unit_tag):
     # print type(message)
     LogParser.insertMessageToDB(message, user, task_id, unit_tag)
     return HttpResponse('OK')
+
+
+@csrf_exempt
+def extension_log(request, username, task_id, unit_tag):
+    message = request.POST[u'mouse_message']
+    user = User.objects(username=username)[0]
+    LogParser.insertExtensionMessageToDB(message, user, task_id, unit_tag)
+    return HttpResponse('OK')

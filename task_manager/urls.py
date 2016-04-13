@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^next_task/([0-9a-z]+)/$', views.get_next_task_unit),
     url(r'^anno/([0-9a-z]+)/(.+)/', views.annotate),
     url(r'^LogService/([0-9a-z]+)/(.+)/', views.log),
+    url(r'^ExtensionLogService/([0-9a-z]+)/([0-9a-z]+)/(.+)/', views.extension_log),
 
     # task manager
     url(r'^manage/$', views.manage_tasks),

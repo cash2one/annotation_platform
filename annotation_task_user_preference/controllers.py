@@ -41,7 +41,8 @@ class UserPreferenceTaskManager(TaskManager):
         # 在6,16,26,36,46各设一个check point
         check_units = []
         for i in range(0, 5):
-            check_units.append(TaskUnit.objects(task=task, tag=check_querys[i])[0])
+            if len(TaskUnit.objects(task=task, tag=check_querys[i])) > 0:
+                check_units.append(TaskUnit.objects(task=task, tag=check_querys[i])[0])
         if len(annotations) < 50 and len(annotations) % 10 == 5:
             i = (len(annotations) - 5) / 10
             return check_units[i]
