@@ -57,7 +57,7 @@ class ExtensionLog(Document):
     task = ReferenceField(Task)
     task_unit = ReferenceField(TaskUnit)
     action = StringField()
-    action_object = StringField()
+    site = StringField()
     content = StringField()
 
 
