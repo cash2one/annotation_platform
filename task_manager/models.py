@@ -27,9 +27,10 @@ class TaskUnit(Document):
     """
     class for each annotation unit, could be a SERP, a query-url pair, etc.
     """
-    tag = StringField(required=True)  # use tag to identify each task unit, should be unique
-    unit_content = StringField()      # the content of the task unit, usually a JSON-serialized string
-    task = ReferenceField(Task)       # reference to the task
+    tag = StringField(required=True)   # use tag to identify each task unit, should be unique
+    unit_content = StringField()       # the content of the task unit, usually a JSON-serialized string
+    task = ReferenceField(Task)        # reference to the task
+    unit_type = StringField(required=True)  # normal unit or check unit
 
 
 class Annotation(Document):
@@ -57,7 +58,7 @@ class ExtensionLog(Document):
     task = ReferenceField(Task)
     task_unit = ReferenceField(TaskUnit)
     action = StringField()
-    site = StringField()
+    action_object = StringField()
     content = StringField()
 
 

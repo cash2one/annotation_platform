@@ -11,20 +11,21 @@ from task_manager.utils import _compute_kappa, _compute_alpha, _compute_weighted
 from task_manager.models import *
 
 
-def import_task_unit(task, json_str):
+def import_task_unit(task, json_str, unit_type):
     obj = json.loads(json_str)
     u = TaskUnit()
     u.task = task
     u.tag = unicode(obj['query'])
     u.unit_content = json_str
+    u.unit_type = unit_type
     u.save()
     return u
 
 
-def batch_import_task_units_from_file(task, path):
+def batch_import_task_units_from_file(task, path, unit_type):
     with open(path, 'r') as fin:
         for line in fin:
-            import_task_unit(task, line)
+            import_task_unit(task, line, unit_type)
 
 
 def get_query(annotation):
