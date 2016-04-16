@@ -39,7 +39,7 @@ class UserPreferenceTaskManager(TaskManager):
         # 在18,35,52,69,86各设一个check point
         check_units = TaskUnit.objects(task=task, unit_type='check')
         if 10 < len(annotations) < 90 and len(annotations) % 17 == 0:
-            i = len(annotations) / 17
+            i = len(annotations) / 17 - 1
             return check_units[i]
         for tag in task_unit_tags:
             if tag in annotated_tags:
