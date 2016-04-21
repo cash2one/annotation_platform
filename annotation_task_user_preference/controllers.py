@@ -135,7 +135,9 @@ class UserPreferenceTaskManager(TaskManager):
         :return: Html fragment that will be inserted to the description block
         """
         user = get_user_from_request(request)
-        finished_task_num = len(Annotation.objects(user=user, task=task))
+        annotations = Annotation.objects(user=user, task=task)
+        annotated_tags = set([a.task_unit.tag for a in annotations])
+        finished_task_num = len(annotated_tags)
         all_task_num = len(TaskUnit.objects(task=task))
         t = loader.get_template('annotation_task_user_preference_description.html')
         c = RequestContext(
@@ -213,74 +215,140 @@ class UserPreferenceTaskManager(TaskManager):
         ret = {}
         if len(annotations) == 0:
             return ret
-
-        '''ret['weighted kappa'] = compute_weighted_kappa(annotations)
-        ret['4-level kappa'] = compute_kappa(annotations)
-        ret['Kripendorff\'s alpha'] = compute_alpha(annotations)'''
-
-        '''annotations_units = [0, 0, 0, 0]
-        task_units = TaskUnit.objects(task=task)
-        conflict2 = 0
-        conflict3 = 0
-        for task_unit in task_units:
-            unit_annotations = Annotation.objects(task_unit=task_unit)
-            if 0 <= len(unit_annotations) <= 3:
-                annotations_units[len(unit_annotations)] += 1
-            if len(unit_annotations) == 2:
-                if get_three_level_score(unit_annotations[0]) + get_three_level_score(unit_annotations[1]) != 0:
-                    conflict2 += 1
+        annotated_users = set([a.user for a in annotations])
+        task_units = TaskUnit.objects(task=task, unit_type='normal')
+        # 每个人标注的情况
+        for user in annotated_users:
+            user_annotations = []
+            for unit in task_units:
+                if len(Annotation.objects(task_unit=unit, user=user)) > 0:
+                    user_annotations.append(Annotation.objects(task_unit=unit, user=user)[0])
+            annotation_scores = {}
+            for i in range(-3, 4):
+                annotation_scores[i] = 0
+            for user_annotation in user_annotations:
+                annotation_scores[int(get_score(user_annotation))] += 1
+            scores_info = ''
+            for i in range(-3, 4):
+                scores_info += str(i) + ':' + str(annotation_scores[i]) + ';'
+            ret[str(user.username)] = scores_info
+        # task整体情况
+        unit_30 = 0
+        unit_21 = 0
+        unit_111 = 0
+        for unit in task_units:
+            unit_annotations = []
+            for user in annotated_users:
+                if len(Annotation.objects(task_unit=unit, user=user)) > 0:
+                    unit_annotations.append(Annotation.objects(task_unit=unit, user=user)[0])
+            '''if len(unit_annotations) == 3:
+                sogou_scores = []
+                for annotation in unit_annotations:
+                    html2 = json.loads(annotation.annotation_content)['html2']
+                    score_sogou = get_score(annotation)
+                    if html2 == 'baidu':
+                        score_sogou = 0 - score_sogou
+                    sogou_scores.append(score_sogou)
+                ret[unit.tag] = str(sogou_scores[0]) + ',' + str(sogou_scores[1]) + ',' + str(sogou_scores[2])'''
             if len(unit_annotations) == 3:
-                score_sogous = []
+                sogou_scores = []
                 for annotation in unit_annotations:
                     html2 = json.loads(annotation.annotation_content)['html2']
                     score_sogou = get_three_level_score(annotation)
                     if html2 == 'baidu':
                         score_sogou = 0 - score_sogou
-                    score_sogous.append(score_sogou)
-                if score_sogous[0] != score_sogous[1] and score_sogous[0] != score_sogous[2] and score_sogous[2] != score_sogous[1]:
-                    conflict3 += 1
-        for i in range(0, 4):
-            ret[str(i) + '个标注有'] = str(annotations_units[i]) + '个task_units'
-        ret['2个标注中的冲突数'] = str(conflict2)
-        ret['3个标注中的冲突数'] = str(conflict3)
-        return ret'''
-
-        annotated_users = set([a.user for a in annotations])
-        for user in annotated_users:
-            user_annotations = Annotation.objects(task=task, user=user)
-            conflict2 = 0
-            conflict3 = 0
-            for user_annotation in user_annotations:
-                task_unit = user_annotation.task_unit
-                unit_annotations = Annotation.objects(task_unit=task_unit)
-                if len(unit_annotations) == 2:
-                    score_sogous = []
-                    for annotation in unit_annotations:
-                        html2 = json.loads(annotation.annotation_content)['html2']
-                        score_sogou = get_three_level_score(annotation)
+                    sogou_scores.append(score_sogou)
+                conflicts = 0
+                for i in range(0, len(sogou_scores)):
+                    for j in range(i+1, len(sogou_scores)):
+                        if sogou_scores[i] != sogou_scores[j]:
+                            conflicts += 1
+                if conflicts == 0:
+                    unit_30 += 1
+                    # ret[unit.tag] = "3-0," + str(sogou_scores[0])
+                if conflicts == 2:
+                    unit_21 += 1
+                    # ret[unit.tag] = "2-1"
+                if conflicts == 3:
+                    unit_111 += 1
+                    # ret[unit.tag] = "1-1-1"
+        ret["3-0"] = str(unit_30)
+        ret["2-1"] = str(unit_21)
+        ret["1-1-1"] = str(unit_111)
+        annotated_users = list(annotated_users)
+        for i in range(0, len(annotated_users)):
+            for j in range(i+1, len(annotated_users)):
+                user1 = annotated_users[i]
+                user2 = annotated_users[j]
+                # 计算三级kappa
+                matrix = [
+                    [0, 0, 0],
+                    [0, 0, 0],
+                    [0, 0, 0]
+                ]
+                total = 0
+                for unit in task_units:
+                    if len(Annotation.objects(task_unit=unit, user=user1)) > 0 and len(Annotation.objects(task_unit=unit, user=user2)) > 0:
+                        total += 1
+                        annotation1 = Annotation.objects(task_unit=unit, user=user1)[0]
+                        html2 = json.loads(annotation1.annotation_content)['html2']
+                        score_sogou1 = get_three_level_score(annotation1)
                         if html2 == 'baidu':
-                            score_sogou = 0 - score_sogou
-                        score_sogous.append(score_sogou)
-                    if score_sogous[0] != score_sogous[1]:
-                        conflict2 += 1
-                if len(unit_annotations) == 3:
-                    this_user_score_sogou = -2
-                    others_score_sogous = []
-                    for annotation in unit_annotations:
-                        html2 = json.loads(annotation.annotation_content)['html2']
-                        score_sogou = get_three_level_score(annotation)
+                            score_sogou1 = 0 - score_sogou1
+                        annotation2 = Annotation.objects(task_unit=unit, user=user2)[0]
+                        html2 = json.loads(annotation2.annotation_content)['html2']
+                        score_sogou2 = get_three_level_score(annotation2)
                         if html2 == 'baidu':
-                            score_sogou = 0 - score_sogou
-                        if annotation.user.username == user.username:
-                            this_user_score_sogou = score_sogou
-                        else:
-                            others_score_sogous.append(score_sogou)
-                    if len(others_score_sogous) == 2:
-                        if this_user_score_sogou != others_score_sogous[0] and this_user_score_sogou != others_score_sogous[1]:
-                            conflict3 += 1
-                    if len(others_score_sogous) == 1:
-                        if this_user_score_sogou != others_score_sogous[0]:
-                            conflict2 += 1
+                            score_sogou2 = 0 - score_sogou2
+                        matrix[score_sogou1 + 1][score_sogou2 + 1] += 1
+                p_o = (matrix[0][0] + matrix[1][1] + matrix[2][2]) / float(total)
+                p_c = (
+                          (matrix[0][0] + matrix[0][1] + matrix[0][2]) * (matrix[0][0] + matrix[1][0] + matrix[2][0])
+                          + (matrix[1][0] + matrix[1][1] + matrix[1][2]) * (matrix[0][1] + matrix[1][1] + matrix[2][1])
+                          + (matrix[2][0] + matrix[2][1] + matrix[2][2]) * (matrix[0][2] + matrix[1][2] + matrix[2][2])
+                      ) / float(total * total)
+                if p_c == 1:
+                    kappa = 1
+                else:
+                    kappa = (p_o - p_c) / (1 - p_c)
+                ret[user1.username + '-' + user2.username + 'kappa'] = str(kappa) + ','.join(str(x) for x in matrix)
 
-            ret[str(user.username.encode('utf-8'))] = '冲突2--' + str(conflict2) + '\t冲突3--' + str(conflict3) + '\t总冲突--' + str(conflict2 + conflict3)
+                # 计算二级kappa
+                binary_matrix = [[0, 0], [0, 0]]
+                total = 0
+                for unit in task_units:
+                    if len(Annotation.objects(task_unit=unit, user=user1)) > 0 and len(Annotation.objects(task_unit=unit, user=user2)) > 0:
+                        total += 1
+                        annotation1 = Annotation.objects(task_unit=unit, user=user1)[0]
+                        html2 = json.loads(annotation1.annotation_content)['html2']
+                        score_sogou1 = get_three_level_score(annotation1)
+                        if html2 == 'baidu':
+                            score_sogou1 = 0 - score_sogou1
+                        annotation2 = Annotation.objects(task_unit=unit, user=user2)[0]
+                        html2 = json.loads(annotation2.annotation_content)['html2']
+                        score_sogou2 = get_three_level_score(annotation2)
+                        if html2 == 'baidu':
+                            score_sogou2 = 0 - score_sogou2
+                        binary_matrix[abs(score_sogou1)][abs(score_sogou2)] += 1
+                p_o = (binary_matrix[0][0] + binary_matrix[1][1]) / float(total)
+                p_c = (
+                    (binary_matrix[0][0] + binary_matrix[0][1]) * (binary_matrix[0][0] + binary_matrix[1][0]) +
+                    (binary_matrix[1][1] + binary_matrix[0][1]) * (binary_matrix[1][1] + binary_matrix[1][0])
+                ) / float(total * total)
+                if p_c == 1:
+                    binary_kappa = 1
+                else:
+                    binary_kappa = (p_o - p_c) / (1 - p_c)
+                ret[user1.username + '-' + user2.username + 'binary_kappa'] = binary_kappa
+
+        check_units = TaskUnit.objects(task=task, unit_type='check')
+        for check_unit in check_units:
+            annotations = Annotation.objects(task_unit=check_unit)
+            for annotation in annotations:
+                html2 = json.loads(annotation.annotation_content)['html2']
+                score_sogou = get_three_level_score(annotation)
+                if html2 == 'baidu':
+                    score_sogou = 0 - score_sogou
+                ret[annotation.user.username + check_unit.tag] = str(score_sogou)
         return ret
+
