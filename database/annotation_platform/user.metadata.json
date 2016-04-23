@@ -1,1 +1,0 @@
-{"options":{"create":"annotation_platform.user"},"indexes":[{"v":1,"key":{"_id":1},"ns":"annotation_platform.user","name":"_id_"},{"v":1,"key":{"username":1},"unique":true,"ns":"annotation_platform.user","name":"username_1","background":false,"sparse":false,"dropDups":false}]}

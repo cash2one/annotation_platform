@@ -1,1 +1,0 @@
-{"options":{"create":"log"},"indexes":[{"v":1,"key":{"_id":1},"ns":"annotation_platform.log","name":"_id_"}]}
